@@ -4,10 +4,10 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Constellation.xcscheme</key>
+		<key>Fortune.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>14</integer>
 		</dict>
 		<key>daichaoFramWork.xcscheme</key>
 		<dict>
@@ -18,13 +18,6 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>15</integer>
-		</dict>
-		<key>daikuanchaoshi 2.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>0</integer>
 		</dict>
 		<key>nuanxindaiFramwork.xcscheme</key>
 		<dict>

@@ -1,0 +1,23 @@
+{
+  "images" : [
+   {
+      "idiom" : "universal",
+      "scale" : "1x",
+      "filename" : "流年运势（小）.png"
+   },
+   {
+      "idiom" : "universal",
+      "scale" : "2x",
+      "filename" : "流年运势（小）@2x.png"
+   },
+   {
+      "idiom" : "universal",
+      "scale" : "3x",
+      "filename" : "流年运势（小）@3x.png"
+   }
+ ],
+  "info" : {
+     "version" : 1,
+     "author" : "xcode"
+ }
+}

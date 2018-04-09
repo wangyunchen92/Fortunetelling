@@ -1,0 +1,23 @@
+{
+  "images" : [
+   {
+      "idiom" : "universal",
+      "scale" : "1x",
+      "filename" : "十年大运.png"
+   },
+   {
+      "idiom" : "universal",
+      "scale" : "2x",
+      "filename" : "十年大运@2x.png"
+   },
+   {
+      "idiom" : "universal",
+      "scale" : "3x",
+      "filename" : "十年大运@3x.png"
+   }
+ ],
+  "info" : {
+     "version" : 1,
+     "author" : "xcode"
+ }
+}

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MainViewController.h"
+#import "MainTabViewController.h"
 #import "LoginViewController.h"
 #import "CommandTool.h"
 #import "HZLaunchImageViewController.h"
@@ -98,7 +98,7 @@
     }] flattenMap:^RACStream *(id value) {
      
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            MainViewController *mainCtl = [[MainViewController alloc] init];
+            MainTabViewController *mainCtl = [[MainTabViewController alloc] init];
             self.window.rootViewController = mainCtl;
             return nil;
         }];
