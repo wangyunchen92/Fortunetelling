@@ -1478,5 +1478,23 @@
     [comp1 year]  == [comp2 year];
 }
 
++(NSString*)dy_getDeviceUUID{
+    
+    CFUUIDRef uuid = CFUUIDCreate(NULL);
+    assert(uuid != NULL);
+    CFStringRef uuidStr = CFUUIDCreateString(NULL, uuid);
+    NSString *retrieveuuid;
+    if (![SSKeychain passwordForService:ServiceName account:ServiceAccount]) {
+        [SSKeychain setPassword:(__bridge NSString *)uuidStr forService:ServiceName account:ServiceAccount];
+        retrieveuuid = [SSKeychain passwordForService:ServiceName account:ServiceAccount];
+        NSLog(@"SSKeychain存储显示: 未安装过:%@", retrieveuuid);
+    } else {
+        retrieveuuid = [SSKeychain passwordForService:ServiceName account:ServiceAccount];
+        NSLog(@"%@", retrieveuuid);
+    }
+    
+    return retrieveuuid;
+}
+
 
 @end

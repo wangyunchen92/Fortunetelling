@@ -7,7 +7,8 @@
 //
 
 #import "BaseViewController.h"
+#import "PersonDetailViewModel.h"
 
 @interface PersonDetailViewController : BaseViewController
-
+- (instancetype)initWithViewModel:(PersonDetailViewModel *)viewModel;
 @end

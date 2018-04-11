@@ -120,10 +120,11 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="八字测算" translatesAutoresizingMaskIntoConstraints="NO" id="cfJ-Xj-q5p">
-                                    <rect key="frame" x="105" y="21" width="58" height="58"/>
+                                    <rect key="frame" x="124" y="30.5" width="39" height="39"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <gestureRecognizers/>
                             <constraints>
                                 <constraint firstItem="yNt-Uc-dMZ" firstAttribute="top" secondItem="6IR-2y-7EG" secondAttribute="top" constant="15" id="3gk-LA-Hmz"/>
                                 <constraint firstItem="Bpg-gc-wYP" firstAttribute="top" secondItem="yNt-Uc-dMZ" secondAttribute="bottom" constant="5" id="C3Z-P2-ylW"/>
@@ -134,6 +135,9 @@
                                 <constraint firstItem="Bpg-gc-wYP" firstAttribute="leading" secondItem="6IR-2y-7EG" secondAttribute="leading" constant="15" id="ptr-bQ-rLI"/>
                                 <constraint firstItem="yNt-Uc-dMZ" firstAttribute="leading" secondItem="6IR-2y-7EG" secondAttribute="leading" constant="15" id="t3u-Yn-MLq"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="6S8-qn-jOL" appends="YES" id="n2K-DW-25g"/>
+                            </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8DI-EN-T3h">
                             <rect key="frame" x="0.0" y="428" width="183" height="210"/>
@@ -518,6 +522,11 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="29" y="129.5"/>
         </view>
+        <tapGestureRecognizer id="6S8-qn-jOL" userLabel="firstFortune">
+            <connections>
+                <action selector="firstFortuneClick:" destination="-1" id="dHR-Qz-OUW"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="八字测算" width="39" height="39"/>

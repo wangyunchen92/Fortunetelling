@@ -204,6 +204,8 @@
 // 根据数字判断星座
 + (NSString *)imagetrans:(NSInteger )tag;
 
+// 获取UUID
++(NSString*)dy_getDeviceUUID;
 
 #pragma mark - webView清理缓存
 + (void)clearWebViewCache;

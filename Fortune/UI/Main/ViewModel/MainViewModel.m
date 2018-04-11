@@ -24,9 +24,9 @@
     [self.subject_getDate subscribeNext:^(NSMutableArray *catchArray) {
         HttpRequestMode *model = [[HttpRequestMode alloc]init];
         model.name= @"产品列表";
-        model.url = GetNews;
+        model.url = GetFortuneInfo;
         
-        [[HttpClient sharedInstance]requestApiWithHttpRequestMode:model Success:^(HttpRequest *request, HttpResponse *response) {
+        [[HttpClient sharedInstance] requestApiWithHttpRequestMode:model Success:^(HttpRequest *request, HttpResponse *response) {
 
         } Failure:^(HttpRequest *request, HttpResponse *response) {
             [BasePopoverView hideHUDForWindow:YES];

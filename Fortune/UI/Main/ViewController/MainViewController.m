@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "NewPagedFlowView.h"
 #import "MainViewModel.h"
+#import "FortuneDetailViewController.h"
 
 @interface MainViewController ()<NewPagedFlowViewDelegate,NewPagedFlowViewDataSource,UIScrollViewDelegate>
 @property (nonatomic, strong)NewPagedFlowView *pageView;
@@ -24,7 +25,7 @@
     [super viewDidLoad];
     self.viewModel = [[MainViewModel alloc] init];
     [self createNavWithTitle:@"八字算命解梦" leftText:@"" rightText:@""];
-    self.theSimpleNavigationBar.backgroundColor = RGB(209, 89, 82);
+    self.theSimpleNavigationBar.backgroundColor = RGB(225, 75, 76);
     [self.theSimpleNavigationBar.titleButton setTitleColor: [UIColor whiteColor] forState:UIControlStateNormal];
     self.theSimpleNavigationBar.bottomLineView.backgroundColor = [UIColor clearColor];
     self.viewModel.block_reloadDate = ^{
@@ -87,6 +88,13 @@
         scrollView.contentOffset = CGPointZero;
     }
 }
+
+- (IBAction)firstFortuneClick:(id)sender {
+    FortuneDetailViewController *FVC = [[FortuneDetailViewController alloc] init];
+    [self.navigationController pushViewController:FVC animated:YES];
+}
+
+
 
 
 - (void)didReceiveMemoryWarning {

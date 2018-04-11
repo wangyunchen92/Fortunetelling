@@ -9,11 +9,15 @@
 #ifndef RequestURL_h
 #define RequestURL_h
 
-static  NSString *const GetNewsNav = @"https://luck.youmeng.com/Api/App/getNewsNav.html";
-static  NSString *const GetNews = @"https://luck.youmeng.com/Api/App/getNews.html";
+static  NSString *const GetCurlInfo = @"https://luck.youmeng.com/Api/Index/curlInfo.html";
+static  NSString *const GetFortuneInfo = @"https://luck.youmeng.com/Api/Index/getFortuneInfo.html";
 
 static  NSString *const GetConsteDetail = @"https://luck.youmeng.com/Api/Third/getFortuneList.html";
 
+// 测算详情
+static  NSString *const GetFortuneDetail = @"https://luck.youmeng.com/Api/Index/getFortuneDetail.html";
+
 static NSString *const GetApkUpdate = @"https://luck.youmeng.com/Api/App/getApkUpdate.html";
+
 
 #endif /* RequestURL_h */

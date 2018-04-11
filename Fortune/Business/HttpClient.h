@@ -36,6 +36,10 @@
 
 #pragma mark ----------------------Create Request----------------------
 
+
+- (void)requestApiWithHttpRequestMode:(HttpRequestMode *)requestMode
+                              Success:(CompletionHandlerSuccessBlock)success
+                              Failure:(CompletionHandlerFailureBlock)failure;
 /**
  *  创建普通接口请求
  *

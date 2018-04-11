@@ -21,6 +21,15 @@
 		D53B7C1F1FC2ECA000395E69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D53B7C1E1FC2ECA000395E69 /* main.m */; };
 		D53B7C291FC2ECA000395E69 /* FortuneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D53B7C281FC2ECA000395E69 /* FortuneTests.m */; };
 		D53B7C341FC2ECA000395E69 /* FortuneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D53B7C331FC2ECA000395E69 /* FortuneUITests.m */; };
+		D54DA0A8207C64BC00EDD167 /* MineCalculateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D54DA0A6207C64BC00EDD167 /* MineCalculateListViewController.m */; };
+		D54DA0A9207C64BC00EDD167 /* MineCalculateListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D54DA0A7207C64BC00EDD167 /* MineCalculateListViewController.xib */; };
+		D54DA0AC207C650C00EDD167 /* MineCalculateViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D54DA0AB207C650C00EDD167 /* MineCalculateViewModel.m */; };
+		D54DA0B0207C664100EDD167 /* MineCalculateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D54DA0AE207C664100EDD167 /* MineCalculateTableViewCell.m */; };
+		D54DA0B1207C664100EDD167 /* MineCalculateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D54DA0AF207C664100EDD167 /* MineCalculateTableViewCell.xib */; };
+		D54DA0B4207C834B00EDD167 /* MineCalculatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D54DA0B3207C834B00EDD167 /* MineCalculatModel.m */; };
+		D54DA0B9207CA15600EDD167 /* FortuneDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D54DA0B7207CA15600EDD167 /* FortuneDetailViewController.xib */; };
+		D54DA0BC207CAC6300EDD167 /* FortuneDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D54DA0BB207CAC6300EDD167 /* FortuneDetailViewModel.m */; };
+		D54DA0BF207CB08E00EDD167 /* FortuneDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D54DA0BE207CB08E00EDD167 /* FortuneDetailViewController.m */; };
 		D55D19EB206B2CEA003AC62A /* XWPresentOneTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D55D19E3206B2CEA003AC62A /* XWPresentOneTransition.m */; };
 		D561827E207B073B009F68BC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D561827C207B073B009F68BC /* MainViewController.m */; };
 		D561827F207B073B009F68BC /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D561827D207B073B009F68BC /* MainViewController.xib */; };
@@ -30,6 +39,18 @@
 		D561828D207B7169009F68BC /* PersonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D561828B207B7169009F68BC /* PersonDetailViewController.m */; };
 		D561828E207B7169009F68BC /* PersonDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D561828C207B7169009F68BC /* PersonDetailViewController.xib */; };
 		D5618291207B717C009F68BC /* PersonDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D5618290207B717C009F68BC /* PersonDetailViewModel.m */; };
+		D578D467207DB14D00004A42 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D578D466207DB14C00004A42 /* RadioButton.m */; };
+		D578D478207DDC7A00004A42 /* WSDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D578D474207DDC7000004A42 /* WSDatePickerView.xib */; };
+		D578D479207DDC7A00004A42 /* WSDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D578D475207DDC7000004A42 /* WSDatePickerView.m */; };
+		D578D47A207DDC7A00004A42 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D578D476207DDC7000004A42 /* NSDate+Extension.m */; };
+		D578D47B207DDC7A00004A42 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D578D477207DDC7000004A42 /* UIView+Extension.m */; };
+		D578D47F207DE3CE00004A42 /* PersonDetailTopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D578D47D207DE3CE00004A42 /* PersonDetailTopTableViewCell.m */; };
+		D578D480207DE3CE00004A42 /* PersonDetailTopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D578D47E207DE3CE00004A42 /* PersonDetailTopTableViewCell.xib */; };
+		D578D484207DE5AD00004A42 /* PersonDetailBoardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D578D482207DE5AD00004A42 /* PersonDetailBoardTableViewCell.m */; };
+		D578D485207DE5AD00004A42 /* PersonDetailBoardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D578D483207DE5AD00004A42 /* PersonDetailBoardTableViewCell.xib */; };
+		D578D489207DE6EE00004A42 /* PersonBottomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D578D487207DE6EE00004A42 /* PersonBottomTableViewCell.m */; };
+		D578D48A207DE6EE00004A42 /* PersonBottomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D578D488207DE6EE00004A42 /* PersonBottomTableViewCell.xib */; };
+		D578D48D207DF2F400004A42 /* PersonTopDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D578D48C207DF2F400004A42 /* PersonTopDetailModel.m */; };
 		D57CD46E1FC3C334001446D8 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = D57CD46D1FC3C334001446D8 /* Config.m */; };
 		D57CD4731FC3CA59001446D8 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D57CD4721FC3CA59001446D8 /* BaseViewController.m */; };
 		D57CD47A1FC3CB17001446D8 /* SimpleNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D57CD4791FC3CB17001446D8 /* SimpleNavigationBar.m */; };
@@ -136,6 +157,21 @@
 		D53B7C2F1FC2ECA000395E69 /* FortuneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FortuneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D53B7C331FC2ECA000395E69 /* FortuneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FortuneUITests.m; sourceTree = "<group>"; };
 		D53B7C351FC2ECA000395E69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D54DA0A5207C64BC00EDD167 /* MineCalculateListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineCalculateListViewController.h; sourceTree = "<group>"; };
+		D54DA0A6207C64BC00EDD167 /* MineCalculateListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineCalculateListViewController.m; sourceTree = "<group>"; };
+		D54DA0A7207C64BC00EDD167 /* MineCalculateListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineCalculateListViewController.xib; sourceTree = "<group>"; };
+		D54DA0AA207C650C00EDD167 /* MineCalculateViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineCalculateViewModel.h; sourceTree = "<group>"; };
+		D54DA0AB207C650C00EDD167 /* MineCalculateViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineCalculateViewModel.m; sourceTree = "<group>"; };
+		D54DA0AD207C664100EDD167 /* MineCalculateTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineCalculateTableViewCell.h; sourceTree = "<group>"; };
+		D54DA0AE207C664100EDD167 /* MineCalculateTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineCalculateTableViewCell.m; sourceTree = "<group>"; };
+		D54DA0AF207C664100EDD167 /* MineCalculateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineCalculateTableViewCell.xib; sourceTree = "<group>"; };
+		D54DA0B2207C834B00EDD167 /* MineCalculatModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineCalculatModel.h; sourceTree = "<group>"; };
+		D54DA0B3207C834B00EDD167 /* MineCalculatModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineCalculatModel.m; sourceTree = "<group>"; };
+		D54DA0B7207CA15600EDD167 /* FortuneDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FortuneDetailViewController.xib; sourceTree = "<group>"; };
+		D54DA0BA207CAC6300EDD167 /* FortuneDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FortuneDetailViewModel.h; sourceTree = "<group>"; };
+		D54DA0BB207CAC6300EDD167 /* FortuneDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FortuneDetailViewModel.m; sourceTree = "<group>"; };
+		D54DA0BD207CB08E00EDD167 /* FortuneDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FortuneDetailViewController.h; sourceTree = "<group>"; };
+		D54DA0BE207CB08E00EDD167 /* FortuneDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FortuneDetailViewController.m; sourceTree = "<group>"; };
 		D55D19E3206B2CEA003AC62A /* XWPresentOneTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWPresentOneTransition.m; sourceTree = "<group>"; };
 		D55D19E8206B2CEA003AC62A /* XWPresentOneTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWPresentOneTransition.h; sourceTree = "<group>"; };
 		D561827B207B073B009F68BC /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -152,6 +188,26 @@
 		D561828C207B7169009F68BC /* PersonDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonDetailViewController.xib; sourceTree = "<group>"; };
 		D561828F207B717C009F68BC /* PersonDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonDetailViewModel.h; sourceTree = "<group>"; };
 		D5618290207B717C009F68BC /* PersonDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonDetailViewModel.m; sourceTree = "<group>"; };
+		D578D465207DB14C00004A42 /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButton.h; sourceTree = "<group>"; };
+		D578D466207DB14C00004A42 /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButton.m; sourceTree = "<group>"; };
+		D578D471207DDC7000004A42 /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		D578D472207DDC7000004A42 /* WSDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDatePickerView.h; sourceTree = "<group>"; };
+		D578D473207DDC7000004A42 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		D578D474207DDC7000004A42 /* WSDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WSDatePickerView.xib; sourceTree = "<group>"; };
+		D578D475207DDC7000004A42 /* WSDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDatePickerView.m; sourceTree = "<group>"; };
+		D578D476207DDC7000004A42 /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		D578D477207DDC7000004A42 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		D578D47C207DE3CE00004A42 /* PersonDetailTopTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonDetailTopTableViewCell.h; sourceTree = "<group>"; };
+		D578D47D207DE3CE00004A42 /* PersonDetailTopTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonDetailTopTableViewCell.m; sourceTree = "<group>"; };
+		D578D47E207DE3CE00004A42 /* PersonDetailTopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonDetailTopTableViewCell.xib; sourceTree = "<group>"; };
+		D578D481207DE5AD00004A42 /* PersonDetailBoardTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonDetailBoardTableViewCell.h; sourceTree = "<group>"; };
+		D578D482207DE5AD00004A42 /* PersonDetailBoardTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonDetailBoardTableViewCell.m; sourceTree = "<group>"; };
+		D578D483207DE5AD00004A42 /* PersonDetailBoardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonDetailBoardTableViewCell.xib; sourceTree = "<group>"; };
+		D578D486207DE6EE00004A42 /* PersonBottomTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonBottomTableViewCell.h; sourceTree = "<group>"; };
+		D578D487207DE6EE00004A42 /* PersonBottomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonBottomTableViewCell.m; sourceTree = "<group>"; };
+		D578D488207DE6EE00004A42 /* PersonBottomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonBottomTableViewCell.xib; sourceTree = "<group>"; };
+		D578D48B207DF2F400004A42 /* PersonTopDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonTopDetailModel.h; sourceTree = "<group>"; };
+		D578D48C207DF2F400004A42 /* PersonTopDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonTopDetailModel.m; sourceTree = "<group>"; };
 		D57CD46A1FC3C1A6001446D8 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		D57CD46C1FC3C334001446D8 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		D57CD46D1FC3C334001446D8 /* Config.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
@@ -386,6 +442,55 @@
 			path = FortuneUITests;
 			sourceTree = "<group>";
 		};
+		D54DA0A0207C649900EDD167 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				D54DA0A1207C649900EDD167 /* ViewModel */,
+				D54DA0A2207C649900EDD167 /* Model */,
+				D54DA0A3207C649900EDD167 /* View */,
+				D54DA0A4207C649900EDD167 /* ViewController */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		D54DA0A1207C649900EDD167 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D54DA0AA207C650C00EDD167 /* MineCalculateViewModel.h */,
+				D54DA0AB207C650C00EDD167 /* MineCalculateViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D54DA0A2207C649900EDD167 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D54DA0B2207C834B00EDD167 /* MineCalculatModel.h */,
+				D54DA0B3207C834B00EDD167 /* MineCalculatModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D54DA0A3207C649900EDD167 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D54DA0AD207C664100EDD167 /* MineCalculateTableViewCell.h */,
+				D54DA0AE207C664100EDD167 /* MineCalculateTableViewCell.m */,
+				D54DA0AF207C664100EDD167 /* MineCalculateTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D54DA0A4207C649900EDD167 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D54DA0A5207C64BC00EDD167 /* MineCalculateListViewController.h */,
+				D54DA0A6207C64BC00EDD167 /* MineCalculateListViewController.m */,
+				D54DA0A7207C64BC00EDD167 /* MineCalculateListViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		D55D19E2206B2CEA003AC62A /* PresentTransition */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +518,8 @@
 				D5618281207B0748009F68BC /* MainViewModel.m */,
 				D561828F207B717C009F68BC /* PersonDetailViewModel.h */,
 				D5618290207B717C009F68BC /* PersonDetailViewModel.m */,
+				D54DA0BA207CAC6300EDD167 /* FortuneDetailViewModel.h */,
+				D54DA0BB207CAC6300EDD167 /* FortuneDetailViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -420,6 +527,8 @@
 		D5618278207B0710009F68BC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D578D48B207DF2F400004A42 /* PersonTopDetailModel.h */,
+				D578D48C207DF2F400004A42 /* PersonTopDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -427,6 +536,17 @@
 		D5618279207B0710009F68BC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D578D465207DB14C00004A42 /* RadioButton.h */,
+				D578D466207DB14C00004A42 /* RadioButton.m */,
+				D578D47C207DE3CE00004A42 /* PersonDetailTopTableViewCell.h */,
+				D578D47D207DE3CE00004A42 /* PersonDetailTopTableViewCell.m */,
+				D578D47E207DE3CE00004A42 /* PersonDetailTopTableViewCell.xib */,
+				D578D481207DE5AD00004A42 /* PersonDetailBoardTableViewCell.h */,
+				D578D482207DE5AD00004A42 /* PersonDetailBoardTableViewCell.m */,
+				D578D483207DE5AD00004A42 /* PersonDetailBoardTableViewCell.xib */,
+				D578D486207DE6EE00004A42 /* PersonBottomTableViewCell.h */,
+				D578D487207DE6EE00004A42 /* PersonBottomTableViewCell.m */,
+				D578D488207DE6EE00004A42 /* PersonBottomTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -440,6 +560,9 @@
 				D561828A207B7169009F68BC /* PersonDetailViewController.h */,
 				D561828B207B7169009F68BC /* PersonDetailViewController.m */,
 				D561828C207B7169009F68BC /* PersonDetailViewController.xib */,
+				D54DA0BD207CB08E00EDD167 /* FortuneDetailViewController.h */,
+				D54DA0BE207CB08E00EDD167 /* FortuneDetailViewController.m */,
+				D54DA0B7207CA15600EDD167 /* FortuneDetailViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -453,6 +576,20 @@
 				D5618287207B431A009F68BC /* NewPagedFlowView.h */,
 			);
 			path = NewPagedFlowView;
+			sourceTree = "<group>";
+		};
+		D578D470207DDC7000004A42 /* WSDaePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				D578D471207DDC7000004A42 /* NSDate+Extension.h */,
+				D578D472207DDC7000004A42 /* WSDatePickerView.h */,
+				D578D473207DDC7000004A42 /* UIView+Extension.h */,
+				D578D474207DDC7000004A42 /* WSDatePickerView.xib */,
+				D578D475207DDC7000004A42 /* WSDatePickerView.m */,
+				D578D476207DDC7000004A42 /* NSDate+Extension.m */,
+				D578D477207DDC7000004A42 /* UIView+Extension.m */,
+			);
+			path = WSDaePickerView;
 			sourceTree = "<group>";
 		};
 		D57CD4691FC3C167001446D8 /* Support */ = {
@@ -485,6 +622,7 @@
 		D57CD4701FC3C9C2001446D8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D54DA0A0207C649900EDD167 /* Mine */,
 				D5618276207B0710009F68BC /* Main */,
 				D57CD4D71FC3FF70001446D8 /* Load */,
 				D57CD4711FC3CA59001446D8 /* BaseViewController.h */,
@@ -504,6 +642,7 @@
 		D57CD4741FC3CAD7001446D8 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				D578D470207DDC7000004A42 /* WSDaePickerView */,
 				D5618283207B431A009F68BC /* NewPagedFlowView */,
 				D5DD67E02073794800A97941 /* UM */,
 				D55D19E2206B2CEA003AC62A /* PresentTransition */,
@@ -860,6 +999,7 @@
 				TargetAttributes = {
 					D53B7C0B1FC2ECA000395E69 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -905,11 +1045,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D561828E207B7169009F68BC /* PersonDetailViewController.xib in Resources */,
+				D54DA0B1207C664100EDD167 /* MineCalculateTableViewCell.xib in Resources */,
 				D5A5027C2068EBE1001EBE10 /* Images.xcassets in Resources */,
+				D54DA0B9207CA15600EDD167 /* FortuneDetailViewController.xib in Resources */,
+				D578D478207DDC7A00004A42 /* WSDatePickerView.xib in Resources */,
 				D53B7C191FC2ECA000395E69 /* Assets.xcassets in Resources */,
 				D561827F207B073B009F68BC /* MainViewController.xib in Resources */,
+				D578D48A207DE6EE00004A42 /* PersonBottomTableViewCell.xib in Resources */,
 				D57CD4E31FC3FFE8001446D8 /* LoginViewController.xib in Resources */,
+				D578D485207DE5AD00004A42 /* PersonDetailBoardTableViewCell.xib in Resources */,
+				D578D480207DE3CE00004A42 /* PersonDetailTopTableViewCell.xib in Resources */,
 				D5DD67DF2073672F00A97941 /* HZLaunchImageViewController.xib in Resources */,
+				D54DA0A9207C64BC00EDD167 /* MineCalculateListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1019,6 +1166,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Fortune/Pods-Fortune-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/PGDatePicker/PGDatePicker/PGDatePicker.bundle",
+				"${PODS_ROOT}/SSKeychain/Support/SSKeychain.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -1089,6 +1238,9 @@
 				D5A502652068A261001EBE10 /* UploadModel.m in Sources */,
 				D57CD4C21FC3D5F9001446D8 /* UIColor+Hex.m in Sources */,
 				D57CD4871FC3CBD6001446D8 /* UIUtil.m in Sources */,
+				D578D47A207DDC7A00004A42 /* NSDate+Extension.m in Sources */,
+				D578D47F207DE3CE00004A42 /* PersonDetailTopTableViewCell.m in Sources */,
+				D578D48D207DF2F400004A42 /* PersonTopDetailModel.m in Sources */,
 				D57CD4BD1FC3D5F9001446D8 /* UIButton+TouchAreaInsets.m in Sources */,
 				D55D19EB206B2CEA003AC62A /* XWPresentOneTransition.m in Sources */,
 				D57CD4C01FC3D5F9001446D8 /* NSMutableURLRequest+CMUtils.m in Sources */,
@@ -1096,13 +1248,17 @@
 				D57CD4E21FC3FFE8001446D8 /* LoginViewController.m in Sources */,
 				D5A5025F2068A261001EBE10 /* YYMemoryCache.m in Sources */,
 				D5618289207B431A009F68BC /* NewPagedFlowView.m in Sources */,
+				D578D484207DE5AD00004A42 /* PersonDetailBoardTableViewCell.m in Sources */,
 				D5059B652069E83F00914C01 /* DSNavViewController.m in Sources */,
 				D57CD4C61FC3D5F9001446D8 /* NSString+Extension.m in Sources */,
 				D57CD4E61FC40100001446D8 /* LoginViewModel.m in Sources */,
 				D57CD4C81FC3D5F9001446D8 /* NSDictionary+Utils.m in Sources */,
 				D57CD4BE1FC3D5F9001446D8 /* NSDate+CustomDate.m in Sources */,
 				D5A502612068A261001EBE10 /* HttpClient.m in Sources */,
+				D54DA0A8207C64BC00EDD167 /* MineCalculateListViewController.m in Sources */,
 				D57CD4731FC3CA59001446D8 /* BaseViewController.m in Sources */,
+				D578D467207DB14D00004A42 /* RadioButton.m in Sources */,
+				D578D47B207DDC7A00004A42 /* UIView+Extension.m in Sources */,
 				D57CD4D31FC3DB7B001446D8 /* ToolUtil+PublicParam.m in Sources */,
 				D57CD4F61FC40761001446D8 /* UserDefaultsTool.m in Sources */,
 				D57CD4C51FC3D5F9001446D8 /* NSString+NSHash.m in Sources */,
@@ -1110,12 +1266,14 @@
 				D53B7C1F1FC2ECA000395E69 /* main.m in Sources */,
 				D5A5027F2068F3EB001EBE10 /* BaseViewModel.m in Sources */,
 				D57CD4EC1FC4062E001446D8 /* UserInfo.m in Sources */,
+				D578D489207DE6EE00004A42 /* PersonBottomTableViewCell.m in Sources */,
 				D5A502662068A261001EBE10 /* NSMutableDictionary+Utils.m in Sources */,
 				D57CD4E91FC401AB001446D8 /* BackgroundViewController.m in Sources */,
 				D5618282207B0748009F68BC /* MainViewModel.m in Sources */,
 				D5A502622068A261001EBE10 /* HttpResponse.m in Sources */,
 				D57CD4CC1FC3D5F9001446D8 /* UIImage+Color.m in Sources */,
 				D57CD4C71FC3D5F9001446D8 /* UIButton+Touch.m in Sources */,
+				D54DA0B4207C834B00EDD167 /* MineCalculatModel.m in Sources */,
 				D57CD4C91FC3D5F9001446D8 /* NSDictionary+UrlEncoding.m in Sources */,
 				D561828D207B7169009F68BC /* PersonDetailViewController.m in Sources */,
 				D57CD4CA1FC3D5F9001446D8 /* UITextField+Extension.m in Sources */,
@@ -1127,13 +1285,17 @@
 				D5059B7D206A3C1E00914C01 /* MainTabViewController.m in Sources */,
 				D57CD4CB1FC3D5F9001446D8 /* UIButton+UIButtonExt.m in Sources */,
 				D53B7C111FC2ECA000395E69 /* AppDelegate.m in Sources */,
+				D54DA0BF207CB08E00EDD167 /* FortuneDetailViewController.m in Sources */,
 				D5A502602068A261001EBE10 /* HttpFileLoadProgress.m in Sources */,
 				D57CD4BF1FC3D5F9001446D8 /* UIAlertView+Block.m in Sources */,
 				D5A5026A2068A362001EBE10 /* BasePopoverView.m in Sources */,
+				D578D479207DDC7A00004A42 /* WSDatePickerView.m in Sources */,
 				D5DD67DE2073672F00A97941 /* HZLaunchImageViewController.m in Sources */,
 				D5A5025D2068A261001EBE10 /* YYCache.m in Sources */,
 				D5A5025E2068A261001EBE10 /* YYKVStorage.m in Sources */,
+				D54DA0AC207C650C00EDD167 /* MineCalculateViewModel.m in Sources */,
 				D57CD4BC1FC3D5F9001446D8 /* UIImage+FX.m in Sources */,
+				D54DA0BC207CAC6300EDD167 /* FortuneDetailViewModel.m in Sources */,
 				D5618288207B431A009F68BC /* PGIndexBannerSubiew.m in Sources */,
 				D5DD67D7207358F500A97941 /* CommandTool.m in Sources */,
 				D561827E207B073B009F68BC /* MainViewController.m in Sources */,
@@ -1141,6 +1303,7 @@
 				D5A502772068C882001EBE10 /* NSDictionary+Log.m in Sources */,
 				D57CD4851FC3CBD6001446D8 /* NavigationBarUIUtil.m in Sources */,
 				D57CD4C31FC3D5F9001446D8 /* NSString+PDRegex.m in Sources */,
+				D54DA0B0207C664100EDD167 /* MineCalculateTableViewCell.m in Sources */,
 				D5A5025B2068A261001EBE10 /* HttpRequestMode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1291,6 +1454,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Fortune/Fortune.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = BXNJAEDFYS;
@@ -1305,6 +1469,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "f2a10696-50d3-40eb-b278-27e4764beed2";
 				PROVISIONING_PROFILE_SPECIFIER = conste;
+				SWIFT_OBJC_BRIDGING_HEADER = "Fortune/UI/Main/ViewController/Fortune-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1315,6 +1482,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Fortune/Fortune.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = BXNJAEDFYS;
@@ -1329,6 +1497,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "f2a10696-50d3-40eb-b278-27e4764beed2";
 				PROVISIONING_PROFILE_SPECIFIER = conste;
+				SWIFT_OBJC_BRIDGING_HEADER = "Fortune/UI/Main/ViewController/Fortune-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

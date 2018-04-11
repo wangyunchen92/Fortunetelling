@@ -80,6 +80,12 @@ static HttpClient *httpClient = nil;
 }
 
 - (void)requestApiWithHttpRequestMode:(HttpRequestMode *)requestMode
+                              Success:(CompletionHandlerSuccessBlock)success
+                              Failure:(CompletionHandlerFailureBlock)failure {
+        [self requestBaseWithName:requestMode.name Url:requestMode.url Parameters:requestMode.parameters IsGet:requestMode.isGET IsCache:NO Success:success Failure:failure RequsetStart:nil ResponseEnd:nil];
+}
+
+- (void)requestApiWithHttpRequestMode:(HttpRequestMode *)requestMode
                            Success:(CompletionHandlerSuccessBlock)success
                            Failure:(CompletionHandlerFailureBlock)failure
                       RequsetStart:(RequstStartBlock)requestStart

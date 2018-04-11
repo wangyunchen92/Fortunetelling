@@ -25,6 +25,10 @@ dispatch_async(dispatch_get_main_queue(), block); \
 #define kUMAppKey             @"5ac1f1ebb27b0a36f80000e3"
 #define kIsProduct            YES
 
+//应用名称(保证唯一性)
+#define ServiceName @"com.Fortune.youmeng"
+#define ServiceAccount @"1"
+
 
 
 //重新定义宏定义

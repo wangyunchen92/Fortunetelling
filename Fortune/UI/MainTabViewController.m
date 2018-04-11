@@ -10,6 +10,7 @@
 #import "MainViewController.h"
 #import "LoginViewController.h"
 #import "DSNavViewController.h"
+#import "MineCalculateListViewController.h"
 
 
 @interface MainTabViewController()<UITabBarControllerDelegate>
@@ -81,7 +82,7 @@
 //    FamilyViewController *hvc    = [[FamilyViewController alloc] init];
     
     MainViewController *hvc      = [[MainViewController alloc] init];
-    BaseViewController *mvc = [[BaseViewController alloc] init];
+    MineCalculateListViewController *mvc = [[MineCalculateListViewController alloc] init];
 
     DSNavViewController *hNav    = [[DSNavViewController alloc] initWithRootViewController:hvc];
     DSNavViewController *mNav    = [[DSNavViewController alloc] initWithRootViewController:mvc];
