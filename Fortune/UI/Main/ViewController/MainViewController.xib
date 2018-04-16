@@ -12,8 +12,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="dateDayLabel" destination="DbD-yP-zf0" id="dex-bk-h1S"/>
+                <outlet property="dateNumLabel" destination="2i2-Bx-i3p" id="2p1-Ia-O4G"/>
+                <outlet property="dateYearLabel" destination="oZW-cJ-8Zm" id="HLY-YH-7Mb"/>
+                <outlet property="jiLabel" destination="aei-vG-Qdn" id="XeU-nV-uMJ"/>
                 <outlet property="topMaskView" destination="mQs-NY-pj4" id="NxR-Zp-nHc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="yiLabel" destination="m9I-39-K8N" id="jHQ-BR-3Gv"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -34,20 +39,6 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D1h-rH-DLv">
                             <rect key="frame" x="0.0" y="217" width="183" height="100"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="周公解梦" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0B-G8-g5W">
-                                    <rect key="frame" x="15" y="15" width="70" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
-                                    <color key="textColor" red="1" green="0.30980392159999998" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYl-qi-xL5">
-                                    <rect key="frame" x="15" y="41" width="86" height="29"/>
-                                    <string key="text">解析梦境大全，
-测算运势</string>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="周公解梦" translatesAutoresizingMaskIntoConstraints="NO" id="6fr-Kr-m3r">
                                     <rect key="frame" x="105" y="9" width="58" height="82"/>
                                     <constraints>
@@ -55,8 +46,21 @@
                                         <constraint firstAttribute="width" constant="58" id="yJG-qH-Dv2"/>
                                     </constraints>
                                 </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="周公解梦" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0B-G8-g5W">
+                                    <rect key="frame" x="15" y="15" width="70" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                    <color key="textColor" red="1" green="0.30980392159999998" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="解析梦境大全，测算运势" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYl-qi-xL5">
+                                    <rect key="frame" x="15" y="41" width="90" height="29"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <gestureRecognizers/>
                             <constraints>
                                 <constraint firstItem="FYl-qi-xL5" firstAttribute="top" secondItem="m0B-G8-g5W" secondAttribute="bottom" constant="5" id="6zy-nI-g2r"/>
                                 <constraint firstItem="6fr-Kr-m3r" firstAttribute="centerY" secondItem="D1h-rH-DLv" secondAttribute="centerY" id="8zt-OV-WgF"/>
@@ -65,7 +69,11 @@
                                 <constraint firstAttribute="trailing" secondItem="6fr-Kr-m3r" secondAttribute="trailing" constant="20" id="Qxy-hW-0Sc"/>
                                 <constraint firstItem="m0B-G8-g5W" firstAttribute="leading" secondItem="D1h-rH-DLv" secondAttribute="leading" constant="15" id="cnl-A4-VX7"/>
                                 <constraint firstItem="FYl-qi-xL5" firstAttribute="leading" secondItem="D1h-rH-DLv" secondAttribute="leading" constant="15" id="i3C-lO-rTz"/>
+                                <constraint firstItem="6fr-Kr-m3r" firstAttribute="leading" secondItem="FYl-qi-xL5" secondAttribute="trailing" id="vx7-ew-ngM"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="fEd-aB-wMU" appends="YES" id="bjH-zB-Dce"/>
+                            </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLO-Id-pDS">
                             <rect key="frame" x="184" y="116" width="182" height="100"/>
@@ -91,6 +99,7 @@
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <gestureRecognizers/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="3uA-n5-tfA"/>
                                 <constraint firstItem="fTN-d4-65U" firstAttribute="centerY" secondItem="CLO-Id-pDS" secondAttribute="centerY" id="DEl-yg-8OD"/>
@@ -101,6 +110,9 @@
                                 <constraint firstItem="SeC-jp-rHc" firstAttribute="top" secondItem="S3n-j9-UU8" secondAttribute="bottom" constant="5" id="lIl-JT-tX4"/>
                                 <constraint firstItem="SeC-jp-rHc" firstAttribute="leading" secondItem="CLO-Id-pDS" secondAttribute="leading" constant="15" id="qwa-s9-r3w"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="Zl6-OQ-hFu" appends="YES" id="U9l-xS-WSo"/>
+                            </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6IR-2y-7EG">
                             <rect key="frame" x="0.0" y="116" width="183" height="100"/>
@@ -149,8 +161,8 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期四" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbD-yP-zf0">
-                                    <rect key="frame" x="114" y="15" width="52" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <rect key="frame" x="109" y="17" width="49" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -187,10 +199,10 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="DbD-yP-zf0" firstAttribute="leading" secondItem="oZW-cJ-8Zm" secondAttribute="trailing" constant="15" id="4eZ-EX-xWM"/>
+                                <constraint firstItem="DbD-yP-zf0" firstAttribute="leading" secondItem="oZW-cJ-8Zm" secondAttribute="trailing" constant="10" id="4eZ-EX-xWM"/>
                                 <constraint firstItem="m9I-39-K8N" firstAttribute="leading" secondItem="BSV-zh-kya" secondAttribute="trailing" constant="8" id="8eh-Zs-wud"/>
                                 <constraint firstAttribute="height" constant="210" id="DxR-pl-lLi"/>
-                                <constraint firstItem="DbD-yP-zf0" firstAttribute="top" secondItem="8DI-EN-T3h" secondAttribute="top" constant="15" id="J56-Hd-1fi"/>
+                                <constraint firstItem="DbD-yP-zf0" firstAttribute="top" secondItem="8DI-EN-T3h" secondAttribute="top" constant="17" id="J56-Hd-1fi"/>
                                 <constraint firstItem="aei-vG-Qdn" firstAttribute="centerY" secondItem="Pjh-ZM-eoG" secondAttribute="centerY" id="MNI-RX-Sar"/>
                                 <constraint firstItem="2i2-Bx-i3p" firstAttribute="top" secondItem="oZW-cJ-8Zm" secondAttribute="bottom" constant="17" id="Ve7-Y1-FoL"/>
                                 <constraint firstItem="oZW-cJ-8Zm" firstAttribute="leading" secondItem="8DI-EN-T3h" secondAttribute="leading" constant="15" id="bcG-fH-JIv"/>
@@ -228,6 +240,7 @@
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <gestureRecognizers/>
                             <constraints>
                                 <constraint firstItem="oa7-yR-0j8" firstAttribute="top" secondItem="UWi-Uw-rt7" secondAttribute="top" constant="15" id="3pU-tx-w9f"/>
                                 <constraint firstAttribute="trailing" secondItem="ymm-lA-8W7" secondAttribute="trailing" constant="20" id="NzK-hK-IRf"/>
@@ -238,6 +251,9 @@
                                 <constraint firstItem="Qkh-cd-HaJ" firstAttribute="top" secondItem="oa7-yR-0j8" secondAttribute="bottom" constant="5" id="uTL-Mb-OS7"/>
                                 <constraint firstItem="ymm-lA-8W7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Qkh-cd-HaJ" secondAttribute="trailing" constant="5" id="yTn-xZ-r5r"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="UMy-LE-u5J" appends="YES" id="jEN-Pu-sWf"/>
+                            </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HEw-Lp-z49">
                             <rect key="frame" x="184" y="428" width="90.5" height="105"/>
@@ -360,12 +376,16 @@
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <gestureRecognizers/>
                                     <constraints>
                                         <constraint firstItem="iMg-yd-0sn" firstAttribute="top" secondItem="mZP-eE-iH8" secondAttribute="top" constant="13" id="NJ4-nR-1fv"/>
                                         <constraint firstItem="iMg-yd-0sn" firstAttribute="centerX" secondItem="mZP-eE-iH8" secondAttribute="centerX" id="oIU-jq-3hl"/>
                                         <constraint firstItem="s7w-AH-Oxk" firstAttribute="top" secondItem="iMg-yd-0sn" secondAttribute="bottom" constant="5" id="tei-T9-BVl"/>
                                         <constraint firstItem="s7w-AH-Oxk" firstAttribute="centerX" secondItem="mZP-eE-iH8" secondAttribute="centerX" id="xAU-d8-QJC"/>
                                     </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="ELJ-ij-lt1" appends="YES" id="MEg-2B-Ch0"/>
+                                    </connections>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xkc-Y7-4qt">
                                     <rect key="frame" x="183" y="0.0" width="91.5" height="100"/>
@@ -385,12 +405,16 @@
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <gestureRecognizers/>
                                     <constraints>
                                         <constraint firstItem="OqX-EM-Vi2" firstAttribute="centerX" secondItem="Xkc-Y7-4qt" secondAttribute="centerX" id="31j-jR-aPa"/>
                                         <constraint firstItem="OqX-EM-Vi2" firstAttribute="top" secondItem="Xkc-Y7-4qt" secondAttribute="top" constant="13" id="BGA-MG-mCy"/>
                                         <constraint firstItem="BqT-Bz-4V5" firstAttribute="top" secondItem="OqX-EM-Vi2" secondAttribute="bottom" constant="5" id="gJq-j3-cVq"/>
                                         <constraint firstItem="BqT-Bz-4V5" firstAttribute="centerX" secondItem="Xkc-Y7-4qt" secondAttribute="centerX" id="qU9-aI-J5Y"/>
                                     </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="Tb2-IA-xyB" appends="YES" id="1lN-Hl-iwc"/>
+                                    </connections>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pC-mD-Rlf">
                                     <rect key="frame" x="91.5" y="0.0" width="91.5" height="100"/>
@@ -410,12 +434,16 @@
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <gestureRecognizers/>
                                     <constraints>
                                         <constraint firstItem="RRB-5E-hN5" firstAttribute="centerX" secondItem="3pC-mD-Rlf" secondAttribute="centerX" id="HIO-4D-aaW"/>
                                         <constraint firstItem="Hue-jl-HWl" firstAttribute="centerX" secondItem="3pC-mD-Rlf" secondAttribute="centerX" id="gfb-E6-t9K"/>
                                         <constraint firstItem="Hue-jl-HWl" firstAttribute="top" secondItem="RRB-5E-hN5" secondAttribute="bottom" constant="5" id="opK-6R-tYT"/>
                                         <constraint firstItem="RRB-5E-hN5" firstAttribute="top" secondItem="3pC-mD-Rlf" secondAttribute="top" constant="13" id="wuD-OL-S7h"/>
                                     </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="faa-Eh-OOM" appends="YES" id="Izj-Ey-JtR"/>
+                                    </connections>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8G9-49-djs">
                                     <rect key="frame" x="274.5" y="0.0" width="91.5" height="100"/>
@@ -435,12 +463,16 @@
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <gestureRecognizers/>
                                     <constraints>
                                         <constraint firstItem="uAe-KV-UeY" firstAttribute="top" secondItem="8G9-49-djs" secondAttribute="top" constant="13" id="7yj-2f-yEM"/>
                                         <constraint firstItem="owU-fO-yW0" firstAttribute="top" secondItem="uAe-KV-UeY" secondAttribute="bottom" constant="5" id="8Qz-h2-yw3"/>
                                         <constraint firstItem="uAe-KV-UeY" firstAttribute="centerX" secondItem="8G9-49-djs" secondAttribute="centerX" id="BQQ-uZ-n5N"/>
                                         <constraint firstItem="owU-fO-yW0" firstAttribute="centerX" secondItem="8G9-49-djs" secondAttribute="centerX" id="qPc-eY-MfT"/>
                                     </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="lox-rE-jE4" appends="YES" id="tMe-ek-zcv"/>
+                                    </connections>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -527,6 +559,33 @@
                 <action selector="firstFortuneClick:" destination="-1" id="dHR-Qz-OUW"/>
             </connections>
         </tapGestureRecognizer>
+        <tapGestureRecognizer id="Zl6-OQ-hFu" userLabel="TopSecend">
+            <connections>
+                <action selector="TopSecendClick:" destination="-1" id="cho-YX-dX8"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="fEd-aB-wMU" userLabel="TopThree">
+            <connections>
+                <action selector="TopThreeClick:" destination="-1" id="AdP-uQ-TnL"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="UMy-LE-u5J" userLabel="TopFour"/>
+        <tapGestureRecognizer id="ELJ-ij-lt1" userLabel="boardFirst">
+            <connections>
+                <action selector="topFirstClick:" destination="-1" id="A4f-IE-m41"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="faa-Eh-OOM" userLabel="boardSecend">
+            <connections>
+                <action selector="boardSecendClick:" destination="-1" id="Pnk-jk-OrB"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="Tb2-IA-xyB" userLabel="boardThree">
+            <connections>
+                <action selector="boardThreeClick:" destination="-1" id="M6L-L1-dy4"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="lox-rE-jE4" userLabel="boardFour"/>
     </objects>
     <resources>
         <image name="八字测算" width="39" height="39"/>

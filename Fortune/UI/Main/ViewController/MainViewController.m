@@ -10,12 +10,18 @@
 #import "NewPagedFlowView.h"
 #import "MainViewModel.h"
 #import "FortuneDetailViewController.h"
+#import "YMWebViewController.h"
 
 @interface MainViewController ()<NewPagedFlowViewDelegate,NewPagedFlowViewDataSource,UIScrollViewDelegate>
 @property (nonatomic, strong)NewPagedFlowView *pageView;
 @property (nonatomic, strong)UIPageControl *pageControl;
 @property (nonatomic, strong)MainViewModel *viewModel;
 @property (weak, nonatomic) IBOutlet UIView *topMaskView;
+@property (weak, nonatomic) IBOutlet UILabel *yiLabel;
+@property (weak, nonatomic) IBOutlet UILabel *jiLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateNumLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateYearLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateDayLabel;
 
 @end
 
@@ -31,6 +37,12 @@
     self.viewModel.block_reloadDate = ^{
         [self.pageView reloadData];
     };
+    self.yiLabel.text = [[ToolUtil stringForYi] componentsJoinedByString:@" "];
+    self.jiLabel.text = [[ToolUtil stringForJi] componentsJoinedByString:@" "];
+    if (iPhone5) {
+        self.yiLabel.font = [UIFont systemFontOfSize:13];
+        self.jiLabel.font = [UIFont systemFontOfSize:13];
+    }
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -50,7 +62,55 @@
     self.pageControl = pageControl;
     [self.topMaskView addSubview:pageFlowView];
 
+    [self setDateForLabel];
 
+}
+
+- (void)setDateForLabel {
+    NSDate *date = [NSDate date];
+    {
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat: @"yyyy年MM月"];
+        self.dateYearLabel.text = [dateFormatter stringFromDate:date];
+    }
+    {
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat: @"dd"];
+        self.dateNumLabel.text = [dateFormatter stringFromDate:date];
+    }
+    {
+        NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        NSDateComponents *comps = [[NSDateComponents alloc] init];
+        NSInteger unitFlags = NSCalendarUnitYear | NSCalendarUnitWeekday;
+        comps = [calendar components:unitFlags fromDate:date];
+        NSString *day;
+        switch ([comps weekday]) {
+            case 1:
+                day = @"日";
+                break;
+            case 2:
+                day = @"一";
+                break;
+            case 3:
+                day = @"二";
+                break;
+            case 4:
+                day = @"三";
+                break;
+            case 5:
+                day = @"四";
+                break;
+            case 6:
+                day = @"五";
+                break;
+            case 7:
+                day = @"六";
+            default:
+                break;
+        }
+        self.dateDayLabel.text = [NSString stringWithFormat:@"星期%@",day];
+    }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -93,7 +153,38 @@
     FortuneDetailViewController *FVC = [[FortuneDetailViewController alloc] init];
     [self.navigationController pushViewController:FVC animated:YES];
 }
+- (IBAction)TopSecendClick:(id)sender {
+    YMWebViewController *WVC = [[YMWebViewController alloc] init];
+    WVC.urlStr = @"http://tools.2345.com/m/shengxiao/";
+    WVC.titleStr = @"流年运势";
+    [self.navigationController pushViewController:WVC animated:YES];
+}
 
+- (IBAction)TopThreeClick:(id)sender {
+    YMWebViewController *WVC = [[YMWebViewController alloc] init];
+    WVC.urlStr = @"http://tools.2345.com/m/zhgjm.htm?from=calendar";
+    WVC.titleStr = @"周公解梦";
+    [self.navigationController pushViewController:WVC animated:YES];
+}
+
+- (IBAction)topFirstClick:(id)sender {
+    YMWebViewController *WVC = [[YMWebViewController alloc] init];
+    WVC.urlStr = @"http://tools.2345.com/m/shouxiang/?mrili&from=calendar";
+    WVC.titleStr = @"手相解密";
+    [self.navigationController pushViewController:WVC animated:YES];
+}
+- (IBAction)boardSecendClick:(id)sender {
+    YMWebViewController *WVC = [[YMWebViewController alloc] init];
+    WVC.urlStr = @"http://tools.2345.com/m/suanming_zw.htm?mrili&from=calendar";
+    WVC.titleStr = @"指纹算命";
+    [self.navigationController pushViewController:WVC animated:YES];
+}
+- (IBAction)boardThreeClick:(id)sender {
+    YMWebViewController *WVC = [[YMWebViewController alloc] init];
+    WVC.urlStr = @"http://tools.2345.com/m/zhanbu/guanyin/?from=calendar";
+    WVC.titleStr = @"抽签占卜";
+    [self.navigationController pushViewController:WVC animated:YES];
+}
 
 
 

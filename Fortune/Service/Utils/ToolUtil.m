@@ -321,6 +321,15 @@
     return formatDate;
 }
 
++ (NSDate *)dateFormNowZero {
+    NSDate *date = [NSDate date];
+    
+    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+    NSTimeInterval time = [zone secondsFromGMTForDate:date];
+    NSDate *dateNow = [date dateByAddingTimeInterval:time];// 然后把差的时间加上,就是当前系统准确的时间
+    return dateNow;
+}
+
 + (NSDate *)dateFromString:(NSString *)dateString
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -1494,6 +1503,96 @@
     }
     
     return retrieveuuid;
+}
+
++ (NSMutableArray *)stringForYi {
+    NSDateFormatter *dateformatte = [[NSDateFormatter alloc] init];
+    dateformatte.dateFormat = @"yyyyMMdd";
+    NSString *str = [dateformatte stringFromDate:[NSDate date]];
+    NSInteger tag1 = [str integerValue] % 4 + 1;
+    NSInteger tag2 = [str integerValue] % 8 + 1;
+    NSMutableArray *array1 = [[NSMutableArray alloc] initWithObjects:@"祭祀",@"安葬",@"嫁娶",@"出行",@"祈福",@"动土",@"安床",@"纳采", nil];
+    NSMutableArray *array2 = [[NSMutableArray alloc] initWithObjects:@"入殓",@"移徙",@"破土",@"解除",@"入宅",@"修造",@"栽种",@"开光", nil];
+    NSMutableArray *array3 = [[NSMutableArray alloc] initWithObjects:@"开市",@"移柩",@"订盟",@"拆卸",@"立卷",@"交易",@"求嗣",@"入宅", nil];
+    NSMutableArray *array4 = [[NSMutableArray alloc] initWithObjects:@"纳财",@"起基",@"赴任",@"安门",@"修坟",@"挂匾",@"上梁",@"移柩",nil];
+    
+    NSMutableArray *returnArray  = [[NSMutableArray alloc] init];
+    switch (tag1) {
+        case 1:
+            [returnArray addObject:array1[(tag2 + 1 ) %8]];
+            [returnArray addObject:array2[(tag2 + 1 ) %8]];
+            [returnArray addObject:array3[(tag2 + 1 ) %8]];
+            [returnArray addObject:array4[(tag2 + 1 ) %8]];
+            break;
+        case 2:
+            [returnArray addObject:array1[(tag2+2 ) %8]];
+            [returnArray addObject:array2[(tag2+2 ) %8]];
+            [returnArray addObject:array3[(tag2+2 ) %8]];
+            [returnArray addObject:array4[(tag2+2 ) %8]];
+            break;
+        case 3:
+            [returnArray addObject:array1[(tag2+3 ) %8]];
+            [returnArray addObject:array2[(tag2+3 ) %8]];
+            [returnArray addObject:array3[(tag2+3 ) %8]];
+            [returnArray addObject:array4[(tag2+3 ) %8]];
+            break;
+        case 4:
+            [returnArray addObject:array1[(tag2 + 4 ) %8]];
+            [returnArray addObject:array2[(tag2 + 4 ) %8]];
+            [returnArray addObject:array3[(tag2 + 4 ) %8]];
+            [returnArray addObject:array4[(tag2 + 4 ) %8]];
+            break;
+            
+        default:
+            break;
+    }
+    
+    return returnArray;
+}
+
++ (NSMutableArray *)stringForJi {
+    NSDateFormatter *dateformatte = [[NSDateFormatter alloc] init];
+    dateformatte.dateFormat = @"yyyyMMdd";
+    NSString *str = [dateformatte stringFromDate:[NSDate date]];
+    NSInteger tag1 = [str integerValue] % 4 + 1;
+    NSInteger tag2 = [str integerValue] % 8 + 1;
+    NSMutableArray *array1 = [[NSMutableArray alloc] initWithObjects:@"祭祀",@"安葬",@"嫁娶",@"出行",@"祈福",@"动土",@"安床",@"纳采", nil];
+    NSMutableArray *array2 = [[NSMutableArray alloc] initWithObjects:@"入殓",@"移徙",@"破土",@"解除",@"入宅",@"修造",@"栽种",@"开光", nil];
+    NSMutableArray *array3 = [[NSMutableArray alloc] initWithObjects:@"开市",@"移柩",@"订盟",@"拆卸",@"立卷",@"交易",@"求嗣",@"入宅", nil];
+    NSMutableArray *array4 = [[NSMutableArray alloc] initWithObjects:@"纳财",@"起基",@"赴任",@"安门",@"修坟",@"挂匾",@"上梁",@"移柩",nil];
+    
+    NSMutableArray *returnArray  = [[NSMutableArray alloc] init];
+    switch (tag1) {
+        case 1:
+            [returnArray addObject:array1[(tag2+5) %8]];
+            [returnArray addObject:array2[(tag2+5) %8]];
+            [returnArray addObject:array3[(tag2+5) %8]];
+            [returnArray addObject:array4[(tag2+5) %8]];
+            break;
+        case 2:
+            [returnArray addObject:array1[(tag2+6) %8]];
+            [returnArray addObject:array2[(tag2+6) %8]];
+            [returnArray addObject:array3[(tag2+6) %8]];
+            [returnArray addObject:array4[(tag2+6) %8]];
+            break;
+        case 3:
+            [returnArray addObject:array1[(tag2+7) %8]];
+            [returnArray addObject:array2[(tag2+7) %8]];
+            [returnArray addObject:array3[(tag2+7) %8]];
+            [returnArray addObject:array4[(tag2+7) %8]];
+            break;
+        case 4:
+            [returnArray addObject:array1[(tag2) %8]];
+            [returnArray addObject:array2[(tag2) %8]];
+            [returnArray addObject:array3[(tag2) %8]];
+            [returnArray addObject:array4[(tag2) %8]];
+            break;
+            
+        default:
+            break;
+    }
+    
+    return returnArray;
 }
 
 

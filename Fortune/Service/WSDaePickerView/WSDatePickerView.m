@@ -275,8 +275,8 @@ typedef void(^doneBlock)(NSDate *);
 {
     switch (self.datePickerStyle) {
         case DateStyleShowYearMonthDayHourMinute:
-            [self addLabelWithName:@[@"年",@"月",@"日",@"时",@"分"]];
-            return 5;
+            [self addLabelWithName:@[@"年",@"月",@"日",@"时"]];
+            return 4;
         case DateStyleShowMonthDayHourMinute:
             [self addLabelWithName:@[@"月",@"日",@"时",@"分"]];
             return 4;
@@ -314,7 +314,7 @@ typedef void(^doneBlock)(NSDate *);
     
     switch (self.datePickerStyle) {
         case DateStyleShowYearMonthDayHourMinute:
-            return @[@(yearNum),@(monthNum),@(dayNum),@(hourNum),@(minuteNUm)];
+            return @[@(yearNum),@(monthNum),@(dayNum),@(hourNum)];
             break;
         case DateStyleShowMonthDayHourMinute:
             return @[@(monthNum*timeInterval),@(dayNum),@(hourNum),@(minuteNUm)];
@@ -365,9 +365,6 @@ typedef void(^doneBlock)(NSDate *);
             }
             if (component==3) {
                 title = _hourArray[row];
-            }
-            if (component==4) {
-                title = _minuteArray[row];
             }
             break;
         case DateStyleShowYearMonthDay:
@@ -441,7 +438,7 @@ typedef void(^doneBlock)(NSDate *);
             
             if (component == 0) {
                 yearIndex = row;
-                
+//                [self setMonthArrayChinese];
                 self.showYearView.text =_yearArray[yearIndex];
             }
             if (component == 1) {
@@ -667,8 +664,27 @@ typedef void(^doneBlock)(NSDate *);
         default:
             break;
     }
+    if (self.isChinese) {
+        
+    }
     return 0;
 }
+
+//// 计算农历闰月
+//- (void)setMonthArrayChinese {
+//    for (NSInteger i = 1; i <= 12; i++) {
+//        NSString *dateStr = [NSString stringWithFormat:@"%@-%ld",_yearArray[yearIndex],i];
+//
+//        NSDate *date = [[NSDate date:dateStr WithFormat:@"yyyy"] dateWithFormatter:_dateFormatter];
+//
+//        NSCalendar *localeCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierChinese];
+//
+//        unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay;
+//
+//        NSDateComponents *localeComp = [localeCalendar components:unitFlags fromDate:date];
+//    }
+//}
+
 
 //设置每月的天数数组
 - (void)setdayArray:(NSInteger)num
@@ -700,7 +716,7 @@ typedef void(^doneBlock)(NSDate *);
     NSArray *indexArray;
     
     if (self.datePickerStyle == DateStyleShowYearMonthDayHourMinute)
-        indexArray = @[@(yearIndex),@(monthIndex),@(dayIndex),@(hourIndex),@(minuteIndex)];
+        indexArray = @[@(yearIndex),@(monthIndex),@(dayIndex),@(hourIndex)];
     if (self.datePickerStyle == DateStyleShowYearMonthDay)
         indexArray = @[@(yearIndex),@(monthIndex),@(dayIndex)];
     if (self.datePickerStyle == DateStyleShowYearMonth)

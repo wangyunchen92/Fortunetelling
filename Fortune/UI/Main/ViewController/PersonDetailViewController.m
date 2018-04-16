@@ -29,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self createNavWithTitle:@"当前算命者信息" leftText:@"" rightText:@""];
+    [self createNavWithTitle:@"当前算命者信息" leftText:@"Whiteback" rightText:@""];
     self.theSimpleNavigationBar.backgroundColor = RGB(209, 89, 82);
     [self.theSimpleNavigationBar.titleButton setTitleColor: [UIColor whiteColor] forState:UIControlStateNormal];
     self.theSimpleNavigationBar.bottomLineView.backgroundColor = [UIColor clearColor];
@@ -75,10 +75,11 @@
             return cell;
         }
     }
-
-
-    
     return nil;
+}
+
+- (void)navBarButtonAction:(UIButton *)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {

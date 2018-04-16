@@ -11,6 +11,7 @@
 #import "LoginViewController.h"
 #import "DSNavViewController.h"
 #import "MineCalculateListViewController.h"
+#import "FortuneDetailViewController.h"
 
 
 @interface MainTabViewController()<UITabBarControllerDelegate>
@@ -83,23 +84,32 @@
     
     MainViewController *hvc      = [[MainViewController alloc] init];
     MineCalculateListViewController *mvc = [[MineCalculateListViewController alloc] init];
-
+    FortuneDetailViewController *fvc = [[FortuneDetailViewController alloc] init];
+    
+    
     DSNavViewController *hNav    = [[DSNavViewController alloc] initWithRootViewController:hvc];
     DSNavViewController *mNav    = [[DSNavViewController alloc] initWithRootViewController:mvc];
+    DSNavViewController *fNav    = [[DSNavViewController alloc] initWithRootViewController:fvc];
 
     
     [self setTabBarItem:hNav
-                  title:@"首页"
-            selectImage:@"多彩b"
-          unselectImage:@"多彩"
+                  title:@"测算大全"
+            selectImage:@"测算大全选中"
+          unselectImage:@"测算大全未选中"
                     tag:1];
     
-    [self setTabBarItem:mNav
-                  title:@"基金组合"
-            selectImage:@"投资管家-选中"
-          unselectImage:@"投资管家"
+    [self setTabBarItem:fNav
+                  title:@"八字测算"
+            selectImage:@"八字测算选中"
+          unselectImage:@"八字测算未选中"
                     tag:2];
-    self.viewControllers = @[hNav,mNav];
+    
+    [self setTabBarItem:mNav
+                  title:@"我的测算"
+            selectImage:@"我的测算选中"
+          unselectImage:@"我的测算未选中"
+                    tag:3];
+    self.viewControllers = @[hNav,fNav,mNav];
 }
 
 - (void)constructNotLoginViewControllers
@@ -122,7 +132,7 @@
     navController.tabBarItem.title = title;
     
     NSDictionary *normalDic = [NSDictionary dictionaryWithObjectsAndKeys:
-                               UIColorFromRGB(0x004486),
+                               UIColorFromRGB(0x333333),
                                NSForegroundColorAttributeName, nil];
     [navController.tabBarItem setTitleTextAttributes:normalDic forState:UIControlStateSelected];
     

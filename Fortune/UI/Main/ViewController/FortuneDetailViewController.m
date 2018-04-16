@@ -10,7 +10,10 @@
 #import "FortuneDetailViewModel.h"
 #import "WSDatePickerView.h"
 #import "PersonDetailViewController.h"
+#import "YMWebViewController.h"
+#import "UIScrollView+UITouch.h"
 
+#import "PayDetailViewController.h"
 
 @interface FortuneDetailViewController ()
 @property (nonatomic, strong)FortuneDetailViewModel *viewModel;
@@ -37,6 +40,24 @@
         PersonDetailViewController *pVC = [[PersonDetailViewController alloc] initWithViewModel:pVCViewModel];
         [self.navigationController pushViewController:pVC animated:YES];
     };
+    self.viewModel.block_isNoTest = ^(NSString *programId ,PersonDetailViewModel *pVCViewModel ) {
+        @strongify(self);
+        PayViewModel *viewModel = [[PayViewModel alloc] init];
+        viewModel.programId = programId;
+        PayDetailViewController *PayVC = [[PayDetailViewController alloc] initWithViewModel:viewModel];
+        PayVC.block_payResult = ^(BOOL ispaysuccess) {
+            if (ispaysuccess) {
+                pVCViewModel.isgetDate = NO;
+                PersonDetailViewController *pVC = [[PersonDetailViewController alloc] initWithViewModel:pVCViewModel];
+                [self.navigationController pushViewController:pVC animated:YES];
+            } else {
+                [BasePopoverView showFailHUDToWindow:@"支付失败..."];
+            }
+            
+        };
+        [self.navigationController pushViewController:PayVC animated:YES];
+    };
+
     // Do any additional setup after loading the view.
 }
 
@@ -56,9 +77,10 @@
 }
 
 - (IBAction)showPicView:(id)sender {
+   [self.view endEditing:YES];
     WSDatePickerView *datepicker = [[WSDatePickerView alloc] initWithDateStyle:DateStyleShowYearMonthDayHourMinute CompleteBlock:^(NSDate *selectDate) {
         
-        NSString *dateString = [selectDate stringWithFormat:@"yyyy年MM月dd日 HH时mm分"];
+        NSString *dateString = [selectDate stringWithFormat:@"yyyy年MM月dd日 HH时"];
         [self.viewModel getNowday:selectDate];
         self.dateLabel.text = dateString;
     }];
@@ -69,6 +91,10 @@
     
 }
 
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
+
 - (IBAction)radioButtonClick:(RadioButton *)sender {
     NSLog(@"%@",sender.titleLabel.text);
 }
@@ -77,8 +103,32 @@
 - (IBAction)sureButtonClick:(id)sender {
     [self.viewModel.subject_getDate sendNext:@YES];
 }
-- (void)viewDidAppear:(BOOL)animated {
 
+- (IBAction)firstClick:(id)sender {
+    YMWebViewController *WVC = [[YMWebViewController alloc] init];
+    WVC.urlStr = @"http://tools.2345.com/m/shouxiang/?mrili&from=calendar";
+    WVC.titleStr = @"手相解密";
+    [self.navigationController pushViewController:WVC animated:YES];
+}
+- (IBAction)secendClick:(id)sender {
+    YMWebViewController *WVC = [[YMWebViewController alloc] init];
+    WVC.urlStr = @"http://tools.2345.com/m/suanming_zw.htm?mrili&from=calendar";
+    WVC.titleStr = @"指纹算命";
+    [self.navigationController pushViewController:WVC animated:YES];
+    
+}
+- (IBAction)threeClick:(id)sender {
+    YMWebViewController *WVC = [[YMWebViewController alloc] init];
+    WVC.urlStr = @"http://tools.2345.com/m/zhanbu/guanyin/?from=calendar";
+    WVC.titleStr = @"抽签占卜";
+    [self.navigationController pushViewController:WVC animated:YES];
+}
+
+- (IBAction)fourClick:(id)sender {
+    YMWebViewController *WVC = [[YMWebViewController alloc] init];
+    WVC.urlStr = @"http://tools.2345.com/m/zhgjm.htm?from=calendar";
+    WVC.titleStr = @"周公解梦";
+    [self.navigationController pushViewController:WVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

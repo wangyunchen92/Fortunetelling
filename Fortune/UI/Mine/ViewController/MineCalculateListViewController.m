@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self createNavWithTitle:@"我的测算" leftText:@"" rightText:@""];
+    [self createNavWithTitle:@"我的测算" leftText:@"Whiteback" rightText:@""];
     self.theSimpleNavigationBar.backgroundColor = RGB(225, 75, 76);
     [self.theSimpleNavigationBar.titleButton setTitleColor: [UIColor whiteColor] forState:UIControlStateNormal];
     self.theSimpleNavigationBar.bottomLineView.backgroundColor = [UIColor clearColor];

@@ -20,4 +20,11 @@ static  NSString *const GetFortuneDetail = @"https://luck.youmeng.com/Api/Index/
 static NSString *const GetApkUpdate = @"https://luck.youmeng.com/Api/App/getApkUpdate.html";
 
 
+// 获取金额
+static NSString *const GetMoneyListe = @"https://luck.youmeng.com/Api/Index/getMoneyList.html";
+
+// 获取金额
+static NSString *const GetAliPaySign = @"https://luck.youmeng.com/Api/AliPay/getAliPaySign.html";
+
+
 #endif /* RequestURL_h */

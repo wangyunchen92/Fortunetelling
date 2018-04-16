@@ -12,6 +12,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
+        _projectId = @"1";
         _title = @"";
         _brithDateG = @"";
         _nayin = @"";
@@ -24,6 +25,7 @@
 }
 
 - (void)getdateForServer:(NSDictionary *)dic {
+    self.projectId = [dic stringForKey:@"id"];
     self.title =  [dic stringForKey:@"title"];
     self.brithDateG = [dic stringForKey:@"birth_date_g"];
     self.nayin = [dic stringForKey:@"nayin"];

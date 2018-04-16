@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface PersonTopDetailModel : NSObject
+@property (nonatomic, copy)NSString *projectId;
 @property (nonatomic, copy)NSString *projectName;
 @property (nonatomic, copy)NSString *brithDateY;
 @property (nonatomic, copy)NSString *bazi;

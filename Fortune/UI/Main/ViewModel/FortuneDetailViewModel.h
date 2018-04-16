@@ -19,5 +19,6 @@
 @property (nonatomic, copy)NSString *firstName;
 @property (nonatomic, copy)NSString *lastName;
 @property (nonatomic, copy)void (^block_personDetail)(PersonDetailViewModel *);
+@property (nonatomic, copy)void (^block_isNoTest)(NSString *programId,PersonDetailViewModel * ); // 非审核跳转支付
 - (void)getNowday:(NSDate *)selectDate;
 @end

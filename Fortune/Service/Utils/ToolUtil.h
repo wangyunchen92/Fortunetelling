@@ -57,6 +57,7 @@
 + (NSString *)formatDate:(NSString *)dateTime srcFormat:(NSString *)srcFormat destFormat:(NSString *)destFormat;
 
 // NSDate相关
++ (NSDate *)dateFormNowZero;
 + (NSDate *)dateFromString:(NSString *)dateString;
 + (NSDate *)dateFromString:(NSString *)dateString format:(NSString *)format;
 + (NSString *)stringFromDate:(NSDate *)date;
@@ -203,6 +204,10 @@
 + (BOOL)stringContainsEmoji:(NSString *)string;
 // 根据数字判断星座
 + (NSString *)imagetrans:(NSInteger )tag;
+
+// 通过日期随机出固定的术语
++ (NSMutableArray *)stringForYi ;
++ (NSMutableArray *)stringForJi;
 
 // 获取UUID
 +(NSString*)dy_getDeviceUUID;

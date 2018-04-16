@@ -17,7 +17,7 @@
         _sex = @"男";
         _firstName = @"";
         _lastName = @"";
-        [self getNowday:[NSDate date]];
+        
     }
     return self;
 }
@@ -28,7 +28,7 @@
     self.month = [selectDate stringWithFormat:@"MM"];
     self.day = [selectDate stringWithFormat:@"dd"];
     self.hour = [selectDate stringWithFormat:@"HH"];
-    self.min = [selectDate stringWithFormat:@"mm"];
+    self.min = @"00";
 }
 
 - (void)initSigin {
@@ -36,12 +36,15 @@
     [self.subject_getDate subscribeNext:^(id x) {
         if (!(self.firstName.length > 0)) {
             [BasePopoverView showFailHUDToWindow:@"请填写姓氏"];
+            return ;
         }
         if (!(self.lastName.length > 0)) {
             [BasePopoverView showFailHUDToWindow:@"请填写名子"];
+            return ;
         }
         if (!(self.year.length > 0)) {
             [BasePopoverView showFailHUDToWindow:@"请选择生日"];
+            return ;
         }
         HttpRequestMode *model = [[HttpRequestMode alloc]init];
         NSMutableDictionary *pram = [[NSMutableDictionary alloc] init];
@@ -68,9 +71,16 @@
             [model getdateForServer:dic];
             personViewModel.topModel = model;
             personViewModel.boardArray = [dic arrayForKey:@"info"];
-            if (self.block_personDetail) {
-                self.block_personDetail(personViewModel);
+            if (([[dic objectForKey:@"is_test"] integerValue]) == 1) {
+                if (self.block_personDetail) {
+                    self.block_personDetail(personViewModel);
+                }
+            } else {
+                if (self.block_isNoTest) {
+                    self.block_isNoTest(model.projectId,personViewModel);
+                }
             }
+
             
         } Failure:^(HttpRequest *request, HttpResponse *response) {
             [BasePopoverView hideHUDForWindow:YES];

@@ -12,6 +12,8 @@
 #import "CommandTool.h"
 #import "HZLaunchImageViewController.h"
 
+#import <AlipaySDK/AlipaySDK.h>
+
 // 引入JPush功能所需头文件
 #import <JPUSHService.h>
 #import <UserNotifications/UserNotifications.h>
@@ -183,6 +185,21 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
     //ios10 收到消息通知
     [self pushToCertainPageWithUserInfo:userInfo];
+}
+
+#pragma -mark 支付宝回调
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    //跳转支付宝钱包进行支付，处理支付结果
+    if ([url.host isEqualToString:@"safepay"]) {
+        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+            NSLog(@"result = %@",resultDic);
+        }];
+    }
+    return YES;
+    
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {

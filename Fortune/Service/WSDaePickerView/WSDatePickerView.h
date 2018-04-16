@@ -25,6 +25,7 @@ typedef enum{
 
 @interface WSDatePickerView : UIView
 
+@property (nonatomic, assign)BOOL isChinese;
 /**
  *  确定按钮颜色
  */
