@@ -30,14 +30,14 @@
                     <rect key="frame" x="0.0" y="64" width="366" height="733"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQs-NY-pj4">
-                            <rect key="frame" x="0.0" y="0.0" width="366" height="115"/>
+                            <rect key="frame" x="0.0" y="-1" width="366" height="115"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="115" id="vq8-qK-cEs"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D1h-rH-DLv">
-                            <rect key="frame" x="0.0" y="217" width="183" height="100"/>
+                            <rect key="frame" x="0.0" y="216" width="183" height="100"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="周公解梦" translatesAutoresizingMaskIntoConstraints="NO" id="6fr-Kr-m3r">
                                     <rect key="frame" x="105" y="9" width="58" height="82"/>
@@ -76,7 +76,7 @@
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLO-Id-pDS">
-                            <rect key="frame" x="184" y="116" width="182" height="100"/>
+                            <rect key="frame" x="184" y="115" width="182" height="100"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="流年运势" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3n-j9-UU8">
                                     <rect key="frame" x="15" y="15" width="70" height="21"/>
@@ -115,7 +115,7 @@
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6IR-2y-7EG">
-                            <rect key="frame" x="0.0" y="116" width="183" height="100"/>
+                            <rect key="frame" x="0.0" y="115" width="183" height="100"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="八字测算" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNt-Uc-dMZ">
                                     <rect key="frame" x="15" y="15" width="70" height="21"/>
@@ -152,7 +152,7 @@
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8DI-EN-T3h">
-                            <rect key="frame" x="0.0" y="428" width="183" height="210"/>
+                            <rect key="frame" x="0.0" y="427" width="183" height="210"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018年3月" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZW-cJ-8Zm">
                                     <rect key="frame" x="15" y="17" width="84" height="21"/>
@@ -160,7 +160,7 @@
                                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期四" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbD-yP-zf0">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期四" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbD-yP-zf0">
                                     <rect key="frame" x="109" y="17" width="49" height="19.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -201,6 +201,7 @@
                             <constraints>
                                 <constraint firstItem="DbD-yP-zf0" firstAttribute="leading" secondItem="oZW-cJ-8Zm" secondAttribute="trailing" constant="10" id="4eZ-EX-xWM"/>
                                 <constraint firstItem="m9I-39-K8N" firstAttribute="leading" secondItem="BSV-zh-kya" secondAttribute="trailing" constant="8" id="8eh-Zs-wud"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DbD-yP-zf0" secondAttribute="trailing" id="9cJ-lt-jEu"/>
                                 <constraint firstAttribute="height" constant="210" id="DxR-pl-lLi"/>
                                 <constraint firstItem="DbD-yP-zf0" firstAttribute="top" secondItem="8DI-EN-T3h" secondAttribute="top" constant="17" id="J56-Hd-1fi"/>
                                 <constraint firstItem="aei-vG-Qdn" firstAttribute="centerY" secondItem="Pjh-ZM-eoG" secondAttribute="centerY" id="MNI-RX-Sar"/>
@@ -217,7 +218,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWi-Uw-rt7">
-                            <rect key="frame" x="184" y="217" width="182" height="100"/>
+                            <rect key="frame" x="184" y="216" width="182" height="100"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="十年大运" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oa7-yR-0j8">
                                     <rect key="frame" x="15" y="15" width="70" height="21"/>
@@ -256,7 +257,7 @@
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HEw-Lp-z49">
-                            <rect key="frame" x="184" y="428" width="90.5" height="105"/>
+                            <rect key="frame" x="184" y="427" width="90.5" height="105"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="婚姻测算" translatesAutoresizingMaskIntoConstraints="NO" id="o66-F7-MFm">
                                     <rect key="frame" x="20.5" y="13" width="50" height="50"/>
@@ -281,7 +282,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xTV-9X-F0u">
-                            <rect key="frame" x="275" y="428" width="90.5" height="105"/>
+                            <rect key="frame" x="275" y="427" width="90.5" height="105"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="流年运势（小）" translatesAutoresizingMaskIntoConstraints="NO" id="LJV-da-Zzg">
                                     <rect key="frame" x="20" y="13" width="50" height="50"/>
@@ -306,7 +307,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rpr-Yw-Vqo">
-                            <rect key="frame" x="184" y="534" width="90.5" height="104"/>
+                            <rect key="frame" x="184" y="533" width="90.5" height="104"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="桃花运势" translatesAutoresizingMaskIntoConstraints="NO" id="0bn-GJ-t0U">
                                     <rect key="frame" x="20" y="13" width="50" height="50"/>
@@ -331,7 +332,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssK-Yn-8BU">
-                            <rect key="frame" x="275" y="534" width="90.5" height="104"/>
+                            <rect key="frame" x="275" y="533" width="90.5" height="104"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="财运分析" translatesAutoresizingMaskIntoConstraints="NO" id="hhz-kR-jCz">
                                     <rect key="frame" x="20" y="13" width="50" height="50"/>
@@ -356,7 +357,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="daD-UT-kZY">
-                            <rect key="frame" x="0.0" y="318" width="366" height="100"/>
+                            <rect key="frame" x="0.0" y="317" width="366" height="100"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZP-eE-iH8">
                                     <rect key="frame" x="0.0" y="0.0" width="91.5" height="100"/>
@@ -530,7 +531,7 @@
                         <constraint firstItem="xTV-9X-F0u" firstAttribute="top" secondItem="HEw-Lp-z49" secondAttribute="top" id="iJc-PG-09Z"/>
                         <constraint firstItem="CLO-Id-pDS" firstAttribute="top" secondItem="mQs-NY-pj4" secondAttribute="bottom" constant="1" id="jNO-Ia-fy3"/>
                         <constraint firstItem="ssK-Yn-8BU" firstAttribute="height" secondItem="xTV-9X-F0u" secondAttribute="height" constant="-1" id="lIl-d7-wIc"/>
-                        <constraint firstItem="mQs-NY-pj4" firstAttribute="top" secondItem="daF-mA-lNS" secondAttribute="top" id="lYb-zi-W2l"/>
+                        <constraint firstItem="mQs-NY-pj4" firstAttribute="top" secondItem="daF-mA-lNS" secondAttribute="top" constant="-1" id="lYb-zi-W2l"/>
                         <constraint firstItem="HEw-Lp-z49" firstAttribute="leading" secondItem="8DI-EN-T3h" secondAttribute="trailing" constant="1" id="nGR-Nb-QE5"/>
                         <constraint firstItem="8DI-EN-T3h" firstAttribute="leading" secondItem="daF-mA-lNS" secondAttribute="leading" id="t0f-Xc-sgi"/>
                         <constraint firstItem="6IR-2y-7EG" firstAttribute="leading" secondItem="daF-mA-lNS" secondAttribute="leading" id="tMK-yf-vNb"/>
@@ -569,7 +570,11 @@
                 <action selector="TopThreeClick:" destination="-1" id="AdP-uQ-TnL"/>
             </connections>
         </tapGestureRecognizer>
-        <tapGestureRecognizer id="UMy-LE-u5J" userLabel="TopFour"/>
+        <tapGestureRecognizer id="UMy-LE-u5J" userLabel="TopFour">
+            <connections>
+                <action selector="TopFourClick:" destination="-1" id="ChX-VK-WO7"/>
+            </connections>
+        </tapGestureRecognizer>
         <tapGestureRecognizer id="ELJ-ij-lt1" userLabel="boardFirst">
             <connections>
                 <action selector="topFirstClick:" destination="-1" id="A4f-IE-m41"/>

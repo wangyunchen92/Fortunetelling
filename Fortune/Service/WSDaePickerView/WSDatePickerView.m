@@ -207,6 +207,7 @@ typedef void(^doneBlock)(NSDate *);
             [_hourArray addObject:num];
         [_minuteArray addObject:num];
     }
+    [_hourArray insertObject:@"未知" atIndex:0];
     for (NSInteger i=MINYEAR; i<=MAXYEAR; i++) {
         NSString *num = [NSString stringWithFormat:@"%ld",(long)i];
         [_yearArray addObject:num];
@@ -555,8 +556,13 @@ typedef void(^doneBlock)(NSDate *);
     }
     
     [pickerView reloadAllComponents];
-    
-    NSString *dateStr = [NSString stringWithFormat:@"%@-%@-%@ %@:%@",_yearArray[yearIndex],_monthArray[monthIndex],_dayArray[dayIndex],_hourArray[hourIndex],_minuteArray[minuteIndex]];
+    NSString *dateStr;
+    if ([_hourArray[hourIndex] isEqualToString:@"未知"]) {
+        dateStr = [NSString stringWithFormat:@"%@-%@-%@ 00:%@",_yearArray[yearIndex],_monthArray[monthIndex],_dayArray[dayIndex],_minuteArray[minuteIndex]];
+    } else {
+        dateStr = [NSString stringWithFormat:@"%@-%@-%@ %@:%@",_yearArray[yearIndex],_monthArray[monthIndex],_dayArray[dayIndex],_hourArray[hourIndex],_minuteArray[minuteIndex]];
+    }
+
     
     self.scrollToDate = [[NSDate date:dateStr WithFormat:@"yyyy-MM-dd HH:mm"] dateWithFormatter:_dateFormatter];
     
@@ -707,7 +713,7 @@ typedef void(^doneBlock)(NSDate *);
     yearIndex = date.year-MINYEAR;
     monthIndex = date.month-1;
     dayIndex = date.day-1;
-    hourIndex = date.hour;
+    hourIndex = date.hour + 1;
     minuteIndex = date.minute;
     
     //循环滚动时需要用到

@@ -23,8 +23,12 @@ static NSString *const GetApkUpdate = @"https://luck.youmeng.com/Api/App/getApkU
 // 获取金额
 static NSString *const GetMoneyListe = @"https://luck.youmeng.com/Api/Index/getMoneyList.html";
 
-// 获取金额
+// 获取金额签名
 static NSString *const GetAliPaySign = @"https://luck.youmeng.com/Api/AliPay/getAliPaySign.html";
 
+// 黄道吉日
+static NSString *const GetFortuneList = @"https://luck.youmeng.com/Api/Third/getFortuneList.html";
 
+// web筛选规则
+static NSString *const GetRuleList = @"https://luck.youmeng.com/Api/Wap/ruleList";
 #endif /* RequestURL_h */

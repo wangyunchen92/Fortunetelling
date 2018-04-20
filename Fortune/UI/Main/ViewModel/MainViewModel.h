@@ -10,5 +10,7 @@
 
 @interface MainViewModel : BaseViewModel
 @property (nonatomic, strong)NSMutableArray *bannerArray;
+@property (nonatomic, strong)NSString *webfile;
+
 
 @end

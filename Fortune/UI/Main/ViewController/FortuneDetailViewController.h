@@ -11,5 +11,6 @@
 
 @interface FortuneDetailViewController : BaseViewController
 @property (weak, nonatomic) IBOutlet RadioButton *radioButton;
+@property (nonatomic, assign)BOOL isshowNavback;
 
 @end

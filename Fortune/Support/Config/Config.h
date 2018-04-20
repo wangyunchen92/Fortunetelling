@@ -115,6 +115,8 @@ static NSString *const FortuneNumber = @"FortuneNumber";
 static NSString *const LoginDate = @"LoginDate";
 static NSString *const isFirstLogin= @"isFirstLogin"; // 是否第一次启动
 
+#define defaultColor RGB(225, 75, 76)
+
 
 #define requestErrorStrings(error)  \
 NSString *errorString = @"";\

@@ -15,12 +15,13 @@
 
 #import "PayDetailViewController.h"
 
-@interface FortuneDetailViewController ()
+@interface FortuneDetailViewController ()<UITextFieldDelegate>
 @property (nonatomic, strong)FortuneDetailViewModel *viewModel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (nonatomic, strong)WSDatePickerView *picView;
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *bannerImage;
 
 @end
 
@@ -28,8 +29,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self createNavWithTitle:@"八字算命" leftText:@"" rightText:@""];
-    self.theSimpleNavigationBar.backgroundColor = RGB(225, 75, 76);
+    if ([self.title isEqualToString:@"流年运势"]) {
+        self.bannerImage.image = IMAGE_NAME(@"测算页banner");
+    } else if ([self.title isEqualToString:@"十年大运"]) {
+        self.bannerImage.image = IMAGE_NAME(@"Banner1");
+    } else {
+        self.bannerImage.image = IMAGE_NAME(@"Banner2");
+    }
+    [self createNavWithTitle:self.title? self.title : @"八字算命" leftImage:self.isshowNavback? @"Whiteback" :nil  rightText:@""];
+    self.theSimpleNavigationBar.backgroundColor = defaultColor;
     [self.theSimpleNavigationBar.titleButton setTitleColor: [UIColor whiteColor] forState:UIControlStateNormal];
     self.theSimpleNavigationBar.bottomLineView.backgroundColor = [UIColor clearColor];
     self.viewModel = [[FortuneDetailViewModel alloc] init];
@@ -78,15 +86,16 @@
 
 - (IBAction)showPicView:(id)sender {
    [self.view endEditing:YES];
-    WSDatePickerView *datepicker = [[WSDatePickerView alloc] initWithDateStyle:DateStyleShowYearMonthDayHourMinute CompleteBlock:^(NSDate *selectDate) {
-        
+    
+    WSDatePickerView *datepicker = [[WSDatePickerView alloc] initWithDateStyle:DateStyleShowYearMonthDayHourMinute scrollToDate:self.viewModel.seledate CompleteBlock:^(NSDate *selectDate) {
         NSString *dateString = [selectDate stringWithFormat:@"yyyy年MM月dd日 HH时"];
         [self.viewModel getNowday:selectDate];
         self.dateLabel.text = dateString;
     }];
-    datepicker.dateLabelColor = [UIColor orangeColor];//年-月-日-时-分 颜色
+    
+    datepicker.dateLabelColor = defaultColor;//年-月-日-时-分 颜色
     datepicker.datePickerColor = [UIColor blackColor];//滚轮日期颜色
-    datepicker.doneButtonColor = [UIColor orangeColor];//确定按钮的颜色
+    datepicker.doneButtonColor = defaultColor;//确定按钮的颜色
     [datepicker show];
     
 }
@@ -129,6 +138,54 @@
     WVC.urlStr = @"http://tools.2345.com/m/zhgjm.htm?from=calendar";
     WVC.titleStr = @"周公解梦";
     [self.navigationController pushViewController:WVC animated:YES];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat offY = scrollView.contentOffset.y;
+    
+    if (offY < 0) {
+        scrollView.contentOffset = CGPointZero;
+    }
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+
+    
+    if ([string containsString:@"-"] || [string containsString:@"+"]) {
+        // 禁止粘贴"-"和"+"
+        return NO;
+    }
+    
+    NSMutableString *mutableString = [NSMutableString stringWithString:textField.text];
+    if ([string isEqualToString:@""]) {
+        //删除
+        [mutableString deleteCharactersInRange:range];
+    }else{
+        [mutableString replaceCharactersInRange:range withString:string];
+    }
+    if ([self filterCharactor:string withRegex:@"[^\u4E00-\u9FA5]"]) {
+        return NO;
+    }
+    
+    if (mutableString.length > 3 ) {
+        return NO;
+    } else {
+            return YES;
+    }
+    
+
+}
+
+//根据正则，过滤特殊字符
+- (BOOL)filterCharactor:(NSString *)string withRegex:(NSString *)regexStr{
+//    NSString *searchText = string;
+//    NSError *error = NULL;
+//
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regexStr];
+       return [predicate evaluateWithObject:string];
+//    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexStr options:NSRegularExpressionCaseInsensitive error:&error];
+//    NSString *result = [regex stringByReplacingMatchesInString:searchText options:NSMatchingReportCompletion range:NSMakeRange(0, searchText.length) withTemplate:@""];
+//    return result;
 }
 
 - (void)didReceiveMemoryWarning {

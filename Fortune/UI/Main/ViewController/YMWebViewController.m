@@ -16,6 +16,8 @@
 @property(nonatomic,strong)YMWebProgressLayer *progressLayer; ///< 网页加载进度条
 @property(nonatomic,strong)MBProgressHUD* hub;
 @property (nonatomic, strong) dispatch_source_t timer;
+@property (assign, nonatomic)BOOL isloadJS;
+@property (nonatomic, assign)NSInteger loadtag;
 @end
 
 @implementation YMWebViewController
@@ -24,7 +26,7 @@
     [super viewDidLoad];
     [self createNavWithTitle:self.titleStr leftImage:@"Whiteback" rightImage:nil superView:nil];
     [self createNavWithTitle:self.titleStr leftText:@"" rightText:@""];
-    self.theSimpleNavigationBar.backgroundColor = RGB(225, 75, 76);
+    self.theSimpleNavigationBar.backgroundColor = defaultColor;
     [self.theSimpleNavigationBar.titleButton setTitleColor: [UIColor whiteColor] forState:UIControlStateNormal];
     self.theSimpleNavigationBar.bottomLineView.backgroundColor = [UIColor clearColor];
     //加载界面
@@ -36,6 +38,7 @@
         NSLog(@"urls ==- %@",self.urlStr);
         [self.webView loadRequest:request];
     }];
+    self.loadtag = 0;
 }
 
 // navBar 回调
@@ -85,107 +88,138 @@
     webView.alpha = 0;
      NSLog(@"开始加载数据 request == %@",request);
     [self.progressLayer startLoad];
-    JSContext *content = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-    NSString *hideId = @"function hideId(str){\
-    var oDiv =  document.getElementsByTagName('div');\
-    for(var i=0; i<oDiv.length; i++)\
-    {\
-    if(oDiv[i].id){\
-    if( oDiv[i].id.indexOf(str) >= 0 ){\
-    oDiv[i].parentNode.style.display='none';\
-    }\
-    }\
-    }\
-    };";
+   
     
-    NSString *getHeard =@"function getHeader(parent,sClass){\
-    var aEle2=parent.getElementsByTagName('header');  \
-    var aResult2=[];  \
-    var k=0;  \
-    for(k<0;k<aEle2.length;k++) {  \
-    if(aEle2[k].className==sClass) { \
-    aResult2.push(aEle2[k]);  \
-    }  \
-    };  \
-    return aResult2;  \
-    }";
     
-    NSString *getClass = @"function getClass(parent,sClass) {  \
-    var aEle=parent.getElementsByTagName('div');  \
-    var aResult=[];  \
-    var i=0;  \
-    for(i<0;i<aEle.length;i++) {  \
-    if(aEle[i].className==sClass) { \
-    aResult.push(aEle[i]);  \
-    }  \
-    };  \
-    return aResult;  \
-    }";
-    
-    NSString *hindOther = @"function hideOther() { \
-    if(getHeader(document,'header-2').length>0){ \
-    getHeader(document,'header-2')[0].style.display='none'; \
-    } \
-    if(getClass(document,'appStore').length>0){ \
-    getClass(document,'appStore')[0].children[0].style.display='none'; \
-    } \
-    if(getClass(document,'mod').length>0){ \
-    for (var i =0;i<getClass(document,'mod').length;i++){ \
-    getClass(document,'mod')[i].style.display='none'; \
-    } \
-    } \
-    if(getClass(document,'keywords clearfix').length>0){ \
-    getClass(document,'keywords clearfix')[0].style.display='none'; \
-    } \
-    if(getClass(document,'mod-tsimg-wrapper').length>0){ \
-    getClass(document,'mod-tsimg-wrapper')[0].style.display='none'; \
-    } \
-    if(getClass(document,'fly-fixed').length>0){ \
-    getClass(document,'fly-fixed')[0].style.display='none'; \
-    } \
-    if(getClass(document,'share-btns').length>0){ \
-    getClass(document,'share-btns')[0].style.display='none'; \
-    } \
-    if(getClass(document,'art-mod mod-yindao part').length>0){ \
-    getClass(document,'art-mod mod-yindao part')[0].style.display='none'; \
-    } \
-    if(getClass(document,'mod-yindao ').length>0){ \
-    getClass(document,'mod-yindao ')[0].style.display='none'; \
-    } \
-    if(getClass(document,'mod anti-t').length>0){ \
-    getClass(document,'mod anti-t')[0].style.display='none'; \
-    } \
-    if(getClass(document,'detail-gg').length>0){ \
-    getClass(document,'detail-gg')[0].style.display='none'; \
-    } \
-    if(getClass(document,'baidu-bn').length>0){ \
-    for (var j =0;j<getClass(document,'baidu-bn').length>0;j++){\
-    getClass(document,'baidu-bn')[j].id='none'; \
-    getClass(document,'baidu-bn')[j].style.display='none'; \
-    } \
-    } \
-    }";
-    //    [self.webView stringByEvaluatingJavaScriptFromString:getClass];
-    //    [self.webView stringByEvaluatingJavaScriptFromString:getHeard];
-    //    [self.webView stringByEvaluatingJavaScriptFromString:hideId];
-    //    [self.webView stringByEvaluatingJavaScriptFromString:hindOther];
-    [content evaluateScript:getClass];
-    [content evaluateScript:getHeard];
-    [content evaluateScript:hideId];
-    [content evaluateScript:hindOther];
 //    [content evaluateScript:@"hideOther()"];
     return YES;
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
      [self.progressLayer startLoad];
+     self.isloadJS = YES;
+    self.loadtag ++;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    JSContext *content = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-    [content evaluateScript:@"hideOther()"];
-    [BasePopoverView hideHUDForWindow:YES];
-    webView.alpha = 1;
+    
+    if (!webView.isLoading){
+        return;
+    }
+    
+//    self.loadtag --;
+//    if (self.loadtag > 0) {
+//        return;
+//    }
+
+    if (self.isloadJS) {
+        JSContext *content = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+        NSString *hideId = @"function hideId(str){\
+        var oDiv =  document.getElementsByTagName('div');\
+        for(var i=0; i<oDiv.length; i++)\
+        {\
+        if(oDiv[i].id){\
+        if( oDiv[i].id.indexOf(str) >= 0 ){\
+        oDiv[i].parentNode.style.display='none';\
+        }\
+        }\
+        }\
+        };\
+        function getHeader(parent,sClass){\
+        var aEle2=parent.getElementsByTagName('header');  \
+        var aResult2=[];\
+        var k=0;\
+        for(k<0;k<aEle2.length;k++) {  \
+        if(aEle2[k].className==sClass) { \
+        aResult2.push(aEle2[k]);  \
+        }  \
+        };  \
+        return aResult2;  \
+        }\
+        function getClass(parent,sClass) {  \
+        var aEle=parent.getElementsByTagName('div');  \
+        var aResult=[];  \
+        var i=0;  \
+        for(i<0;i<aEle.length;i++) {  \
+        if(aEle[i].className==sClass) { \
+        aResult.push(aEle[i]);  \
+        }  \
+        };  \
+        return aResult;  \
+        }\
+        function removeTags(tagName,tagClass){\
+        var tagElements = document.getElementsByTagName( 'a' );\
+        for( var m = 0 ; m < tagElements.length ; m++ ){\
+        if( tagElements[m].className == '_hb-box _hb-ani' ){\
+        tagElements[m].parentNode.removeChild( tagElements[m] );\
+        }\
+        }\
+        }\
+        function hideOther() { \
+        if(getHeader(document,'header-2').length>0){ \
+        getHeader(document,'header-2')[0].style.display='none'; \
+        } \
+        if(getClass(document,'appStore').length>0){ \
+        getClass(document,'appStore')[0].children[0].style.display='none'; \
+        } \
+        if(getClass(document,'mod').length>0){ \
+        for (var i =0;i<getClass(document,'mod').length;i++){ \
+        getClass(document,'mod')[i].style.display='none'; \
+        } \
+        } \
+        if(getClass(document,'keywords clearfix').length>0){ \
+        getClass(document,'keywords clearfix')[0].style.display='none'; \
+        } \
+        if(getClass(document,'mod-tsimg-wrapper').length>0){ \
+        getClass(document,'mod-tsimg-wrapper')[0].style.display='none'; \
+        } \
+        if(getClass(document,'fly-fixed').length>0){ \
+        getClass(document,'fly-fixed')[0].style.display='none'; \
+        } \
+        if(getClass(document,'share-btns').length>0){ \
+        getClass(document,'share-btns')[0].style.display='none'; \
+        } \
+        if(getClass(document,'art-mod mod-yindao part').length>0){ \
+        getClass(document,'art-mod mod-yindao part')[0].style.display='none'; \
+        } \
+        if(getClass(document,'mod-yindao ').length>0){ \
+        getClass(document,'mod-yindao ')[0].style.display='none'; \
+        } \
+        if(getClass(document,'mod anti-t').length>0){ \
+        getClass(document,'mod anti-t')[0].style.display='none'; \
+        } \
+        if(getClass(document,'detail-gg').length>0){ \
+        getClass(document,'detail-gg')[0].style.display='none'; \
+        } \
+        if(getClass(document,'detail-gg').length>0){ \
+        getClass(document,'detail-gg')[0].style.display='none'; \
+        } \
+        if(getClass(document,'baidu-bn').length>0){ \
+        for (var j =0;j<getClass(document,'baidu-bn').length>0;j++){\
+        getClass(document,'baidu-bn')[j].id='none'; \
+        getClass(document,'baidu-bn')[j].style.display='none'; \
+        } \
+        } \
+        removeTags('a','nofollow');\
+        }";
+        self.webfile  = [UserDefaultsTool getStringWithKey:@"webFile"];
+        
+        if ([self.webfile isEqualToString:@""] || !self.webfile) {
+            self.webfile = hideId;
+        }
+        
+        [content evaluateScript:self.webfile];
+
+        [content evaluateScript:@"hideOther()"];
+        [self.progressLayer finishedLoad];
+        [BasePopoverView hideHUDForWindow:YES];
+        self.isloadJS = NO;
+        
+        
+        webView.alpha = 1;
+    }
+    
+
 
 }
 

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineCalculateListViewController">
             <connections>
+                <outlet property="noNumberView" destination="afn-aH-2b4" id="z87-GX-2nK"/>
                 <outlet property="tableView" destination="57a-zF-9lb" id="oWL-AB-a7B"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -28,14 +29,63 @@
                         <outlet property="delegate" destination="-1" id="lV8-tq-722"/>
                     </connections>
                 </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afn-aH-2b4">
+                    <rect key="frame" x="-1" y="0.0" width="376" height="667"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4y-Ih-dgE">
+                            <rect key="frame" x="50" y="340.5" width="276" height="50"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="ryL-6H-CbB"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                            <state key="normal" title="马上开始测算">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="9"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="pushNexView:" destination="-1" eventType="touchUpInside" id="d8R-RM-nS8"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="空态图形" translatesAutoresizingMaskIntoConstraints="NO" id="MCo-14-p4C">
+                            <rect key="frame" x="128" y="178" width="121" height="83"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您还没有测算历史" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jwc-Gz-GbX">
+                            <rect key="frame" x="123" y="281" width="131" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.5607843137254902" green="0.5607843137254902" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="U4y-Ih-dgE" firstAttribute="top" secondItem="Jwc-Gz-GbX" secondAttribute="bottom" constant="40" id="6To-Nd-vgy"/>
+                        <constraint firstItem="Jwc-Gz-GbX" firstAttribute="top" secondItem="MCo-14-p4C" secondAttribute="bottom" constant="20" id="7yQ-dT-4ds"/>
+                        <constraint firstItem="Jwc-Gz-GbX" firstAttribute="centerX" secondItem="afn-aH-2b4" secondAttribute="centerX" id="Awd-4M-qlP"/>
+                        <constraint firstItem="U4y-Ih-dgE" firstAttribute="centerY" secondItem="afn-aH-2b4" secondAttribute="centerY" constant="32" id="BK5-LW-Tp7"/>
+                        <constraint firstItem="MCo-14-p4C" firstAttribute="centerX" secondItem="afn-aH-2b4" secondAttribute="centerX" id="F4k-EX-W2p"/>
+                        <constraint firstAttribute="trailing" secondItem="U4y-Ih-dgE" secondAttribute="trailing" constant="50" id="dJ3-sd-Qhq"/>
+                        <constraint firstItem="U4y-Ih-dgE" firstAttribute="centerX" secondItem="afn-aH-2b4" secondAttribute="centerX" id="xSF-Kv-UYv"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="afn-aH-2b4" secondAttribute="trailing" id="1ld-Jj-AeQ"/>
                 <constraint firstItem="57a-zF-9lb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="Czc-M9-WVj"/>
+                <constraint firstItem="afn-aH-2b4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Eqk-MO-uv5"/>
                 <constraint firstAttribute="bottom" secondItem="57a-zF-9lb" secondAttribute="bottom" id="Ns8-gO-XUY"/>
+                <constraint firstItem="afn-aH-2b4" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ULB-Bk-UBk"/>
                 <constraint firstItem="57a-zF-9lb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aOj-DM-RCD"/>
+                <constraint firstItem="afn-aH-2b4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dkY-Wt-YKL"/>
                 <constraint firstAttribute="trailing" secondItem="57a-zF-9lb" secondAttribute="trailing" id="fBw-nr-zXZ"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="空态图形" width="121" height="83"/>
+    </resources>
 </document>

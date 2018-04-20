@@ -56,7 +56,6 @@
  * [including the GNU Public Licence.]
  */
 
-
 #ifndef HEADER_RSA_H
 #define HEADER_RSA_H
 

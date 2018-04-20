@@ -16,7 +16,7 @@
 
 #define NBFrameLeftBtnBG        CGRectMake(0, kHeightStatusBar, kNBButtonWidth, kHeightCellNormal)
 #define NBFrameMainBtnLeft      CGRectMake(20, 12, 11, 20)
-#define NBFrameMainBtn          CGRectMake(18, 13, 18, 18)
+#define NBFrameMainBtn          CGRectMake(18, 13, 22, 22)
 #define NBFrameMainBtnText      CGRectMake(0, 0, kNBButtonWidth, kHeightCellNormal)
 #define NBFrameRightBtnBG       CGRectMake(kScreenWidth - kNBButtonWidth, kHeightStatusBar, kNBButtonWidth, kHeightCellNormal)
 

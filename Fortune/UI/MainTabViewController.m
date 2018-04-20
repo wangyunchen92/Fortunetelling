@@ -12,6 +12,7 @@
 #import "DSNavViewController.h"
 #import "MineCalculateListViewController.h"
 #import "FortuneDetailViewController.h"
+#import "EveryDayViewController.h"
 
 
 @interface MainTabViewController()<UITabBarControllerDelegate>
@@ -83,12 +84,16 @@
 //    FamilyViewController *hvc    = [[FamilyViewController alloc] init];
     
     MainViewController *hvc      = [[MainViewController alloc] init];
-    MineCalculateListViewController *mvc = [[MineCalculateListViewController alloc] init];
     FortuneDetailViewController *fvc = [[FortuneDetailViewController alloc] init];
+    fvc.isshowNavback = NO;
+    EveryDayViewController *evc = [[EveryDayViewController alloc] init];
     
+    MineCalculateListViewController *mvc = [[MineCalculateListViewController alloc] init];
+
     
     DSNavViewController *hNav    = [[DSNavViewController alloc] initWithRootViewController:hvc];
     DSNavViewController *mNav    = [[DSNavViewController alloc] initWithRootViewController:mvc];
+    DSNavViewController *eNav    = [[DSNavViewController alloc] initWithRootViewController:evc];
     DSNavViewController *fNav    = [[DSNavViewController alloc] initWithRootViewController:fvc];
 
     
@@ -104,12 +109,19 @@
           unselectImage:@"八字测算未选中"
                     tag:2];
     
+    [self setTabBarItem:eNav
+                  title:@"每日宜忌"
+            selectImage:@"每日宜忌选中"
+          unselectImage:@"每日宜忌未选中"
+                    tag:3];
+    
     [self setTabBarItem:mNav
                   title:@"我的测算"
             selectImage:@"我的测算选中"
           unselectImage:@"我的测算未选中"
-                    tag:3];
-    self.viewControllers = @[hNav,fNav,mNav];
+                    tag:4];
+    
+    self.viewControllers = @[hNav,fNav,eNav,mNav];
 }
 
 - (void)constructNotLoginViewControllers

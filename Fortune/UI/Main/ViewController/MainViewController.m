@@ -31,11 +31,12 @@
     [super viewDidLoad];
     self.viewModel = [[MainViewModel alloc] init];
     [self createNavWithTitle:@"八字算命解梦" leftText:@"" rightText:@""];
-    self.theSimpleNavigationBar.backgroundColor = RGB(225, 75, 76);
+    self.theSimpleNavigationBar.backgroundColor = defaultColor;
     [self.theSimpleNavigationBar.titleButton setTitleColor: [UIColor whiteColor] forState:UIControlStateNormal];
     self.theSimpleNavigationBar.bottomLineView.backgroundColor = [UIColor clearColor];
     self.viewModel.block_reloadDate = ^{
         [self.pageView reloadData];
+        [UserDefaultsTool setString:self.viewModel.webfile withKey:@"webFile"];
     };
     self.yiLabel.text = [[ToolUtil stringForYi] componentsJoinedByString:@" "];
     self.jiLabel.text = [[ToolUtil stringForJi] componentsJoinedByString:@" "];
@@ -43,6 +44,7 @@
         self.yiLabel.font = [UIFont systemFontOfSize:13];
         self.jiLabel.font = [UIFont systemFontOfSize:13];
     }
+    [self.viewModel.subject_getDate sendNext:@YES];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -113,9 +115,6 @@
     
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [self.viewModel.subject_getDate sendNext:@YES];
-}
 
 #pragma mark NewPagedFlowView Delegate
 - (CGSize)sizeForPageInFlowView:(NewPagedFlowView *)flowView {
@@ -125,6 +124,22 @@
 #pragma mark NewPagedFlowView Datasource
 - (NSInteger)numberOfPagesInFlowView:(NewPagedFlowView *)flowView {
     return self.viewModel.bannerArray.count ? self.viewModel.bannerArray.count : 1;
+}
+
+- (void)didSelectCell:(PGIndexBannerSubiew *)subView withSubViewIndex:(NSInteger)subIndex {
+    FortuneDetailViewController *FVC = [[FortuneDetailViewController alloc] init];
+    FVC.isshowNavback = YES;
+    switch (subIndex) {
+        case 0:
+            FVC.title = @"十年大运";
+            break;
+        case 1:
+            FVC.title = @"流年运势";
+            break;
+        default:
+            break;
+    }
+    [self.navigationController pushViewController:FVC animated:YES];
 }
 
 - (PGIndexBannerSubiew *)flowView:(NewPagedFlowView *)flowView cellForPageAtIndex:(NSInteger)index{
@@ -151,13 +166,14 @@
 
 - (IBAction)firstFortuneClick:(id)sender {
     FortuneDetailViewController *FVC = [[FortuneDetailViewController alloc] init];
+    FVC.isshowNavback = YES;
     [self.navigationController pushViewController:FVC animated:YES];
 }
 - (IBAction)TopSecendClick:(id)sender {
-    YMWebViewController *WVC = [[YMWebViewController alloc] init];
-    WVC.urlStr = @"http://tools.2345.com/m/shengxiao/";
-    WVC.titleStr = @"流年运势";
-    [self.navigationController pushViewController:WVC animated:YES];
+    FortuneDetailViewController *FVC = [[FortuneDetailViewController alloc] init];
+    FVC.isshowNavback = YES;
+    FVC.title = @"流年运势";
+    [self.navigationController pushViewController:FVC animated:YES];
 }
 
 - (IBAction)TopThreeClick:(id)sender {
@@ -165,6 +181,12 @@
     WVC.urlStr = @"http://tools.2345.com/m/zhgjm.htm?from=calendar";
     WVC.titleStr = @"周公解梦";
     [self.navigationController pushViewController:WVC animated:YES];
+}
+- (IBAction)TopFourClick:(id)sender {
+    FortuneDetailViewController *FVC = [[FortuneDetailViewController alloc] init];
+    FVC.isshowNavback = YES;
+    FVC.title = @"十年大运";
+    [self.navigationController pushViewController:FVC animated:YES];
 }
 
 - (IBAction)topFirstClick:(id)sender {

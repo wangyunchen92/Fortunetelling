@@ -29,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self createNavWithTitle:@"当前算命者信息" leftText:@"Whiteback" rightText:@""];
+    [self createNavWithTitle:@"当前算命者信息" leftImage:@"Whiteback" rightText:@""];
     self.theSimpleNavigationBar.backgroundColor = RGB(209, 89, 82);
     [self.theSimpleNavigationBar.titleButton setTitleColor: [UIColor whiteColor] forState:UIControlStateNormal];
     self.theSimpleNavigationBar.bottomLineView.backgroundColor = [UIColor clearColor];
@@ -85,6 +85,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 1;
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

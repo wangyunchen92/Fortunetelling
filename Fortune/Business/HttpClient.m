@@ -148,7 +148,7 @@ static HttpClient *httpClient = nil;
 
 
 //通一请求累
-- (void)    requestBaseWithName:(NSString *)name
+- (void)requestBaseWithName:(NSString *)name
                         Url:(NSString *)url
                  Parameters:(NSDictionary *)parameters
                       IsGet:(BOOL)isGet
@@ -157,12 +157,9 @@ static HttpClient *httpClient = nil;
                     Failure:(CompletionHandlerFailureBlock)failure
                RequsetStart:(RequstStartBlock)requestStart
                 ResponseEnd:(ResponseEndBlock)responseEnd {
-    
     NSMutableDictionary* newParamDic = [[NSMutableDictionary alloc]initWithDictionary:parameters];
-
     newParamDic = [self getDefaultparams:newParamDic];
     HttpRequest *request = [[HttpRequest alloc]initWithRequestWithName:name UrlString:url Parameters:newParamDic IsGET:isGet IsCache:isCache];
-    
     [request startRequestWithSuccessBlock:success FailedBlock:failure RequsetStart:requestStart ResponseEnd:responseEnd];
 }
 

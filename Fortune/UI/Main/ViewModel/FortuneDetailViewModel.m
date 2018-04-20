@@ -17,6 +17,7 @@
         _sex = @"男";
         _firstName = @"";
         _lastName = @"";
+        _seledate = [NSDate date];
         
     }
     return self;
@@ -29,6 +30,7 @@
     self.day = [selectDate stringWithFormat:@"dd"];
     self.hour = [selectDate stringWithFormat:@"HH"];
     self.min = @"00";
+    self.seledate = selectDate;
 }
 
 - (void)initSigin {
@@ -62,10 +64,10 @@
         model.name= @"八字算命";
         model.parameters = pram;
         model.url = GetCurlInfo;
-        
+        [BasePopoverView showHUDToWindow:YES withMessage:@"提交中..."];
         [[HttpClient sharedInstance]requestApiWithHttpRequestMode:model Success:^(HttpRequest *request, HttpResponse *response) {
+            [BasePopoverView hideHUDForWindow:YES];
             PersonDetailViewModel *personViewModel = [[PersonDetailViewModel alloc] init];
-            
             NSDictionary *dic = response.result;
             PersonTopDetailModel *model = [[PersonTopDetailModel alloc] init];
             [model getdateForServer:dic];
@@ -76,9 +78,17 @@
                     self.block_personDetail(personViewModel);
                 }
             } else {
-                if (self.block_isNoTest) {
-                    self.block_isNoTest(model.projectId,personViewModel);
+                // 已经测算过
+                if ([[dic objectForKey:@"status"] integerValue] == 1) {
+                    if (self.block_personDetail) {
+                        self.block_personDetail(personViewModel);
+                    }
+                } else {
+                    if (self.block_isNoTest) {
+                        self.block_isNoTest(model.projectId,personViewModel);
+                    }
                 }
+                
             }
 
             
