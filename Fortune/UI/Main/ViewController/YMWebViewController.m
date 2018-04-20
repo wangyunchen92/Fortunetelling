@@ -102,10 +102,17 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    
-    if (!webView.isLoading){
-        return;
+    NSLog(@"%@",[webView.request.URL absoluteString]);
+    if (self.isloadweb  == 1) {
+        if (!webView.isLoading){
+            return;
+        }
+    } else if (self.isloadweb == 2) {
+        if (webView.isLoading){
+            return;
+        }
     }
+
     
 //    self.loadtag --;
 //    if (self.loadtag > 0) {

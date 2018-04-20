@@ -117,12 +117,14 @@
     YMWebViewController *WVC = [[YMWebViewController alloc] init];
     WVC.urlStr = @"http://tools.2345.com/m/shouxiang/?mrili&from=calendar";
     WVC.titleStr = @"手相解密";
+     WVC.isloadweb = 1;
     [self.navigationController pushViewController:WVC animated:YES];
 }
 - (IBAction)secendClick:(id)sender {
     YMWebViewController *WVC = [[YMWebViewController alloc] init];
     WVC.urlStr = @"http://tools.2345.com/m/suanming_zw.htm?mrili&from=calendar";
     WVC.titleStr = @"指纹算命";
+     WVC.isloadweb = 1;
     [self.navigationController pushViewController:WVC animated:YES];
     
 }
@@ -130,6 +132,7 @@
     YMWebViewController *WVC = [[YMWebViewController alloc] init];
     WVC.urlStr = @"http://tools.2345.com/m/zhanbu/guanyin/?from=calendar";
     WVC.titleStr = @"抽签占卜";
+     WVC.isloadweb = 1;
     [self.navigationController pushViewController:WVC animated:YES];
 }
 
@@ -137,6 +140,7 @@
     YMWebViewController *WVC = [[YMWebViewController alloc] init];
     WVC.urlStr = @"http://tools.2345.com/m/zhgjm.htm?from=calendar";
     WVC.titleStr = @"周公解梦";
+     WVC.isloadweb = 1;
     [self.navigationController pushViewController:WVC animated:YES];
 }
 

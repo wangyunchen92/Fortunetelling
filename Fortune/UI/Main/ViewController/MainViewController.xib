@@ -274,12 +274,16 @@
                                 </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <gestureRecognizers/>
                             <constraints>
                                 <constraint firstItem="o66-F7-MFm" firstAttribute="centerX" secondItem="HEw-Lp-z49" secondAttribute="centerX" id="CGS-Aa-yfX"/>
                                 <constraint firstItem="o66-F7-MFm" firstAttribute="top" secondItem="HEw-Lp-z49" secondAttribute="top" constant="13" id="P92-QX-uqY"/>
                                 <constraint firstItem="Zbq-Gt-tzV" firstAttribute="centerX" secondItem="HEw-Lp-z49" secondAttribute="centerX" id="iVI-PM-GTV"/>
                                 <constraint firstItem="Zbq-Gt-tzV" firstAttribute="top" secondItem="o66-F7-MFm" secondAttribute="bottom" constant="10" id="ugz-DF-sNf"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="5jK-ej-sAV" appends="YES" id="PGO-Kv-yWL"/>
+                            </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xTV-9X-F0u">
                             <rect key="frame" x="275" y="427" width="90.5" height="105"/>
@@ -299,12 +303,16 @@
                                 </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <gestureRecognizers/>
                             <constraints>
                                 <constraint firstItem="LJV-da-Zzg" firstAttribute="centerX" secondItem="xTV-9X-F0u" secondAttribute="centerX" id="0wI-Xm-9Bs"/>
                                 <constraint firstItem="2cN-S1-Do9" firstAttribute="centerX" secondItem="xTV-9X-F0u" secondAttribute="centerX" id="dbV-pl-siZ"/>
                                 <constraint firstItem="2cN-S1-Do9" firstAttribute="top" secondItem="LJV-da-Zzg" secondAttribute="bottom" constant="13" id="hP9-ie-T84"/>
                                 <constraint firstItem="LJV-da-Zzg" firstAttribute="top" secondItem="xTV-9X-F0u" secondAttribute="top" constant="13" id="xlJ-52-DBe"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="Ocq-sg-qId" appends="YES" id="yie-o5-d7N"/>
+                            </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rpr-Yw-Vqo">
                             <rect key="frame" x="184" y="533" width="90.5" height="104"/>
@@ -324,12 +332,16 @@
                                 </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <gestureRecognizers/>
                             <constraints>
                                 <constraint firstItem="0bn-GJ-t0U" firstAttribute="top" secondItem="rpr-Yw-Vqo" secondAttribute="top" constant="13" id="2cn-Nf-KkX"/>
                                 <constraint firstItem="gy1-Fb-bR6" firstAttribute="centerX" secondItem="rpr-Yw-Vqo" secondAttribute="centerX" id="6av-Ui-JkP"/>
                                 <constraint firstItem="0bn-GJ-t0U" firstAttribute="centerX" secondItem="rpr-Yw-Vqo" secondAttribute="centerX" id="cbs-wO-Hi8"/>
                                 <constraint firstItem="gy1-Fb-bR6" firstAttribute="top" secondItem="0bn-GJ-t0U" secondAttribute="bottom" constant="13" id="frA-77-ELP"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="4O5-qw-iGi" appends="YES" id="Kaf-uw-KMH"/>
+                            </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssK-Yn-8BU">
                             <rect key="frame" x="275" y="533" width="90.5" height="104"/>
@@ -349,12 +361,16 @@
                                 </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <gestureRecognizers/>
                             <constraints>
                                 <constraint firstItem="eb4-mL-I0i" firstAttribute="top" secondItem="hhz-kR-jCz" secondAttribute="bottom" constant="13" id="09k-oG-wOK"/>
                                 <constraint firstItem="hhz-kR-jCz" firstAttribute="centerX" secondItem="ssK-Yn-8BU" secondAttribute="centerX" id="1ie-k4-yy3"/>
                                 <constraint firstItem="eb4-mL-I0i" firstAttribute="centerX" secondItem="ssK-Yn-8BU" secondAttribute="centerX" id="2pa-wL-knq"/>
                                 <constraint firstItem="hhz-kR-jCz" firstAttribute="top" secondItem="ssK-Yn-8BU" secondAttribute="top" constant="13" id="46G-fh-qJB"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="aqa-Dk-Ned" appends="YES" id="GkC-6S-dlS"/>
+                            </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="daD-UT-kZY">
                             <rect key="frame" x="0.0" y="317" width="366" height="100"/>
@@ -590,7 +606,31 @@
                 <action selector="boardThreeClick:" destination="-1" id="M6L-L1-dy4"/>
             </connections>
         </tapGestureRecognizer>
-        <tapGestureRecognizer id="lox-rE-jE4" userLabel="boardFour"/>
+        <tapGestureRecognizer id="lox-rE-jE4" userLabel="boardFour">
+            <connections>
+                <action selector="boardFourClick:" destination="-1" id="5HQ-lh-yYt"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="5jK-ej-sAV" userLabel="bottomFirst">
+            <connections>
+                <action selector="bottomFirstClick:" destination="-1" id="lva-n0-0uV"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="Ocq-sg-qId" userLabel="bottomSecend">
+            <connections>
+                <action selector="bottomSecendClick:" destination="-1" id="fE1-1R-ZN5"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="4O5-qw-iGi" userLabel="bottomThree">
+            <connections>
+                <action selector="bottomThreeClick:" destination="-1" id="TUE-Jp-Ne1"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="aqa-Dk-Ned" userLabel="bottomFour">
+            <connections>
+                <action selector="bottomFourClick:" destination="-1" id="X7q-jS-a4K"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="八字测算" width="39" height="39"/>

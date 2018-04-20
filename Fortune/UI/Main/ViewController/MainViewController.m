@@ -179,6 +179,7 @@
 - (IBAction)TopThreeClick:(id)sender {
     YMWebViewController *WVC = [[YMWebViewController alloc] init];
     WVC.urlStr = @"http://tools.2345.com/m/zhgjm.htm?from=calendar";
+    WVC.isloadweb = 1;
     WVC.titleStr = @"周公解梦";
     [self.navigationController pushViewController:WVC animated:YES];
 }
@@ -192,22 +193,63 @@
 - (IBAction)topFirstClick:(id)sender {
     YMWebViewController *WVC = [[YMWebViewController alloc] init];
     WVC.urlStr = @"http://tools.2345.com/m/shouxiang/?mrili&from=calendar";
+    WVC.isloadweb = 1;
     WVC.titleStr = @"手相解密";
     [self.navigationController pushViewController:WVC animated:YES];
 }
 - (IBAction)boardSecendClick:(id)sender {
     YMWebViewController *WVC = [[YMWebViewController alloc] init];
     WVC.urlStr = @"http://tools.2345.com/m/suanming_zw.htm?mrili&from=calendar";
+    WVC.isloadweb = 1;
     WVC.titleStr = @"指纹算命";
     [self.navigationController pushViewController:WVC animated:YES];
 }
 - (IBAction)boardThreeClick:(id)sender {
     YMWebViewController *WVC = [[YMWebViewController alloc] init];
     WVC.urlStr = @"http://tools.2345.com/m/zhanbu/guanyin/?from=calendar";
+    WVC.isloadweb = 1;
     WVC.titleStr = @"抽签占卜";
     [self.navigationController pushViewController:WVC animated:YES];
 }
+- (IBAction)boardFourClick:(id)sender {
+    YMWebViewController *WVC = [[YMWebViewController alloc] init];
+    WVC.urlStr = @"http://tools.2345.com/m/peidui/xingming/?qq-pf-to=pcqq.c2c";
+    WVC.isloadweb = 2;
+    WVC.titleStr = @"恋爱配对";
+    [self.navigationController pushViewController:WVC animated:YES];
+}
+- (IBAction)bottomFirstClick:(id)sender {
+    YMWebViewController *WVC = [[YMWebViewController alloc] init];
+    WVC.urlStr = @"http://tools.2345.com/m/peidui/xingzuo/";
+     WVC.isloadweb = 2;
+    WVC.titleStr = @"婚姻测算";
+    [self.navigationController pushViewController:WVC animated:YES];
+    
+}
 
+- (IBAction)bottomSecendClick:(id)sender {
+    YMWebViewController *WVC = [[YMWebViewController alloc] init];
+    WVC.urlStr = @"http://tools.2345.com/m/shengxiao/";
+     WVC.isloadweb = 2;
+    WVC.titleStr = @"流年运势";
+    [self.navigationController pushViewController:WVC animated:YES];
+}
+
+- (IBAction)bottomThreeClick:(id)sender {
+    YMWebViewController *WVC = [[YMWebViewController alloc] init];
+    WVC.urlStr = @"http://tools.2345.com/m/zhanbu/zhuge.htm";
+     WVC.isloadweb = 2;
+    WVC.titleStr = @"桃花运势";
+    [self.navigationController pushViewController:WVC animated:YES];
+}
+
+- (IBAction)bottomFourClick:(id)sender {
+    YMWebViewController *WVC = [[YMWebViewController alloc] init];
+    WVC.urlStr = @"http://tools.2345.com/m/zhanbu/tianhou/";
+     WVC.isloadweb = 2;
+    WVC.titleStr = @"财运分析";
+    [self.navigationController pushViewController:WVC animated:YES];
+}
 
 
 - (void)didReceiveMemoryWarning {
