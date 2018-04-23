@@ -67,5 +67,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>App需要您的同意,才能访问相机</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>App需要您的同意,才能访问相册</string>
+	<key>LSApplicationCategoryType</key>
+	<string>请点击“允许”以允许访问。若不允许，会影响保存图片到相册功能的使用！</string>
 </dict>
 </plist>

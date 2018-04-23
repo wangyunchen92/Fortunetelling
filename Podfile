@@ -17,17 +17,4 @@ pod 'WYCPagController'
 pod 'FMDB', '~> 2.6.2'
 pod 'JPush'
 pod 'SSKeychain'
-
-  # Pods for Fortune
-
-  target 'FortuneTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'FortuneUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
