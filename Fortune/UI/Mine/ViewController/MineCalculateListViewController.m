@@ -32,7 +32,7 @@
     @weakify(self);
     self.viewModel.block_reloadDate = ^{
         @strongify(self);
-        if (!(self.viewModel.dataArray.count > 0)) {
+        if ((self.viewModel.dataArray.count > 0)) {
             self.tableView.hidden  = YES;
             self.noNumberView.hidden = NO;
         } else {
@@ -49,19 +49,19 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.viewModel.dataArray.count;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MineCalculateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MineCalculateTableViewCell class]) forIndexPath:indexPath];
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [cell getDataForModel:self.viewModel.dataArray[indexPath.row]];
-    cell.block_detailButtonClick = ^(NSString *programId) {
-        PersonDetailViewModel *VCviewModel = [[PersonDetailViewModel alloc] init];
-        VCviewModel.programId = programId;
-        PersonDetailViewController *VC = [[PersonDetailViewController alloc] initWithViewModel:VCviewModel];
-        [self.navigationController pushViewController:VC animated:YES];
-    };
+//    [cell getDataForModel:self.viewModel.dataArray[indexPath.row]];
+//    cell.block_detailButtonClick = ^(NSString *programId) {
+//        PersonDetailViewModel *VCviewModel = [[PersonDetailViewModel alloc] init];
+//        VCviewModel.programId = programId;
+//        PersonDetailViewController *VC = [[PersonDetailViewController alloc] initWithViewModel:VCviewModel];
+//        [self.navigationController pushViewController:VC animated:YES];
+//    };
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

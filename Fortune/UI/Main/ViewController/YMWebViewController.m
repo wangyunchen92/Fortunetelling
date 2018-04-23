@@ -210,24 +210,16 @@
         removeTags('a','nofollow');\
         }";
         self.webfile  = [UserDefaultsTool getStringWithKey:@"webFile"];
-        
         if ([self.webfile isEqualToString:@""] || !self.webfile) {
             self.webfile = hideId;
         }
-        
         [content evaluateScript:self.webfile];
-
         [content evaluateScript:@"hideOther()"];
         [self.progressLayer finishedLoad];
         [BasePopoverView hideHUDForWindow:YES];
         self.isloadJS = NO;
-        
-        
         webView.alpha = 1;
     }
-    
-
-
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {

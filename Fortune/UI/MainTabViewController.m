@@ -15,6 +15,7 @@
 #import "EveryDayViewController.h"
 
 
+
 @interface MainTabViewController()<UITabBarControllerDelegate>
 
 @end
@@ -129,8 +130,8 @@
     [self createViewControllers];
     
     self.selectedIndex = 0;
-//    self.tabBar.backgroundImage = [UIImage imageWithColor:RGB(237, 217, 219)];
-    self.tabBar.backgroundImage = [UIImage imageWithColor:[UIColor whiteColor]];
+    self.tabBar.backgroundImage = [UIImage imageWithColor:RGB(209, 90, 82)];
+//    self.tabBar.backgroundImage = [UIImage imageWithColor:[UIColor whiteColor]];
 }
 
 - (void)setTabBarItem:(UINavigationController *) navController
@@ -143,14 +144,19 @@
     UIImage * normalImage = [IMAGE_NAME(unselectImage) imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     navController.tabBarItem.title = title;
     
-    NSDictionary *normalDic = [NSDictionary dictionaryWithObjectsAndKeys:
-                               UIColorFromRGB(0x333333),
+    NSDictionary *seleDic = [NSDictionary dictionaryWithObjectsAndKeys:
+                               UIColorFromRGB(0xffffff),
                                NSForegroundColorAttributeName, nil];
-    [navController.tabBarItem setTitleTextAttributes:normalDic forState:UIControlStateSelected];
+    NSDictionary *normalDic = [NSDictionary dictionaryWithObjectsAndKeys:
+                               UIColorFromRGB(0xf3beb2),
+                               NSForegroundColorAttributeName, nil];
     
+    [navController.tabBarItem setTitleTextAttributes:seleDic forState:UIControlStateSelected];
+    [navController.tabBarItem setTitleTextAttributes:normalDic forState:UIControlStateNormal];
     navController.tabBarItem.image = normalImage;
     navController.tabBarItem.selectedImage = normalSelectImage;
 }
+
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {

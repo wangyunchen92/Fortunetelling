@@ -132,6 +132,10 @@
 		D5A5026A2068A362001EBE10 /* BasePopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A502682068A362001EBE10 /* BasePopoverView.m */; };
 		D5A502772068C882001EBE10 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A502762068C882001EBE10 /* NSDictionary+Log.m */; };
 		D5A5027F2068F3EB001EBE10 /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A5027D2068F3EB001EBE10 /* BaseViewModel.m */; };
+		D5D0E4F42089EA2E00853305 /* ASVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D0E4F22089EA2E00853305 /* ASVViewController.m */; };
+		D5D0E4F52089EA2E00853305 /* ASVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5D0E4F32089EA2E00853305 /* ASVViewController.xib */; };
+		D5D0E4F62089EA9200853305 /* 李旭科毛笔行书.ttf in Sources */ = {isa = PBXBuildFile; fileRef = D5D0E4EE2089E85F00853305 /* 李旭科毛笔行书.ttf */; };
+		D5D0E4F72089EAA700853305 /* 李旭科毛笔行书.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D5D0E4EE2089E85F00853305 /* 李旭科毛笔行书.ttf */; };
 		D5DD67D7207358F500A97941 /* CommandTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DD67D5207358F500A97941 /* CommandTool.m */; };
 		D5DD67DA2073598D00A97941 /* YMUpdateView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DD67D92073598D00A97941 /* YMUpdateView.m */; };
 		D5DD67DE2073672F00A97941 /* HZLaunchImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DD67DB2073672F00A97941 /* HZLaunchImageViewController.m */; };
@@ -463,6 +467,10 @@
 		D5A502762068C882001EBE10 /* NSDictionary+Log.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Log.m"; sourceTree = "<group>"; };
 		D5A5027D2068F3EB001EBE10 /* BaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewModel.m; sourceTree = "<group>"; };
 		D5A5027E2068F3EB001EBE10 /* BaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewModel.h; sourceTree = "<group>"; };
+		D5D0E4EE2089E85F00853305 /* 李旭科毛笔行书.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "李旭科毛笔行书.ttf"; sourceTree = "<group>"; };
+		D5D0E4F12089EA2E00853305 /* ASVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASVViewController.h; sourceTree = "<group>"; };
+		D5D0E4F22089EA2E00853305 /* ASVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASVViewController.m; sourceTree = "<group>"; };
+		D5D0E4F32089EA2E00853305 /* ASVViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASVViewController.xib; sourceTree = "<group>"; };
 		D5DD67D42073221A00A97941 /* Fortune.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fortune.entitlements; sourceTree = "<group>"; };
 		D5DD67D5207358F500A97941 /* CommandTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandTool.m; sourceTree = "<group>"; };
 		D5DD67D6207358F500A97941 /* CommandTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandTool.h; sourceTree = "<group>"; };
@@ -614,6 +622,7 @@
 		D53B7C0E1FC2ECA000395E69 /* Fortune */ = {
 			isa = PBXGroup;
 			children = (
+				D5D0E4EE2089E85F00853305 /* 李旭科毛笔行书.ttf */,
 				D5DD67D42073221A00A97941 /* Fortune.entitlements */,
 				D53B7C1D1FC2ECA000395E69 /* Info.plist */,
 				D57CD46F1FC3C9B0001446D8 /* Resource */,
@@ -690,6 +699,9 @@
 				D54DA0A5207C64BC00EDD167 /* MineCalculateListViewController.h */,
 				D54DA0A6207C64BC00EDD167 /* MineCalculateListViewController.m */,
 				D54DA0A7207C64BC00EDD167 /* MineCalculateListViewController.xib */,
+				D5D0E4F12089EA2E00853305 /* ASVViewController.h */,
+				D5D0E4F22089EA2E00853305 /* ASVViewController.m */,
+				D5D0E4F32089EA2E00853305 /* ASVViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1419,6 +1431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D561828E207B7169009F68BC /* PersonDetailViewController.xib in Resources */,
+				D5D0E4F52089EA2E00853305 /* ASVViewController.xib in Resources */,
 				D506F6A32084919F00A7872C /* EveryDayTableViewCell.xib in Resources */,
 				D54DA0B1207C664100EDD167 /* MineCalculateTableViewCell.xib in Resources */,
 				D54DA0B9207CA15600EDD167 /* FortuneDetailViewController.xib in Resources */,
@@ -1427,6 +1440,7 @@
 				D506F6A8208495AD00A7872C /* EveryDayDetailViewController.xib in Resources */,
 				D568F0B9207F5B800055B53D /* PayDetailViewController.xib in Resources */,
 				D568F0AA207F0E100055B53D /* YMWebViewController.xib in Resources */,
+				D5D0E4F72089EAA700853305 /* 李旭科毛笔行书.ttf in Resources */,
 				D53B7C191FC2ECA000395E69 /* Assets.xcassets in Resources */,
 				D561827F207B073B009F68BC /* MainViewController.xib in Resources */,
 				D578D48A207DE6EE00004A42 /* PersonBottomTableViewCell.xib in Resources */,
@@ -1612,6 +1626,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5D0E4F62089EA9200853305 /* 李旭科毛笔行书.ttf in Sources */,
 				D592A8982085A1EA00FEA213 /* openssl_wrapper.m in Sources */,
 				D5A502642068A261001EBE10 /* HttpError.m in Sources */,
 				D57CD46E1FC3C334001446D8 /* Config.m in Sources */,
@@ -1645,6 +1660,7 @@
 				D57CD4D31FC3DB7B001446D8 /* ToolUtil+PublicParam.m in Sources */,
 				D57CD4F61FC40761001446D8 /* UserDefaultsTool.m in Sources */,
 				D57CD4C51FC3D5F9001446D8 /* NSString+NSHash.m in Sources */,
+				D5D0E4F42089EA2E00853305 /* ASVViewController.m in Sources */,
 				D5A5025C2068A261001EBE10 /* YYDiskCache.m in Sources */,
 				D592A8992085A1EA00FEA213 /* APRSASigner.m in Sources */,
 				D53B7C1F1FC2ECA000395E69 /* main.m in Sources */,
