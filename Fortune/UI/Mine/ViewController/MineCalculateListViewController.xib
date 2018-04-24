@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="李旭科毛笔行书.ttf">
+            <string>LiXuKe</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineCalculateListViewController">
             <connections>
@@ -32,8 +37,11 @@
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afn-aH-2b4">
                     <rect key="frame" x="-1" y="0.0" width="376" height="667"/>
                     <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="没有测算记录" translatesAutoresizingMaskIntoConstraints="NO" id="MCo-14-p4C">
+                            <rect key="frame" x="34" y="151" width="308" height="364"/>
+                        </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4y-Ih-dgE">
-                            <rect key="frame" x="50" y="340.5" width="276" height="50"/>
+                            <rect key="frame" x="80" y="438.5" width="216" height="50"/>
                             <color key="backgroundColor" red="0.93725490199999995" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="ryL-6H-CbB"/>
@@ -50,24 +58,20 @@
                                 <action selector="pushNexView:" destination="-1" eventType="touchUpInside" id="d8R-RM-nS8"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="空态图形" translatesAutoresizingMaskIntoConstraints="NO" id="MCo-14-p4C">
-                            <rect key="frame" x="128" y="178" width="121" height="83"/>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您还没有测算历史" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jwc-Gz-GbX">
-                            <rect key="frame" x="123" y="281" width="131" height="19.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <color key="textColor" red="0.5607843137254902" green="0.5607843137254902" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您还没有测算历史" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jwc-Gz-GbX">
+                            <rect key="frame" x="120.5" y="399.5" width="136" height="19"/>
+                            <fontDescription key="fontDescription" name="LiXuKe" family="LiXuKe" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="U4y-Ih-dgE" firstAttribute="top" secondItem="Jwc-Gz-GbX" secondAttribute="bottom" constant="40" id="6To-Nd-vgy"/>
-                        <constraint firstItem="Jwc-Gz-GbX" firstAttribute="top" secondItem="MCo-14-p4C" secondAttribute="bottom" constant="20" id="7yQ-dT-4ds"/>
+                        <constraint firstItem="U4y-Ih-dgE" firstAttribute="top" secondItem="Jwc-Gz-GbX" secondAttribute="bottom" constant="20" id="6To-Nd-vgy"/>
                         <constraint firstItem="Jwc-Gz-GbX" firstAttribute="centerX" secondItem="afn-aH-2b4" secondAttribute="centerX" id="Awd-4M-qlP"/>
-                        <constraint firstItem="U4y-Ih-dgE" firstAttribute="centerY" secondItem="afn-aH-2b4" secondAttribute="centerY" constant="32" id="BK5-LW-Tp7"/>
+                        <constraint firstItem="U4y-Ih-dgE" firstAttribute="centerY" secondItem="afn-aH-2b4" secondAttribute="centerY" constant="130" id="BK5-LW-Tp7"/>
                         <constraint firstItem="MCo-14-p4C" firstAttribute="centerX" secondItem="afn-aH-2b4" secondAttribute="centerX" id="F4k-EX-W2p"/>
-                        <constraint firstAttribute="trailing" secondItem="U4y-Ih-dgE" secondAttribute="trailing" constant="50" id="dJ3-sd-Qhq"/>
+                        <constraint firstAttribute="trailing" secondItem="U4y-Ih-dgE" secondAttribute="trailing" constant="80" id="dJ3-sd-Qhq"/>
+                        <constraint firstItem="MCo-14-p4C" firstAttribute="centerY" secondItem="afn-aH-2b4" secondAttribute="centerY" id="pxX-z8-fi3"/>
                         <constraint firstItem="U4y-Ih-dgE" firstAttribute="centerX" secondItem="afn-aH-2b4" secondAttribute="centerX" id="xSF-Kv-UYv"/>
                     </constraints>
                 </view>
@@ -86,6 +90,6 @@
         </view>
     </objects>
     <resources>
-        <image name="空态图形" width="121" height="83"/>
+        <image name="没有测算记录" width="308" height="364"/>
     </resources>
 </document>

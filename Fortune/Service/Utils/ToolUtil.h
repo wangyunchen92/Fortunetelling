@@ -212,6 +212,9 @@
 // 获取UUID
 +(NSString*)dy_getDeviceUUID;
 
+// 添加虚线
++ (void)addline:(UIView *)view;
+
 #pragma mark - webView清理缓存
 + (void)clearWebViewCache;
 

@@ -22,6 +22,14 @@
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *bannerImage;
+@property (weak, nonatomic) IBOutlet UIView *noView;
+@property (weak, nonatomic) IBOutlet UIView *firstView;
+@property (weak, nonatomic) IBOutlet UIView *secendView;
+@property (weak, nonatomic) IBOutlet UIView *threeView;
+@property (weak, nonatomic) IBOutlet UIView *fourView;
+@property (weak, nonatomic) IBOutlet UIView *fiveView;
+@property (nonatomic, assign)BOOL isfirstLoad;
+@property (weak, nonatomic) IBOutlet UIView *maskView;
 
 @end
 
@@ -29,6 +37,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.maskView.layer.borderWidth = 1;
+    self.maskView.layer.borderColor = RGB(198, 187, 172).CGColor;
     if ([self.title isEqualToString:@"流年运势"]) {
         self.bannerImage.image = IMAGE_NAME(@"测算页banner");
     } else if ([self.title isEqualToString:@"十年大运"]) {
@@ -65,8 +75,24 @@
         };
         [self.navigationController pushViewController:PayVC animated:YES];
     };
+    
+
+    self.isfirstLoad = YES;
 
     // Do any additional setup after loading the view.
+}
+
+
+- (void)viewDidAppear:(BOOL)animated {
+    if (self.isfirstLoad) {
+        [ToolUtil addline:self.noView];
+        [ToolUtil addline:self.firstView];
+        [ToolUtil addline:self.secendView];
+        [ToolUtil addline:self.threeView];
+        [ToolUtil addline:self.fourView];
+        [ToolUtil addline:self.fiveView];
+        self.isfirstLoad = NO;
+    }
 }
 
 - (void)loadUIData {
@@ -83,6 +109,7 @@
     }];
     
 }
+
 
 - (IBAction)showPicView:(id)sender {
    [self.view endEditing:YES];

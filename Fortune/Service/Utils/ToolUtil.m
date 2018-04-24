@@ -1595,5 +1595,31 @@
     return returnArray;
 }
 
++ (void)addline:(UIView *)view {
+    CAShapeLayer *border = [CAShapeLayer layer];
+    //虚线的颜色
+    border.strokeColor = RGB(198, 187, 172).CGColor;
+    //填充的颜色
+    border.fillColor = [UIColor clearColor].CGColor;
+    
+    UIBezierPath *path = [[UIBezierPath alloc] init];
+    [path moveToPoint:CGPointMake(0, 0)];
+    [path addLineToPoint:CGPointMake(0, view.frame.size.height)];
+    [path addLineToPoint:CGPointMake(view.frame.size.width, view.frame.size.height)];
+    [path addLineToPoint:CGPointMake(view.frame.size.width, 0)];
+    //设置路径
+    border.path = path.CGPath;
+    
+    border.frame = view.bounds;
+    //虚线的宽度
+    border.lineWidth = 1.f;
+    //设置线条的样式
+    //    border.lineCap = @"square";
+    //虚线的间隔
+    border.lineDashPattern = @[@4, @2];
+    //    view.layer.masksToBounds = YES;
+    
+    [view.layer addSublayer:border];
+}
 
 @end
