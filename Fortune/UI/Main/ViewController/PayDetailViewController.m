@@ -7,15 +7,15 @@
 //
 
 #import "PayDetailViewController.h"
-#import "AliPayObject.h"
 
-@interface PayDetailViewController ()
+@interface PayDetailViewController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *alPayView;
 @property (weak, nonatomic) IBOutlet UIView *weiPayView;
 @property(nonatomic, strong)PayViewModel *viewModel;
 @property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
 @property (weak, nonatomic) IBOutlet UIButton *payMoneyButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollerView;
+@property (nonatomic, strong)UIWebView *webview;
 
 @end
 
@@ -24,9 +24,14 @@
     self = [super init];
     if (self) {
         self.viewModel = viewModel;
+        self.webview = [[UIWebView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, self.view.size.height-64)];
+        self.webview.hidden = YES;
+        self.webview.delegate = self;
+        [self.view addSubview:self.webview];
     }
     return self;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createNavWithTitle:@"八字测算" leftImage:@"Whiteback" rightText:@""];
@@ -53,44 +58,61 @@
     self.weiPayView.layer.borderWidth = 1;
     self.weiPayView.layer.borderColor = RGB(209, 89, 82).CGColor;
 }
+
 - (IBAction)alPayAction:(id)sender {
     
     [self.viewModel.subject_getPaySigin sendNext:@YES];
     @weakify(self);
     
     self.viewModel.block_canPay = ^(NSString *sigin) {
-        NSString *appScheme = @"com.Fortune.youmeng";
-        [AliPayObject CreateAliPayWithSigin:sigin appScheme:appScheme andScallback:^(id obj) {
-            {
-                NSDictionary *payInfo = obj;
                 @strongify(self);
-                if([payInfo[@"resultStatus"] isEqualToString:@"9000"]) {
-                    //支付成功
-                    if (self.block_payResult) {
-                        self.block_payResult(YES);
-                    }
-                }else if([payInfo[@"resultStatus"] isEqualToString:@"8000"]) {
-                    //正在处理
-                    
-                }else if([payInfo[@"resultStatus"] isEqualToString:@"4000"]) {
-                    //订单支付失败
-                    if (self.block_payResult) {
-                        self.block_payResult(NO);
-                    }
-                }else if([payInfo[@"resultStatus"] isEqualToString:@"6001"]) {
-                    //用户中途取消
-                    if (self.block_payResult) {
-                        self.block_payResult(NO);
-                    }
-                    
-                }else if([payInfo[@"resultStatus"] isEqualToString:@"6002"]) {
-                    //网络连接出错
-                    if (self.block_payResult) {
-                        self.block_payResult(NO);
-                    }
-                }
-            }
-        }];
+
+        self.webview.hidden = NO;
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.viewModel.webPayRequestUrl]];
+        NSArray *cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage].cookies;
+        //Cookies数组转换为requestHeaderFields
+        NSDictionary *requestHeaderFields = [NSHTTPCookie requestHeaderFieldsWithCookies:cookies];
+        //设置请求头
+        request.allHTTPHeaderFields = requestHeaderFields;
+        [self.webview loadRequest:request];
+
+        
+        //        NSURLRequest *req = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:self.viewModel.webPayRequestUrl]];
+//
+//        [self.webview loadRequest:req];
+
+//        NSString *appScheme = @"com.Fortune.youmeng";
+//        [AliPayObject CreateAliPayWithSigin:sigin appScheme:appScheme andScallback:^(id obj) {
+//            {
+//                NSDictionary *payInfo = obj;
+//                @strongify(self);
+//                if([payInfo[@"resultStatus"] isEqualToString:@"9000"]) {
+//                    //支付成功
+//                    if (self.block_payResult) {
+//                        self.block_payResult(YES);
+//                    }
+//                }else if([payInfo[@"resultStatus"] isEqualToString:@"8000"]) {
+//                    //正在处理
+//
+//                }else if([payInfo[@"resultStatus"] isEqualToString:@"4000"]) {
+//                    //订单支付失败
+//                    if (self.block_payResult) {
+//                        self.block_payResult(NO);
+//                    }
+//                }else if([payInfo[@"resultStatus"] isEqualToString:@"6001"]) {
+//                    //用户中途取消
+//                    if (self.block_payResult) {
+//                        self.block_payResult(NO);
+//                    }
+//
+//                }else if([payInfo[@"resultStatus"] isEqualToString:@"6002"]) {
+//                    //网络连接出错
+//                    if (self.block_payResult) {
+//                        self.block_payResult(NO);
+//                    }
+//                }
+//            }
+//        }];
     };
 //        订单ID 商品名称 商品详情 商品价格 商家信息 scheme 回调url
 //    NSString *partner = @"2088612301888269";
@@ -123,6 +145,19 @@
     [self.scrollerView setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 
+
+#pragma mark - UIWebViewDelegate
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    NSLog(@"开始加载数据 request == %@",request);
+    
+    if ([[webView.request.URL absoluteString] containsString:@"detail"]) {
+        if (self.block_payResult) {
+            self.block_payResult(YES);
+        }
+    }
+    //    [content evaluateScript:@"hideOther()"];
+    return YES;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

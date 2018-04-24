@@ -164,7 +164,7 @@ static HttpClient *httpClient = nil;
 }
 
 - (NSMutableDictionary *)getDefaultparams:(NSMutableDictionary *)dic {
-    [dic addUnEmptyString:Version forKey:@"version"];
+    [dic addUnEmptyString:Version forKey:@"api_version"];
     [dic addUnEmptyString:@"ios" forKey:@"source"];
     NSString* sign = [self getTokenWithParam:dic];
     [dic setObject:sign forKey:@"sign"];

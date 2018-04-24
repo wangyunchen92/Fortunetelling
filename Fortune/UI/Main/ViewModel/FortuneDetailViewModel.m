@@ -73,7 +73,7 @@
             [model getdateForServer:dic];
             personViewModel.topModel = model;
             personViewModel.boardArray = [dic arrayForKey:@"info"];
-            if (([[dic objectForKey:@"is_test"] integerValue]) == 1) {
+            if (!([[dic objectForKey:@"is_test"] integerValue]) == 1) {
                 if (self.block_personDetail) {
                     self.block_personDetail(personViewModel);
                 }
@@ -84,9 +84,12 @@
                         self.block_personDetail(personViewModel);
                     }
                 } else {
-                    if (self.block_isNoTest) {
-                        self.block_isNoTest(model.projectId,personViewModel);
+                    if (self.block_isWebTest) {
+                        self.block_isWebTest(model.projectId,[dic stringForKey:@"key"], [dic stringForKey:@"uUid"], personViewModel);
                     }
+//                    if (self.block_isNoTest) {
+//                        self.block_isNoTest(model.projectId,personViewModel);
+//                    }
                 }
                 
             }

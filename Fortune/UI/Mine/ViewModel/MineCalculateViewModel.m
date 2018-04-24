@@ -35,9 +35,6 @@
         } Failure:^(HttpRequest *request, HttpResponse *response) {
             
         }];
-        if (self.block_reloadDate) {
-            self.block_reloadDate();
-        }
     }];
 
 }

@@ -15,6 +15,8 @@
 
 #import "PayDetailViewController.h"
 
+#import "PayWebViewController.h"
+
 @interface FortuneDetailViewController ()<UITextFieldDelegate>
 @property (nonatomic, strong)FortuneDetailViewModel *viewModel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
@@ -48,6 +50,7 @@
         PersonDetailViewController *pVC = [[PersonDetailViewController alloc] initWithViewModel:pVCViewModel];
         [self.navigationController pushViewController:pVC animated:YES];
     };
+    
     self.viewModel.block_isNoTest = ^(NSString *programId ,PersonDetailViewModel *pVCViewModel ) {
         @strongify(self);
         PayViewModel *viewModel = [[PayViewModel alloc] init];
@@ -61,9 +64,25 @@
             } else {
                 [BasePopoverView showFailHUDToWindow:@"支付失败..."];
             }
-            
+
         };
         [self.navigationController pushViewController:PayVC animated:YES];
+    };
+    self.viewModel.block_isWebTest = ^(NSString *programId, NSString *key, NSString *uUid, PersonDetailViewModel *model) {
+        @strongify(self);
+        NSString *requestUrl = [NSString stringWithFormat:@"https://luck.youmeng.com/Wap/Fortune/pay.html?source=ios&key=%@&uUid=%@",key,uUid];
+        PayWebViewController *webview = [[PayWebViewController alloc] init];
+        webview.payurl = requestUrl;
+        webview.block_payResult = ^(BOOL ispaysuccess) {
+            if (ispaysuccess) {
+                model.isgetDate = NO;
+                PersonDetailViewController *pVC = [[PersonDetailViewController alloc] initWithViewModel:model];
+                [self.navigationController pushViewController:pVC animated:YES];
+            } else {
+                [BasePopoverView showFailHUDToWindow:@"支付失败..."];
+            }
+        };
+        [self.navigationController pushViewController:webview animated:YES];
     };
 
     // Do any additional setup after loading the view.

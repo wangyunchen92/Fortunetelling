@@ -12,6 +12,7 @@
 @property (nonatomic, copy)NSString *payMoney;
 @property (nonatomic, copy)NSString *money;
 @property (nonatomic, copy)NSString *programId;
+@property (nonatomic, copy)NSString *webPayRequestUrl;
 @property (nonatomic, strong)RACSubject *subject_getPaySigin;
 @property (nonatomic, copy)void (^block_canPay)(NSString *sigin);
 @end

@@ -21,5 +21,6 @@
 @property (nonatomic, strong)NSDate *seledate;
 @property (nonatomic, copy)void (^block_personDetail)(PersonDetailViewModel *);
 @property (nonatomic, copy)void (^block_isNoTest)(NSString *programId,PersonDetailViewModel * ); // 非审核跳转支付
+@property (nonatomic, copy)void (^block_isWebTest)(NSString *programId,NSString *key,NSString *uUid,PersonDetailViewModel * model); // 非审核跳转支付
 - (void)getNowday:(NSDate *)selectDate;
 @end
