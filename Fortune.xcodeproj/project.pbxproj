@@ -22,6 +22,7 @@
 		D506F6A32084919F00A7872C /* EveryDayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D506F6A12084919F00A7872C /* EveryDayTableViewCell.xib */; };
 		D506F6A7208495AD00A7872C /* EveryDayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D506F6A5208495AD00A7872C /* EveryDayDetailViewController.m */; };
 		D506F6A8208495AD00A7872C /* EveryDayDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D506F6A6208495AD00A7872C /* EveryDayDetailViewController.xib */; };
+		D537ED8320917BB400A70E94 /* RequestCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = D537ED8120917BB400A70E94 /* RequestCommand.m */; };
 		D53A667D208054F100FFFE0F /* PayViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D53A667C208054F100FFFE0F /* PayViewModel.m */; };
 		D53A66E92080582100FFFE0F /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D53A66812080582100FFFE0F /* AlipaySDK.bundle */; };
 		D53A66F22080582100FFFE0F /* AliPayObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D53A66972080582100FFFE0F /* AliPayObject.m */; };
@@ -100,6 +101,8 @@
 		D57CD4E91FC401AB001446D8 /* BackgroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D57CD4E81FC401AB001446D8 /* BackgroundViewController.m */; };
 		D57CD4EC1FC4062E001446D8 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D57CD4EB1FC4062E001446D8 /* UserInfo.m */; };
 		D57CD4F61FC40761001446D8 /* UserDefaultsTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D57CD4F51FC40760001446D8 /* UserDefaultsTool.m */; };
+		D57E3A7420907AE8008A1AFF /* MajordomoWKWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D57E3A7220907AE7008A1AFF /* MajordomoWKWebView.xib */; };
+		D57E3A7520907AE8008A1AFF /* MajordomoWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = D57E3A7320907AE7008A1AFF /* MajordomoWKWebView.m */; };
 		D58FEF74208454E2002DF59B /* EveryDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D58FEF72208454E2002DF59B /* EveryDayViewController.m */; };
 		D58FEF75208454E2002DF59B /* EveryDayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D58FEF73208454E2002DF59B /* EveryDayViewController.xib */; };
 		D592A88E2085A19300FEA213 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D592A88D2085A19300FEA213 /* AlipaySDK.framework */; };
@@ -132,8 +135,6 @@
 		D5A5026A2068A362001EBE10 /* BasePopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A502682068A362001EBE10 /* BasePopoverView.m */; };
 		D5A502772068C882001EBE10 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A502762068C882001EBE10 /* NSDictionary+Log.m */; };
 		D5A5027F2068F3EB001EBE10 /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A5027D2068F3EB001EBE10 /* BaseViewModel.m */; };
-		D5D0E4F42089EA2E00853305 /* ASVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D0E4F22089EA2E00853305 /* ASVViewController.m */; };
-		D5D0E4F52089EA2E00853305 /* ASVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5D0E4F32089EA2E00853305 /* ASVViewController.xib */; };
 		D5D0E4F62089EA9200853305 /* 李旭科毛笔行书.ttf in Sources */ = {isa = PBXBuildFile; fileRef = D5D0E4EE2089E85F00853305 /* 李旭科毛笔行书.ttf */; };
 		D5D0E4F72089EAA700853305 /* 李旭科毛笔行书.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D5D0E4EE2089E85F00853305 /* 李旭科毛笔行书.ttf */; };
 		D5DD67D7207358F500A97941 /* CommandTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DD67D5207358F500A97941 /* CommandTool.m */; };
@@ -194,6 +195,8 @@
 		D506F6A4208495AD00A7872C /* EveryDayDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EveryDayDetailViewController.h; sourceTree = "<group>"; };
 		D506F6A5208495AD00A7872C /* EveryDayDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EveryDayDetailViewController.m; sourceTree = "<group>"; };
 		D506F6A6208495AD00A7872C /* EveryDayDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EveryDayDetailViewController.xib; sourceTree = "<group>"; };
+		D537ED8120917BB400A70E94 /* RequestCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestCommand.m; sourceTree = "<group>"; };
+		D537ED8220917BB400A70E94 /* RequestCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestCommand.h; sourceTree = "<group>"; };
 		D53A667B208054F100FFFE0F /* PayViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayViewModel.h; sourceTree = "<group>"; };
 		D53A667C208054F100FFFE0F /* PayViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayViewModel.m; sourceTree = "<group>"; };
 		D53A66812080582100FFFE0F /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
@@ -340,6 +343,9 @@
 		D57CD4EB1FC4062E001446D8 /* UserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		D57CD4F41FC40760001446D8 /* UserDefaultsTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsTool.h; sourceTree = "<group>"; };
 		D57CD4F51FC40760001446D8 /* UserDefaultsTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsTool.m; sourceTree = "<group>"; };
+		D57E3A7120907AE7008A1AFF /* MajordomoWKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MajordomoWKWebView.h; sourceTree = "<group>"; };
+		D57E3A7220907AE7008A1AFF /* MajordomoWKWebView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MajordomoWKWebView.xib; sourceTree = "<group>"; };
+		D57E3A7320907AE7008A1AFF /* MajordomoWKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MajordomoWKWebView.m; sourceTree = "<group>"; };
 		D58FEF71208454E2002DF59B /* EveryDayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EveryDayViewController.h; sourceTree = "<group>"; };
 		D58FEF72208454E2002DF59B /* EveryDayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EveryDayViewController.m; sourceTree = "<group>"; };
 		D58FEF73208454E2002DF59B /* EveryDayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EveryDayViewController.xib; sourceTree = "<group>"; };
@@ -468,9 +474,6 @@
 		D5A5027D2068F3EB001EBE10 /* BaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewModel.m; sourceTree = "<group>"; };
 		D5A5027E2068F3EB001EBE10 /* BaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewModel.h; sourceTree = "<group>"; };
 		D5D0E4EE2089E85F00853305 /* 李旭科毛笔行书.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "李旭科毛笔行书.ttf"; sourceTree = "<group>"; };
-		D5D0E4F12089EA2E00853305 /* ASVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASVViewController.h; sourceTree = "<group>"; };
-		D5D0E4F22089EA2E00853305 /* ASVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASVViewController.m; sourceTree = "<group>"; };
-		D5D0E4F32089EA2E00853305 /* ASVViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASVViewController.xib; sourceTree = "<group>"; };
 		D5DD67D42073221A00A97941 /* Fortune.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fortune.entitlements; sourceTree = "<group>"; };
 		D5DD67D5207358F500A97941 /* CommandTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandTool.m; sourceTree = "<group>"; };
 		D5DD67D6207358F500A97941 /* CommandTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandTool.h; sourceTree = "<group>"; };
@@ -699,9 +702,6 @@
 				D54DA0A5207C64BC00EDD167 /* MineCalculateListViewController.h */,
 				D54DA0A6207C64BC00EDD167 /* MineCalculateListViewController.m */,
 				D54DA0A7207C64BC00EDD167 /* MineCalculateListViewController.xib */,
-				D5D0E4F12089EA2E00853305 /* ASVViewController.h */,
-				D5D0E4F22089EA2E00853305 /* ASVViewController.m */,
-				D5D0E4F32089EA2E00853305 /* ASVViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -773,6 +773,9 @@
 		D561827A207B0710009F68BC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D57E3A7120907AE7008A1AFF /* MajordomoWKWebView.h */,
+				D57E3A7320907AE7008A1AFF /* MajordomoWKWebView.m */,
+				D57E3A7220907AE7008A1AFF /* MajordomoWKWebView.xib */,
 				D568F0A6207F0E100055B53D /* YMWebProgressLayer.h */,
 				D568F0A4207F0E0F0055B53D /* YMWebProgressLayer.m */,
 				D568F0A3207F0E0F0055B53D /* YMWebViewController.h */,
@@ -874,6 +877,8 @@
 				D5A5027D2068F3EB001EBE10 /* BaseViewModel.m */,
 				D5059B642069E83E00914C01 /* DSNavViewController.h */,
 				D5059B632069E83E00914C01 /* DSNavViewController.m */,
+				D537ED8220917BB400A70E94 /* RequestCommand.h */,
+				D537ED8120917BB400A70E94 /* RequestCommand.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1431,7 +1436,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D561828E207B7169009F68BC /* PersonDetailViewController.xib in Resources */,
-				D5D0E4F52089EA2E00853305 /* ASVViewController.xib in Resources */,
 				D506F6A32084919F00A7872C /* EveryDayTableViewCell.xib in Resources */,
 				D54DA0B1207C664100EDD167 /* MineCalculateTableViewCell.xib in Resources */,
 				D54DA0B9207CA15600EDD167 /* FortuneDetailViewController.xib in Resources */,
@@ -1446,6 +1450,7 @@
 				D578D48A207DE6EE00004A42 /* PersonBottomTableViewCell.xib in Resources */,
 				D53A66E92080582100FFFE0F /* AlipaySDK.bundle in Resources */,
 				D57CD4E31FC3FFE8001446D8 /* LoginViewController.xib in Resources */,
+				D57E3A7420907AE8008A1AFF /* MajordomoWKWebView.xib in Resources */,
 				D578D485207DE5AD00004A42 /* PersonDetailBoardTableViewCell.xib in Resources */,
 				D578D480207DE3CE00004A42 /* PersonDetailTopTableViewCell.xib in Resources */,
 				D5DD67DF2073672F00A97941 /* HZLaunchImageViewController.xib in Resources */,
@@ -1660,7 +1665,6 @@
 				D57CD4D31FC3DB7B001446D8 /* ToolUtil+PublicParam.m in Sources */,
 				D57CD4F61FC40761001446D8 /* UserDefaultsTool.m in Sources */,
 				D57CD4C51FC3D5F9001446D8 /* NSString+NSHash.m in Sources */,
-				D5D0E4F42089EA2E00853305 /* ASVViewController.m in Sources */,
 				D5A5025C2068A261001EBE10 /* YYDiskCache.m in Sources */,
 				D592A8992085A1EA00FEA213 /* APRSASigner.m in Sources */,
 				D53B7C1F1FC2ECA000395E69 /* main.m in Sources */,
@@ -1674,12 +1678,14 @@
 				D506F6A7208495AD00A7872C /* EveryDayDetailViewController.m in Sources */,
 				D568F0A8207F0E100055B53D /* YMWebProgressLayer.m in Sources */,
 				D5A502622068A261001EBE10 /* HttpResponse.m in Sources */,
+				D537ED8320917BB400A70E94 /* RequestCommand.m in Sources */,
 				D57CD4CC1FC3D5F9001446D8 /* UIImage+Color.m in Sources */,
 				D57CD4C71FC3D5F9001446D8 /* UIButton+Touch.m in Sources */,
 				D54DA0B4207C834B00EDD167 /* MineCalculatModel.m in Sources */,
 				D57CD4C91FC3D5F9001446D8 /* NSDictionary+UrlEncoding.m in Sources */,
 				D561828D207B7169009F68BC /* PersonDetailViewController.m in Sources */,
 				D568F0B8207F5B800055B53D /* PayDetailViewController.m in Sources */,
+				D57E3A7520907AE8008A1AFF /* MajordomoWKWebView.m in Sources */,
 				D57CD4CA1FC3D5F9001446D8 /* UITextField+Extension.m in Sources */,
 				D568F0A9207F0E100055B53D /* YMWebViewController.m in Sources */,
 				D53A66F42080582100FFFE0F /* APAuthV2Info.m in Sources */,

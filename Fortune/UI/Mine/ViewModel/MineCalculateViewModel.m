@@ -7,23 +7,20 @@
 //
 
 #import "MineCalculateViewModel.h"
+#import "RequestCommand.h"
 
 @implementation MineCalculateViewModel
 
 - (void)initSigin {
     [self.subject_getDate subscribeNext:^(id x) {
         [self.dataArray removeAllObjects];
-        HttpRequestMode *model = [[HttpRequestMode alloc]init];
-   
+        
         NSMutableDictionary *program = [[NSMutableDictionary alloc] init];
         [program addUnEmptyString:[ToolUtil dy_getDeviceUUID] forKey:@"uuid"];
         [program addUnEmptyString:[ToolUtil dy_getDeviceUUID] forKey:@"imei"];
-        model.name= @"测算历史";
-        model.parameters = program;
-        model.url = GetFortuneInfo;
-        [[HttpClient sharedInstance] requestApiWithHttpRequestMode:model Success:^(HttpRequest *request, HttpResponse *response) {
-
-            NSArray *array = [response.result arrayForKey:@"object"];
+        
+        [[RequestCommand shareCommand] GetFortuneInfo:program success:^(NSDictionary *result) {
+            NSArray *array = [result arrayForKey:@"object"];
             [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 MineCalculatModel *model = [[MineCalculatModel alloc] init];
                 [model getDataForServer:obj];
@@ -32,9 +29,10 @@
             if (self.block_reloadDate) {
                 self.block_reloadDate();
             }
-        } Failure:^(HttpRequest *request, HttpResponse *response) {
-            
+        } faild:^(NSString *error) {
+            [BasePopoverView showFailHUDToWindow:error];
         }];
+        
     }];
 
 }

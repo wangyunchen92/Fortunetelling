@@ -21,7 +21,7 @@
 #define DLOG(...)  //DLog(...) NSlog(...)
 #endif
 //缺省超时时间
-#define TIMEOUTINTERVAL 30
+#define TIMEOUTINTERVAL 10
 
 @class HttpRequest;
 @class HttpResponse;

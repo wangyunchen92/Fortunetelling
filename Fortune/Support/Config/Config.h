@@ -21,7 +21,7 @@ dispatch_async(dispatch_get_main_queue(), block); \
 
 #define kChannel              @"qsjk"
 #define KType                 @"qsjk"
-#define kJpushAppKey          @"bf435c4f4bb479fb6e11da1e"//借点花花
+#define kJpushAppKey          @"bf435c4f4bb479fb6e11da1e"
 #define kUMAppKey             @"5ac1f1ebb27b0a36f80000e3"
 #define kIsProduct            YES
 
