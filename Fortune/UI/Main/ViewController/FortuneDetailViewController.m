@@ -157,7 +157,7 @@
 
 - (IBAction)fourClick:(id)sender {
     YMWebViewController *WVC = [[YMWebViewController alloc] init];
-    WVC.urlStr = @"http://tools.2345.com/m/zhgjm.htm?from=calendar";
+    WVC.urlStr = @"https://tools.2345.com/m/zhgjm.htm?from=calendar";
     WVC.titleStr = @"周公解梦";
      WVC.isloadweb = 1;
     [self.navigationController pushViewController:WVC animated:YES];

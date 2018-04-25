@@ -8,11 +8,13 @@
 
 #import "YMWebViewController.h"
 #import <WebKit/WebKit.h>
+#import <WebKit/WebKit.h>
 #import <JavaScriptCore/JavaScriptCore.h>
 
 
-@interface YMWebViewController ()<WKUIDelegate,UIWebViewDelegate>
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@interface YMWebViewController ()<WKUIDelegate,WKNavigationDelegate,UIWebViewDelegate>
+//@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (nonatomic, strong)WKWebView *webView;
 @property(nonatomic,strong)YMWebProgressLayer *progressLayer; ///< 网页加载进度条
 @property(nonatomic,strong)MBProgressHUD* hub;
 @property (nonatomic, strong) dispatch_source_t timer;
@@ -30,9 +32,12 @@
     [self.theSimpleNavigationBar.titleButton setTitleColor: [UIColor whiteColor] forState:UIControlStateNormal];
     self.theSimpleNavigationBar.bottomLineView.backgroundColor = [UIColor clearColor];
     //加载界面
-    self.webView.delegate = self;
+    self.webView = [[WKWebView alloc] init];
+    self.webView.frame = CGRectMake(0, 64, kScreenWidth, kScreenHeight-64);
+    [self.view addSubview:self.webView];
+    self.webView.UIDelegate = self;
+    self.webView.navigationDelegate = self;
     self.webView.userInteractionEnabled = YES;
-    self.webView.scalesPageToFit = YES;
     [RACObserve(self, urlStr) subscribeNext:^(id x) {
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: [NSURL URLWithString:self.urlStr]];
         NSLog(@"urls ==- %@",self.urlStr);
@@ -83,44 +88,38 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - UIWebViewDelegate
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    webView.alpha = 0;
-     NSLog(@"开始加载数据 request == %@",request);
-    [self.progressLayer startLoad];
-   
-    
-    
-//    [content evaluateScript:@"hideOther()"];
-    return YES;
-}
 
-- (void)webViewDidStartLoad:(UIWebView *)webView {
+// 页面开始加载时调用
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
+     webView.alpha = 0;
+    self.isloadJS = YES;
      [self.progressLayer startLoad];
-     self.isloadJS = YES;
-    self.loadtag ++;
 }
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    NSLog(@"%@",[webView.request.URL absoluteString]);
-    if (self.isloadweb  == 1) {
-        if (!webView.isLoading){
-            return;
-        }
-    } else if (self.isloadweb == 2) {
-        if (webView.isLoading){
-            return;
-        }
-    }
-
+// 当内容开始返回时调用
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
     
-//    self.loadtag --;
-//    if (self.loadtag > 0) {
-//        return;
+}
+// 页面加载完成之后调用
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
+    
+//    if (self.isloadweb  == 1) {
+//        if (!webView.isLoading){
+//            return;
+//        }
+//    } else if (self.isloadweb == 2) {
+//        if (webView.isLoading){
+//            return;
+//        }
 //    }
-
+    
+    
+    //    self.loadtag --;
+    //    if (self.loadtag > 0) {
+    //        return;
+    //    }
+    
     if (self.isloadJS) {
-        JSContext *content = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+//        JSContext *content = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
         NSString *hideId = @"function hideId(str){\
         var oDiv =  document.getElementsByTagName('div');\
         for(var i=0; i<oDiv.length; i++)\
@@ -215,24 +214,32 @@
             self.webfile = hideId;
         }
         
-        [content evaluateScript:self.webfile];
+        [webView evaluateJavaScript:self.webfile completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+            
+        }];
+        
+        [webView evaluateJavaScript:@"hideOther()" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+            [self.progressLayer finishedLoad];
+            [BasePopoverView hideHUDForWindow:YES];
+            self.isloadJS = NO;
+            webView.alpha = 1;
+        }];
 
-        [content evaluateScript:@"hideOther()"];
-        [self.progressLayer finishedLoad];
-        [BasePopoverView hideHUDForWindow:YES];
-        self.isloadJS = NO;
-        
-        
-        webView.alpha = 1;
     }
+}
+// 页面加载失败时调用
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation{
     
-
-
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-      [self.hub removeFromSuperview];
-      [self.progressLayer finishedLoad];
+// 在收到响应后，决定是否跳转
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
+    
+    NSLog(@"开始加载数据 request == %@",navigationResponse.response.URL.absoluteString);
+    //允许跳转
+    decisionHandler(WKNavigationResponsePolicyAllow);
+    
+    //不允许跳转
+    //decisionHandler(WKNavigationResponsePolicyCancel);
 }
-
 @end

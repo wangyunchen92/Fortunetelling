@@ -73,7 +73,7 @@
             [model getdateForServer:dic];
             personViewModel.topModel = model;
             personViewModel.boardArray = [dic arrayForKey:@"info"];
-            if (!([[dic objectForKey:@"is_test"] integerValue]) == 1) {
+            if (([[dic objectForKey:@"is_test"] integerValue]) == 1) {
                 if (self.block_personDetail) {
                     self.block_personDetail(personViewModel);
                 }
