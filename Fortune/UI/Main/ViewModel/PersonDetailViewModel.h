@@ -15,4 +15,5 @@
 @property (nonatomic, strong)PersonTopDetailModel *topModel;
 @property (nonatomic, strong)NSMutableArray *boardArray;
 
+
 @end

@@ -187,7 +187,6 @@
     nb.action = action;
     
     [nb reloadAllView];
-    nb.leftButton.frame = CGRectMake(30.0f/2, 6.0f, 181.0f/2, 60.0f/2);
     return nb;
 }
 

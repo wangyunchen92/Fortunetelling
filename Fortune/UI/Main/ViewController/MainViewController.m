@@ -11,6 +11,7 @@
 #import "MainViewModel.h"
 #import "FortuneDetailViewController.h"
 #import "YMWebViewController.h"
+#import "LovePairViewController.h"
 
 @interface MainViewController ()<NewPagedFlowViewDelegate,NewPagedFlowViewDataSource,UIScrollViewDelegate>
 @property (nonatomic, strong)NewPagedFlowView *pageView;
@@ -219,11 +220,11 @@
     [self.navigationController pushViewController:WVC animated:YES];
 }
 - (IBAction)bottomFirstClick:(id)sender {
-    YMWebViewController *WVC = [[YMWebViewController alloc] init];
-    WVC.urlStr = @"https://tools.2345.com/m/peidui/xingzuo/";
-     WVC.isloadweb = 2;
-    WVC.titleStr = @"婚姻测算";
-    [self.navigationController pushViewController:WVC animated:YES];
+    LovePairViewController *LVC = [[LovePairViewController alloc] init];
+//    WVC.urlStr = @"https://tools.2345.com/m/peidui/xingzuo/";
+//     WVC.isloadweb = 2;
+//    WVC.titleStr = @"婚姻测算";
+    [self.navigationController pushViewController:LVC animated:YES];
     
 }
 

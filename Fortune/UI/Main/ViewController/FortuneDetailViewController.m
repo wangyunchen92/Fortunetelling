@@ -195,20 +195,12 @@
     } else {
             return YES;
     }
-    
-
 }
 
 //根据正则，过滤特殊字符
 - (BOOL)filterCharactor:(NSString *)string withRegex:(NSString *)regexStr{
-//    NSString *searchText = string;
-//    NSError *error = NULL;
-//
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regexStr];
        return [predicate evaluateWithObject:string];
-//    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexStr options:NSRegularExpressionCaseInsensitive error:&error];
-//    NSString *result = [regex stringByReplacingMatchesInString:searchText options:NSMatchingReportCompletion range:NSMakeRange(0, searchText.length) withTemplate:@""];
-//    return result;
 }
 
 - (void)didReceiveMemoryWarning {

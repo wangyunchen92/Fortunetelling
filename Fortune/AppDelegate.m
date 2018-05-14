@@ -12,13 +12,16 @@
 #import "CommandTool.h"
 #import "HZLaunchImageViewController.h"
 
+#import "GDTSplashAd.h"
+#import "GDTSDKConfig.h"
 
 // 引入JPush功能所需头文件
 #import <JPUSHService.h>
 #import <UserNotifications/UserNotifications.h>
 
-@interface AppDelegate ()<JPUSHRegisterDelegate>
-
+@interface AppDelegate ()<JPUSHRegisterDelegate,GDTSplashAdDelegate>
+@property (strong, nonatomic) GDTSplashAd *splash;
+@property (retain, nonatomic) UIView *bottomView;
 @end
 
 @implementation AppDelegate
@@ -82,6 +85,8 @@
     }] flattenMap:^RACStream *(id value) {
         // APP 广告页面
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+
+            
 //                HZLaunchImageViewController *launchVC = [[HZLaunchImageViewController alloc] init];
 //                launchVC.block_activityViewClicked = ^(ActivityViewClickedTag clickedTag){
 //                    if (!(clickedTag == kActivityViewClickedView)) {
@@ -101,6 +106,26 @@
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             MainTabViewController *mainCtl = [[MainTabViewController alloc] init];
             self.window.rootViewController = mainCtl;
+            
+            [GDTSDKConfig setHttpsOn];
+            //开屏广告初始化并展示代码
+            GDTSplashAd *splash = [[GDTSplashAd alloc] initWithAppId:@"1106792551" placementId:@"5030637342814056"];
+            splash.delegate = self; //设置代理 //根据iPhone设备不同设置不同背景图
+            if ([[UIScreen mainScreen] bounds].size.height >= 568.0f) {
+                splash.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"LaunchImage-568h"]];
+            } else {
+                splash.backgroundColor = [UIColor colorWithPatternImage:[UIImage
+                                                                         imageNamed:@"LaunchImage"]];
+                
+            }
+            UIImage *splashImage = [UIImage imageNamed:@"SplashNormal"];
+            splash.fetchDelay = 3; //开发者可以设置开屏拉取时间，超时则放弃展示 //[可选]拉取并展示全屏开屏广告
+            UIImage *backgroundImage = [AppDelegate imageResize:splashImage
+                                                    andResizeTo:[UIScreen mainScreen].bounds.size];
+            splash.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
+            [splash loadAdAndShowInWindow:self.window];
+            self.splash = splash;
+            
             return nil;
         }];
         
@@ -111,7 +136,21 @@
     [subject_init sendNext:@1];
 }
 
++ (UIImage *)imageResize:(UIImage*)img andResizeTo:(CGSize)newSize
+{
+    CGFloat scale = [[UIScreen mainScreen] scale];
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, scale);
+    [img drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
 
+-(void)splashAdClosed:(GDTSplashAd *)splashAd
+{
+    NSLog(@"%s",__FUNCTION__);
+    self.splash = nil;
+}
 
 #pragma mark 极光初始化
 -(void)initJpushSDKWithOptions:(NSDictionary *)launchOptions{

@@ -33,8 +33,6 @@
             model.name= @"获取更新信息";
             model.url = GetApkUpdate;
             NSMutableDictionary *params = [NSMutableDictionary dictionary];
-            NSString *version = [kAppVersions stringByReplacingOccurrencesOfString:@"." withString:@""];
-            [params setObject:version forKey:@"app_version"];
             [params addUnEmptyString:@"default_channel" forKey:@"channel_key"];
             [params addUnEmptyString:@"com.ymnet.Fortune" forKey:@"package_name"];
             model.parameters = params;

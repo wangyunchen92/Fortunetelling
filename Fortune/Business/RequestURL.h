@@ -31,4 +31,7 @@ static NSString *const GetFortuneList = @"https://luck.youmeng.com/Api/Third/get
 
 // web筛选规则
 static NSString *const GetRuleList = @"https://luck.youmeng.com/Api/Wap/ruleList";
+
+// 八字合婚
+static NSString *const GetActionApi = @"https://luck.youmeng.com/Api/Marriage/actionApi.html";
 #endif /* RequestURL_h */

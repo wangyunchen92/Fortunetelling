@@ -55,7 +55,7 @@ static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
 #define kAppBuildVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
 #define kAppVersions [NSString stringWithFormat:@"%@.%@",[[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] componentsSeparatedByString:@"."][0],[[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] componentsSeparatedByString:@"."][1]]
 
-#define kUIWindow             [[[UIApplication sharedApplication] delegate]
+#define kUIWindow             [[UIApplication sharedApplication].delegate window] 
 
 #define kScreenBounds         [[UIScreen mainScreen] bounds]
 #define kScreenSize           [[UIScreen mainScreen] bounds].size                 //(e.g. 320,480)

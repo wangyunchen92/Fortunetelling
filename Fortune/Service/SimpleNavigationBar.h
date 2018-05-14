@@ -12,7 +12,7 @@
 
 
 #define NBFrameBG               CGRectMake(0, 0, kScreenWidth, kHeightNavigation)
-#define NBFrameBGIPHONEX               CGRectMake(0, 24, kScreenWidth, kHeightNavigation)
+#define NBFrameBGIPHONEX        CGRectMake(0, 24, kScreenWidth, kHeightNavigation)
 
 #define NBFrameLeftBtnBG        CGRectMake(0, kHeightStatusBar, kNBButtonWidth, kHeightCellNormal)
 #define NBFrameMainBtnLeft      CGRectMake(20, 12, 11, 20)
