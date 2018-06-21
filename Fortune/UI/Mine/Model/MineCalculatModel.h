@@ -13,5 +13,6 @@
 @property (nonatomic, copy)NSString *personName;
 @property (nonatomic, copy)NSString *date;
 @property (nonatomic, copy)NSString *programId;
+@property (nonatomic, assign)CeSuanType type;
 - (void)getDataForServer:(NSDictionary *)dic;
 @end

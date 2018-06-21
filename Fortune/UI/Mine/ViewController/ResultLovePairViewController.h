@@ -10,4 +10,5 @@
 #import "ResultLovePairViewModel.h"
 @interface ResultLovePairViewController : BaseViewController
 @property (nonatomic, strong)ResultLovePairViewModel *viewModel;
+- (instancetype)initWithViewModel:(ResultLovePairViewModel *)viewModel;
 @end

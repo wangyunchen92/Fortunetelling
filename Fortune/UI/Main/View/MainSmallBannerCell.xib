@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainSmallBannerCell">
+            <connections>
+                <outlet property="imageView" destination="nHY-jx-eoO" id="TJb-yT-45p"/>
+                <outlet property="titleLabel" destination="c6n-iS-oM6" id="btX-7M-lUU"/>
+                <outlet property="view" destination="iN0-l3-epB" id="rJf-Yj-3JH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="166" height="97"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="抽签占卜" translatesAutoresizingMaskIntoConstraints="NO" id="nHY-jx-eoO">
+                    <rect key="frame" x="58" y="13" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="3gJ-Lr-Msn"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="dHO-4V-SCr"/>
+                        <constraint firstAttribute="height" constant="50" id="e6T-mP-Q1k"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="vMM-74-ENZ"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="婚姻测算" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6n-iS-oM6">
+                    <rect key="frame" x="56.5" y="73" width="53.5" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="nHY-jx-eoO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Fsa-qb-H9k"/>
+                <constraint firstItem="nHY-jx-eoO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="13" id="MTM-5q-zue"/>
+                <constraint firstItem="c6n-iS-oM6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Xpb-qF-gg4"/>
+                <constraint firstItem="c6n-iS-oM6" firstAttribute="top" secondItem="nHY-jx-eoO" secondAttribute="bottom" constant="10" id="o9d-Sx-xkm"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-71" y="-230.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="抽签占卜" width="33" height="33"/>
+    </resources>
+</document>

@@ -17,6 +17,5 @@
 @property(nonatomic,copy)NSString* urlStr;
 @property (nonatomic, copy)NSString *webfile;
 @property (nonatomic, copy)void (^complete)(void);
-@property (nonatomic, assign)NSInteger isloadweb;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "MainViewModel.h"
+#import "MainCellModel.h"
 
 @implementation MainViewModel
 - (instancetype)init {
@@ -14,12 +15,73 @@
     if (self) {
         
         _bannerArray = [[NSMutableArray alloc] init];
-        [_bannerArray addObject:@"Banner1"];
-        [_bannerArray addObject:@"测算页banner"];
-        [_bannerArray addObject:@"Banner2"];
-
+        _bigBannerArray = [[NSArray alloc] init];
+        _smallBannerArray = [[NSArray alloc] init];
+        _subject_getServerData = [[RACSubject alloc] init];
+        [self getServerDate];
     }
     return self;
+}
+- (void)getServerDate {
+    
+    [self.subject_getServerData subscribeNext:^(id x) {
+        [self.bannerArray removeAllObjects];
+        HttpRequestMode *model = [[HttpRequestMode alloc]init];
+        NSMutableDictionary *program = [[NSMutableDictionary alloc] init];
+        
+        model.name= @"动态获取首页配置";
+        model.parameters = program;
+        model.url = GetBannerListpi;
+        [[HttpClient sharedInstance] requestApiWithHttpRequestMode:model Success:^(HttpRequest *request, HttpResponse *response) {
+            [[response.result arrayForKey:@"banner"] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                MainCellModel *model = [[MainCellModel alloc] init];
+                [model getDateForServer:obj];
+                [self.bannerArray addObject:model];
+                
+            }];
+            
+            NSComparator cmptr = ^(MainCellModel* obj1, MainCellModel* obj2){
+                if (obj1.sort > obj2.sort) {
+                    return (NSComparisonResult)NSOrderedAscending;
+                }
+                
+                if (obj1.position < obj2.position) {
+                    return (NSComparisonResult)NSOrderedDescending;
+                }
+                return (NSComparisonResult)NSOrderedSame;
+            };
+            
+            {
+                NSMutableArray *mutarr = [[NSMutableArray alloc] init];
+                [[response.result arrayForKey:@"big"] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    MainCellModel *model = [[MainCellModel alloc] init];
+                    [model getDateForServer:obj];
+                    [mutarr addObject:model];
+                    
+                }];
+                self.bigBannerArray = [mutarr sortedArrayUsingComparator:cmptr];
+            }
+            
+            {
+                NSMutableArray *mutarr = [[NSMutableArray alloc] init];
+                
+                [[response.result arrayForKey:@"small"] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    MainCellModel *model = [[MainCellModel alloc] init];
+                    [model getDateForServer:obj];
+                    [mutarr addObject:model];
+                }];
+                
+                self.smallBannerArray = [mutarr sortedArrayUsingComparator:cmptr];
+                
+            }
+
+            if (self.block_getServerData) {
+                self.block_getServerData();
+            }
+        } Failure:^(HttpRequest *request, HttpResponse *response) {
+            
+        }];
+    }];
 }
 
 - (void)initSigin {
@@ -43,5 +105,8 @@
             
         }];
     }];
+    
+    
+    
 }
 @end

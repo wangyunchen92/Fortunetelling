@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *personNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (nonatomic, copy)NSString *programId;
+@property (nonatomic, assign)CeSuanType type;
 
 
 @end
@@ -30,6 +31,7 @@
     self.personNameLabel.text = model.personName;
     self.dateLabel.text = model.date;
     self.programId = model.programId;
+    self.type = model.type;
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
@@ -38,7 +40,7 @@
 }
 - (IBAction)buttonClick:(id)sender {
     if (self.block_detailButtonClick) {
-        self.block_detailButtonClick(self.programId);
+        self.block_detailButtonClick(self.programId,self.type);
     }
 }
 

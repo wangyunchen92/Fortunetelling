@@ -12,6 +12,11 @@
 #import "PersonDetailViewController.h"
 #import "FortuneDetailViewController.h"
 
+#import "ResultLovePairViewModel.h"
+#import "ResultLovePairViewController.h"
+#import "ResultNameViewModel.h"
+#import "ResultNameViewController.h"
+
 @interface MineCalculateListViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong)MineCalculateViewModel *viewModel;
@@ -56,11 +61,26 @@
     MineCalculateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MineCalculateTableViewCell class]) forIndexPath:indexPath];
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [cell getDataForModel:self.viewModel.dataArray[indexPath.row]];
-    cell.block_detailButtonClick = ^(NSString *programId) {
-        PersonDetailViewModel *VCviewModel = [[PersonDetailViewModel alloc] init];
-        VCviewModel.programId = programId;
-        PersonDetailViewController *VC = [[PersonDetailViewController alloc] initWithViewModel:VCviewModel];
-        [self.navigationController pushViewController:VC animated:YES];
+    cell.block_detailButtonClick = ^(NSString *programId,CeSuanType type) {
+        [ReportStatisticsTool reportStatisticSerialNumber:bazi_cesuan jsonDataString:@"查看测算历史"];
+        if (type == fortune_CeSuanType) {
+            PersonDetailViewModel *VCviewModel = [[PersonDetailViewModel alloc] init];
+            VCviewModel.programId = programId;
+            PersonDetailViewController *VC = [[PersonDetailViewController alloc] initWithViewModel:VCviewModel];
+            [self.navigationController pushViewController:VC animated:YES];
+        } else if (type == name_CeSuanType) {
+            ResultNameViewModel *VCviewModel = [[ResultNameViewModel alloc] init];
+            VCviewModel.programId= programId;
+            ResultNameViewController *VC = [[ResultNameViewController alloc] initWithViewModel:VCviewModel];
+            [self.navigationController pushViewController:VC animated:YES];
+        } else if (type == marry_CeSuanType) {
+            ResultLovePairViewModel *VCviewModel = [[ResultLovePairViewModel alloc] init];
+            VCviewModel.programId = programId;
+            ResultLovePairViewController *VC = [[ResultLovePairViewController alloc] initWithViewModel:VCviewModel];
+            [self.navigationController pushViewController:VC animated:YES];
+        }
+        
+
     };
     return cell;
 }

@@ -10,6 +10,6 @@
 #import "MineCalculatModel.h"
 
 @interface MineCalculateTableViewCell : UITableViewCell
-@property (nonatomic, copy)void (^block_detailButtonClick)(NSString *programId);
+@property (nonatomic, copy)void (^block_detailButtonClick)(NSString *programId,CeSuanType);
 -(void)getDataForModel:(MineCalculatModel *)model;
 @end

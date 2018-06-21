@@ -21,13 +21,24 @@
 }
 
 - (void)getDataForServer:(NSDictionary *)dic {
-    self.personName = [dic stringForKey:@"name"];
-    self.programName = [dic stringForKey:@"project_name"];
     
-    if ([dic stringForKey:@"create_time"].length > 10) {
-        self.date = [[dic stringForKey:@"create_time"] substringToIndex:10];
+    
+    self.programName = [dic stringForKey:@"project_name"];
+    if ([self.programName isEqualToString:@"八字合婚"]) {
+        self.personName =[NSString stringWithFormat:@"%@,%@",[dic stringForKey:@"man_name"],[dic stringForKey:@"woman_name"]];
+        self.type = marry_CeSuanType;
+    } else if ([self.programName isEqualToString:@"八字测算"]) {
+        self.type = fortune_CeSuanType;
+        self.personName = [dic stringForKey:@"name"];
+    } else if ([self.programName isEqualToString:@"姓名测算"]){
+        self.type = name_CeSuanType;
+        self.personName = [dic stringForKey:@"name"];
+    }
+    
+    if ([dic stringForKey:@"create_date"].length > 10) {
+        self.date = [[dic stringForKey:@"create_date"] substringToIndex:10];
     } else {
-        self.date = [dic stringForKey:@"create_time"];
+        self.date = [dic stringForKey:@"create_date"];
     }
 
     self.programId = [dic stringForKey:@"id"];

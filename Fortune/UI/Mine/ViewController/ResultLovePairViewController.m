@@ -17,6 +17,14 @@
 @end
 
 @implementation ResultLovePairViewController
+
+- (instancetype)initWithViewModel:(ResultLovePairViewModel *)viewModel{
+    self = [super init];
+    if (self) {
+        self.viewModel = viewModel;
+    }
+    return self;
+}
 - (void)initData {
     self.viewModel = [[ResultLovePairViewModel alloc] init];
 

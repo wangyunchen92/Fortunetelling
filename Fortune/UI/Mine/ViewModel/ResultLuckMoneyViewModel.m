@@ -1,19 +1,18 @@
 //
-//  ResultLovePairViewModel.m
+//  ResultLockMoneyViewModel.m
 //  Fortune
 //
-//  Created by Sj03 on 2018/5/10.
+//  Created by Sj03 on 2018/5/21.
 //  Copyright © 2018年 Sj03. All rights reserved.
 //
 
-#import "ResultLovePairViewModel.h"
+#import "ResultLuckMoneyViewModel.h"
 
-@implementation ResultLovePairViewModel
-
+@implementation ResultLuckMoneyViewModel
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _topModel = [[ResultLovePairModel alloc] init];
+        _model = [[ResultLuckMoneyModel alloc] init];
         _boardArray = [[NSMutableArray alloc] init];
         _isgetDate = YES;
         [self initSigin];
@@ -35,12 +34,12 @@
             [program addUnEmptyString:[ToolUtil dy_getDeviceUUID] forKey:@"uuid"];
             [program addUnEmptyString:[ToolUtil dy_getDeviceUUID] forKey:@"imei"];
             [program addUnEmptyString:self.programId forKey:@"id"];
-            model.name= @"八字合婚测算历史详情";
+            model.name= @"姓名测算历史";
             model.parameters = program;
-            model.url = GetFortuneDetail;
+            model.url = GetNameHistory;
             [[HttpClient sharedInstance] requestApiWithHttpRequestMode:model Success:^(HttpRequest *request, HttpResponse *response) {
+            
                 
-
             } Failure:^(HttpRequest *request, HttpResponse *response) {
                 
             }];

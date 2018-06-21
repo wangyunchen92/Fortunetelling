@@ -79,7 +79,7 @@ static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
 
 
 // 默认值
-#define Version                @"1"
+#define Version                @"2"
 #define kNBButtonWidth          50
 #define kNBTitleWidth           160
 
@@ -141,6 +141,12 @@ NSAssert([sender isKindOfClass:[UIButton class]], @"sender必须是UIButton类�
 typedef NS_ENUM(NSInteger, NewType) {
     OneImage_NewType          = 0,//一张图片的新闻
     ThreeImage_NewType        = 1,//两张图片的新闻
+};
+
+typedef NS_ENUM(NSInteger,CeSuanType) {
+    fortune_CeSuanType     = 0,
+    marry_CeSuanType       = 1,
+    name_CeSuanType        = 2,
 };
 
 

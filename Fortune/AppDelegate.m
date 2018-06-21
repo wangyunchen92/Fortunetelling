@@ -146,6 +146,10 @@
     return newImage;
 }
 
+- (void)splashAdWillPresentFullScreenModal:(GDTSplashAd *)splashAd {
+    [ReportStatisticsTool reportStatisticSerialNumber:openapp_splash_ad jsonDataString:@"点击广点通广告"];
+}
+
 -(void)splashAdClosed:(GDTSplashAd *)splashAd
 {
     NSLog(@"%s",__FUNCTION__);
@@ -235,6 +239,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 }
 
 -(void)pushToCertainPageWithUserInfo:(NSDictionary* )userInfo{
+    [ReportStatisticsTool reportStatisticSerialNumber:j_push jsonDataString:@"收到极光推送通知"];
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     [JPUSHService setBadge:0];
 }

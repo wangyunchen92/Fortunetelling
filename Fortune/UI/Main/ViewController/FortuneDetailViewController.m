@@ -69,16 +69,19 @@
         [self.navigationController pushViewController:PayVC animated:YES];
     };
     self.viewModel.block_isWebTest = ^(NSString *programId, NSString *key, NSString *uUid, PersonDetailViewModel *model) {
+        [ReportStatisticsTool reportStatisticSerialNumber:pay_View jsonDataString:@"进入web支付"];
         @strongify(self);
         NSString *requestUrl = [NSString stringWithFormat:@"https://luck.youmeng.com/Wap/Fortune/pay.html?source=ios&key=%@&uUid=%@",key,uUid];
         PayWebViewController *webview = [[PayWebViewController alloc] init];
         webview.payurl = requestUrl;
         webview.block_payResult = ^(BOOL ispaysuccess) {
             if (ispaysuccess) {
+                [ReportStatisticsTool reportStatisticSerialNumber:bazi_cesuan jsonDataString:@"支付成功_进入结果页面"];
                 model.isgetDate = NO;
                 PersonDetailViewController *pVC = [[PersonDetailViewController alloc] initWithViewModel:model];
                 [self.navigationController pushViewController:pVC animated:YES];
             } else {
+                [ReportStatisticsTool reportStatisticSerialNumber:bazi_cesuan jsonDataString:@"支付失败..."];
                 [BasePopoverView showFailHUDToWindow:@"支付失败..."];
             }
         };
@@ -125,10 +128,12 @@
 
 - (IBAction)radioButtonClick:(RadioButton *)sender {
     NSLog(@"%@",sender.titleLabel.text);
+    self.viewModel.sex = sender.titleLabel.text;
 }
 
 
 - (IBAction)sureButtonClick:(id)sender {
+    [ReportStatisticsTool reportStatisticSerialNumber:bazi_cesuan jsonDataString:@"八字测算按钮点击"];
     [self.viewModel.subject_getDate sendNext:@YES];
 }
 
@@ -136,14 +141,12 @@
     YMWebViewController *WVC = [[YMWebViewController alloc] init];
     WVC.urlStr = @"http://tools.2345.com/m/shouxiang/?mrili&from=calendar";
     WVC.titleStr = @"手相解密";
-     WVC.isloadweb = 1;
     [self.navigationController pushViewController:WVC animated:YES];
 }
 - (IBAction)secendClick:(id)sender {
     YMWebViewController *WVC = [[YMWebViewController alloc] init];
     WVC.urlStr = @"http://tools.2345.com/m/suanming_zw.htm?mrili&from=calendar";
     WVC.titleStr = @"指纹算命";
-     WVC.isloadweb = 1;
     [self.navigationController pushViewController:WVC animated:YES];
     
 }
@@ -151,7 +154,6 @@
     YMWebViewController *WVC = [[YMWebViewController alloc] init];
     WVC.urlStr = @"http://tools.2345.com/m/zhanbu/guanyin/?from=calendar";
     WVC.titleStr = @"抽签占卜";
-     WVC.isloadweb = 1;
     [self.navigationController pushViewController:WVC animated:YES];
 }
 
@@ -159,7 +161,6 @@
     YMWebViewController *WVC = [[YMWebViewController alloc] init];
     WVC.urlStr = @"https://tools.2345.com/m/zhgjm.htm?from=calendar";
     WVC.titleStr = @"周公解梦";
-     WVC.isloadweb = 1;
     [self.navigationController pushViewController:WVC animated:YES];
 }
 

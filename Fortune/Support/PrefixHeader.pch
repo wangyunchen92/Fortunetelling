@@ -35,6 +35,8 @@
 #       import <UMCommon/UMCommon.h>   //公共组件是所有友盟产品的基础组件
 #       import <UMAnalytics/MobClick.h>//统计组件
 #       import <SSKeychain.h>
+#       import "ReportStatisticsTool.h"
+#       import "Statistics.h"
 
 
 #   endif//__OBJC__

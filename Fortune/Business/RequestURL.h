@@ -10,7 +10,7 @@
 #define RequestURL_h
 
 static  NSString *const GetCurlInfo = @"https://luck.youmeng.com/Api/Index/curlInfo.html";
-static  NSString *const GetFortuneInfo = @"https://luck.youmeng.com/Api/Index/getFortuneInfo.html";
+
 
 static  NSString *const GetConsteDetail = @"https://luck.youmeng.com/Api/Third/getFortuneList.html";
 
@@ -32,6 +32,26 @@ static NSString *const GetFortuneList = @"https://luck.youmeng.com/Api/Third/get
 // web筛选规则
 static NSString *const GetRuleList = @"https://luck.youmeng.com/Api/Wap/ruleList";
 
+#pragma -MARK 二期功能
 // 八字合婚
 static NSString *const GetActionApi = @"https://luck.youmeng.com/Api/Marriage/actionApi.html";
+
+static NSString *const GetNameActionApi = @"https://luck.youmeng.com/Api/Name/actionApi.html";
+
+
+static  NSString *const GetHistoryInfo = @"https://luck.youmeng.com/Api/Index/getHistoryInfo.html";
+
+// 姓名测算历史详情
+static  NSString *const GetNameHistory = @"https://luck.youmeng.com/Api/Name/getDetail.html";
+
+// 八字合婚历史详情
+static  NSString *const GetMarriageHistory = @"https://luck.youmeng.com/Api/Marriage/getDetail.html";
+
+//三生财运 测算
+static NSString *const GetWealthActionApi = @"https://luck.youmeng.com/Api/Wealth/actionApi.html";
+
+//首页动态配置
+static NSString *const GetBannerListpi = @"https://luck.youmeng.com/Api/Banner/getBannerList.html";
+
+
 #endif /* RequestURL_h */

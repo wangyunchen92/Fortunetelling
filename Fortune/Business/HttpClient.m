@@ -146,7 +146,6 @@ static HttpClient *httpClient = nil;
 
 }
 
-
 //通一请求累
 - (void)requestBaseWithName:(NSString *)name
                         Url:(NSString *)url

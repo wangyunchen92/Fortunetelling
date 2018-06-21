@@ -87,15 +87,12 @@
     FortuneDetailViewController *fvc = [[FortuneDetailViewController alloc] init];
     fvc.isshowNavback = NO;
     EveryDayViewController *evc = [[EveryDayViewController alloc] init];
-    
     MineCalculateListViewController *mvc = [[MineCalculateListViewController alloc] init];
 
-    
     DSNavViewController *hNav    = [[DSNavViewController alloc] initWithRootViewController:hvc];
     DSNavViewController *mNav    = [[DSNavViewController alloc] initWithRootViewController:mvc];
     DSNavViewController *eNav    = [[DSNavViewController alloc] initWithRootViewController:evc];
     DSNavViewController *fNav    = [[DSNavViewController alloc] initWithRootViewController:fvc];
-
     
     [self setTabBarItem:hNav
                   title:@"测算大全"
@@ -154,9 +151,21 @@
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-    
+    switch (tabBarController.selectedIndex) {
+        case 0:
+            [ReportStatisticsTool reportStatisticSerialNumber:main_home_module jsonDataString:@"首页"];
+            break;
+        case 1:
+            [ReportStatisticsTool reportStatisticSerialNumber:main_home_module jsonDataString:@"八字测算"];
+            break;
+        case 2:
+            [ReportStatisticsTool reportStatisticSerialNumber:main_home_module jsonDataString:@"每日宜忌"];
+            break;
+        case 3:
+            [ReportStatisticsTool reportStatisticSerialNumber:main_home_module jsonDataString:@"我的测算"];
+            break;
+        default:
+            break;
+    }
 }
-
-
-
 @end
