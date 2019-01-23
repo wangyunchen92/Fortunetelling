@@ -38,6 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.viewModel = [[MainViewModel alloc] init];
+    self.viewModel.view = self.view;
     [self createNavWithTitle:@"八字算命解梦" leftText:@"" rightText:@""];
     self.theSimpleNavigationBar.backgroundColor = defaultColor;
     [self.theSimpleNavigationBar.titleButton setTitleColor: [UIColor whiteColor] forState:UIControlStateNormal];
@@ -70,6 +71,7 @@
         self.yiLabel.font = [UIFont systemFontOfSize:13];
         self.jiLabel.font = [UIFont systemFontOfSize:13];
     }
+
     [self.viewModel.subject_getDate sendNext:@YES];
     [self.viewModel.subject_getServerData sendNext:@YES];
     // Do any additional setup after loading the view from its nib.
@@ -306,13 +308,13 @@
             FortuneDetailViewController *FVC = [[FortuneDetailViewController alloc] init];
             FVC.isshowNavback = YES;
             [self.navigationController pushViewController:FVC animated:YES];
-        } else if ([model.redirect_url isEqualToString:@"sanshi_raw"]) {
+        } else if ([model.redirect_url isEqualToString:@"liunian_raw"]) {
             LuckMoneyViewController *LVC = [[LuckMoneyViewController alloc] init];
             [self.navigationController pushViewController:LVC animated:YES];
         } else if ([model.redirect_url isEqualToString:@"xingming_raw"]) {
             NameCalculateViewController *NVC = [[NameCalculateViewController alloc] init];
             [self.navigationController pushViewController:NVC animated:YES];
-        } else if ([model.redirect_url isEqualToString:@"hehun_raw"]) {
+        } else if ([model.redirect_url isEqualToString:@"shinian_raw"]) {
             LovePairViewController *LVC = [[LovePairViewController alloc] init];
             [self.navigationController pushViewController:LVC animated:YES];
         } else if ([model.redirect_url isEqualToString:@"shouxiang_h5"]) {

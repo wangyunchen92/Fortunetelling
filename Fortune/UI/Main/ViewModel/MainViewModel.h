@@ -10,6 +10,7 @@
 @class MainCellModel;
 
 @interface MainViewModel : BaseViewModel
+@property (nonatomic, strong)UIView *view;
 @property (nonatomic, strong)NSMutableArray <MainCellModel *>*bannerArray;
 @property (nonatomic, strong)NSString *webfile;
 @property (nonatomic, strong)RACSubject *subject_getServerData;

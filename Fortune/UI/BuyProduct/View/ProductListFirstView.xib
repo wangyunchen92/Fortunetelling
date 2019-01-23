@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductListFirstView">
+            <connections>
+                <outlet property="imageView" destination="BtG-CR-cWY" id="hrF-di-kNe"/>
+                <outlet property="subLabel" destination="zes-4m-LeA" id="1aZ-J9-fVu"/>
+                <outlet property="sureButton" destination="TZ2-un-0t9" id="ncR-Fv-ERW"/>
+                <outlet property="title" destination="cMt-F3-Kqw" id="Eqj-IQ-TPp"/>
+                <outlet property="view" destination="iN0-l3-epB" id="THh-pX-r3S"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="590" height="176"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product" translatesAutoresizingMaskIntoConstraints="NO" id="BtG-CR-cWY">
+                    <rect key="frame" x="15" y="15" width="120" height="140"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="140" id="NmH-N9-gNG"/>
+                        <constraint firstAttribute="width" constant="120" id="j0v-tY-qvR"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开光霸王貔貅 财源广进" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMt-F3-Kqw">
+                    <rect key="frame" x="150" y="38" width="178" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <color key="textColor" red="0.46274509800000002" green="0.17254901959999999" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="招财进宝 驱邪避凶" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zes-4m-LeA">
+                    <rect key="frame" x="150" y="69.5" width="126.5" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.81960784310000001" green="0.34901960780000002" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZ2-un-0t9">
+                    <rect key="frame" x="150" y="102.5" width="100" height="33"/>
+                    <color key="backgroundColor" red="0.63529411764705879" green="0.3411764705882353" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="5I3-Nq-aST"/>
+                        <constraint firstAttribute="height" constant="33" id="fLw-kg-gGc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="立即购买">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="4"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.99607843139999996" green="0.98039215690000003" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BtG-CR-cWY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="9j1-Hb-TX2"/>
+                <constraint firstItem="cMt-F3-Kqw" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-40" id="DGz-cY-d2c"/>
+                <constraint firstItem="zes-4m-LeA" firstAttribute="leading" secondItem="cMt-F3-Kqw" secondAttribute="leading" id="Sl3-pL-uzr"/>
+                <constraint firstItem="TZ2-un-0t9" firstAttribute="leading" secondItem="zes-4m-LeA" secondAttribute="leading" id="dYn-bg-gxr"/>
+                <constraint firstItem="BtG-CR-cWY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="fde-h2-kbp"/>
+                <constraint firstItem="TZ2-un-0t9" firstAttribute="top" secondItem="zes-4m-LeA" secondAttribute="bottom" constant="15" id="h5f-rJ-wOh"/>
+                <constraint firstItem="cMt-F3-Kqw" firstAttribute="leading" secondItem="BtG-CR-cWY" secondAttribute="trailing" constant="15" id="qfk-Ws-lgt"/>
+                <constraint firstItem="zes-4m-LeA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-10" id="xMR-8Q-BsV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="140" y="158"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="product" width="66" height="66"/>
+    </resources>
+</document>

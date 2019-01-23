@@ -54,4 +54,15 @@ static NSString *const GetWealthActionApi = @"https://luck.youmeng.com/Api/Wealt
 static NSString *const GetBannerListpi = @"https://luck.youmeng.com/Api/Banner/getBannerList.html";
 
 
+//商品列表
+static NSString *const GetProductList = @"https://luck.youmeng.com/Api/Product/getProductList";
+
+//商品详情
+static NSString *const GetProductDetai = @"https://luck.youmeng.com/Api/Product/getProductDetail";
+
+// 预支付订单
+static NSString *const SaveShopOrder = @"https://luck.youmeng.com/Api/Product/saveShopOrder.html";
+
+
+
 #endif /* RequestURL_h */

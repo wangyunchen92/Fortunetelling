@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="166" height="97"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="抽签占卜" translatesAutoresizingMaskIntoConstraints="NO" id="nHY-jx-eoO">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nHY-jx-eoO">
                     <rect key="frame" x="58" y="13" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="3gJ-Lr-Msn"/>
@@ -30,8 +30,8 @@
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="vMM-74-ENZ"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="婚姻测算" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6n-iS-oM6">
-                    <rect key="frame" x="56.5" y="73" width="53.5" height="16"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6n-iS-oM6">
+                    <rect key="frame" x="80" y="73" width="6.5" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -48,7 +48,4 @@
             <point key="canvasLocation" x="-71" y="-230.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="抽签占卜" width="33" height="33"/>
-    </resources>
 </document>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PayResultViewController">
+            <connections>
+                <outlet property="sureButton" destination="AB4-ee-8YC" id="NWF-H7-u89"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="支付成功" translatesAutoresizingMaskIntoConstraints="NO" id="eOg-qm-v78">
+                    <rect key="frame" x="137.5" y="223.5" width="100" height="140"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="2T5-bQ-kQt"/>
+                        <constraint firstAttribute="height" constant="140" id="jQa-hs-3nz"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AB4-ee-8YC">
+                    <rect key="frame" x="40" y="553" width="295" height="44"/>
+                    <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="2Q3-Pq-tkO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="完  成">
+                        <color key="titleColor" red="0.0" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="6"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="sureButtonClick:" destination="-1" eventType="touchUpInside" id="2Uj-8v-UbI"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付成功" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPD-1s-07W">
+                    <rect key="frame" x="137.5" y="373.5" width="101.5" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="mPD-1s-07W" firstAttribute="top" secondItem="eOg-qm-v78" secondAttribute="bottom" constant="10" id="1y6-DC-vgg"/>
+                <constraint firstItem="eOg-qm-v78" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2kK-Tt-4qb"/>
+                <constraint firstItem="mPD-1s-07W" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="58J-eK-UB3"/>
+                <constraint firstItem="AB4-ee-8YC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="76I-IE-Y4L"/>
+                <constraint firstAttribute="bottom" secondItem="AB4-ee-8YC" secondAttribute="bottom" constant="70" id="90q-zM-txl"/>
+                <constraint firstItem="eOg-qm-v78" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-40" id="cu9-p7-zrP"/>
+                <constraint firstItem="AB4-ee-8YC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lM4-XS-wht"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="支付成功" width="56" height="86"/>
+    </resources>
+</document>

@@ -128,4 +128,7 @@
 
 //设置layer
 + (void)viewLayerWithView:(UIView* )view  cornerRadius:(CGFloat)cornerRadius boredColor:(UIColor* )boredColor borderWidth:(CGFloat)borderWidth;
+
+// 绘制虚线
++ (void)addline:(UIView *)view;
 @end

@@ -20,6 +20,7 @@
         model.name= @"测算历史";
         model.parameters = program;
         model.url = GetHistoryInfo;
+        
         [[HttpClient sharedInstance] requestApiWithHttpRequestMode:model Success:^(HttpRequest *request, HttpResponse *response) {
             NSArray *array = [response.result arrayForKey:@"object"];
             [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

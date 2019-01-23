@@ -14,6 +14,8 @@
 #import "FortuneDetailViewController.h"
 #import "EveryDayViewController.h"
 
+#import "ProductListViewController.h"
+
 
 @interface MainTabViewController()<UITabBarControllerDelegate>
 
@@ -86,7 +88,7 @@
     MainViewController *hvc      = [[MainViewController alloc] init];
     FortuneDetailViewController *fvc = [[FortuneDetailViewController alloc] init];
     fvc.isshowNavback = NO;
-    EveryDayViewController *evc = [[EveryDayViewController alloc] init];
+    ProductListViewController *evc = [[ProductListViewController alloc] init];
     MineCalculateListViewController *mvc = [[MineCalculateListViewController alloc] init];
 
     DSNavViewController *hNav    = [[DSNavViewController alloc] initWithRootViewController:hvc];
@@ -107,7 +109,7 @@
                     tag:2];
     
     [self setTabBarItem:eNav
-                  title:@"每日宜忌"
+                  title:@"商品"
             selectImage:@"每日宜忌选中"
           unselectImage:@"每日宜忌未选中"
                     tag:3];

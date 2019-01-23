@@ -28,11 +28,12 @@
         [self.bannerArray removeAllObjects];
         HttpRequestMode *model = [[HttpRequestMode alloc]init];
         NSMutableDictionary *program = [[NSMutableDictionary alloc] init];
-        
+        [BasePopoverView showHUDAddedTo:self.view animated:YES withMessage:@"加载中..."];
         model.name= @"动态获取首页配置";
         model.parameters = program;
         model.url = GetBannerListpi;
         [[HttpClient sharedInstance] requestApiWithHttpRequestMode:model Success:^(HttpRequest *request, HttpResponse *response) {
+            [BasePopoverView hideHUDForView:self.view animated:YES];
             [[response.result arrayForKey:@"banner"] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 MainCellModel *model = [[MainCellModel alloc] init];
                 [model getDateForServer:obj];

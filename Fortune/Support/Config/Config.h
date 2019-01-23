@@ -47,6 +47,13 @@ static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
 #endif
 
 
+#ifdef DEBUG
+# define DLog(fmt, ...) NSLog((@"[文件名:%s]\n" "[函数名:%s]\n" "[行号:%d] \n" fmt), __FILE__, __FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+# define DLog(...);
+#endif
+
+
 
 #define iPhone4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
 #define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
@@ -126,10 +133,10 @@ errorString = [NSString stringWithFormat:@"NSDebugDescription:%@",dict[@"NSDebug
 }else{\
 errorString = error.description;\
 }\
-[[[UIAlertView alloc] initWithTitle:@"温馨提示"\
+[[[UIAlertView alloc] initWithTitle:@"温馨提示" \
 message:[NSString stringWithFormat:@"url:%@\nparams:%@\nerror.description:%@",url,params,errorString]\
 delegate:nil\
-cancelButtonTitle:@"好的"\
+cancelButtonTitle:@"好的" \
 otherButtonTitles:nil] show];\
 
 #define NAV_BACKBUTTON_DISABLE(sender) \

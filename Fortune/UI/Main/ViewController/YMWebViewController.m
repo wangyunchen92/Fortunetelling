@@ -40,7 +40,7 @@
     self.webView.userInteractionEnabled = YES;
     [RACObserve(self, urlStr) subscribeNext:^(id x) {
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: [NSURL URLWithString:self.urlStr]];
-        NSLog(@"urls ==- %@",self.urlStr);
+        DLog(@"urls ==- %@",self.urlStr);
         [self.webView loadRequest:request];
     }];
     self.loadtag = 0;
@@ -81,7 +81,7 @@
     [self.progressLayer removeFromSuperlayer];
     self.progressLayer = nil;
     self.webView = nil;
-    NSLog(@"i am dealloc");
+    DLog(@"i am dealloc");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -235,7 +235,7 @@
 // 在收到响应后，决定是否跳转
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
     
-    NSLog(@"开始加载数据 request == %@",navigationResponse.response.URL.absoluteString);
+    DLog(@"开始加载数据 request == %@",navigationResponse.response.URL.absoluteString);
     //允许跳转
     decisionHandler(WKNavigationResponsePolicyAllow);
     
