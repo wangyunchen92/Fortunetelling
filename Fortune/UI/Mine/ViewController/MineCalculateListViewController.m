@@ -18,6 +18,7 @@
 #import "ResultNameViewController.h"
 
 @interface MineCalculateListViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewTopConstraint;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong)MineCalculateViewModel *viewModel;
 @property (weak, nonatomic) IBOutlet UIView *noNumberView;
@@ -47,6 +48,7 @@
         }
         
     };
+    self.viewTopConstraint.constant = iPhoneX ? 88 : 64;
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];

@@ -13,6 +13,7 @@
 @interface PayWebViewController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property(nonatomic,strong)YMWebProgressLayer *progressLayer; ///< 网页加载进度条
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewTopConstraint;
 @property(nonatomic,strong)MBProgressHUD* hub;
 @end
 
@@ -25,6 +26,7 @@
     [self.theSimpleNavigationBar.titleButton setTitleColor: [UIColor whiteColor] forState:UIControlStateNormal];
     self.webView.delegate = self;
     self.theSimpleNavigationBar.bottomLineView.backgroundColor = [UIColor clearColor];
+    self.viewTopConstraint.constant = iPhoneX ? 88 : 64;
     // Do any additional setup after loading the view from its nib.
 }
 

@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *bannerImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewTopConstraint;
 
 @end
 
@@ -71,7 +72,7 @@
     self.viewModel.block_isWebTest = ^(NSString *programId, NSString *key, NSString *uUid, PersonDetailViewModel *model) {
         [ReportStatisticsTool reportStatisticSerialNumber:pay_View jsonDataString:@"进入web支付"];
         @strongify(self);
-        NSString *requestUrl = [NSString stringWithFormat:@"https://luck.youmeng.com/Wap/Fortune/pay.html?source=ios&key=%@&uUid=%@",key,uUid];
+        NSString *requestUrl = [NSString stringWithFormat:@"https://shenxingnet.com/Wap/Pay/pay.html?source=ios&key=%@&uUid=%@",key,uUid];
         PayWebViewController *webview = [[PayWebViewController alloc] init];
         webview.payurl = requestUrl;
         webview.block_payResult = ^(BOOL ispaysuccess) {
@@ -103,6 +104,7 @@
     }] subscribeNext:^(id x) {
         self.viewModel.lastName = x;
     }];
+    self.viewTopConstraint.constant = iPhoneX ? 88 : 64;
     
 }
 
@@ -174,12 +176,12 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
 
-    
-    if ([string containsString:@"-"] || [string containsString:@"+"]) {
-        // 禁止粘贴"-"和"+"
-        return NO;
-    }
-    
+//    
+//    if ([string containsString:@"-"] || [string containsString:@"+"]) {
+//        // 禁止粘贴"-"和"+"
+//        return NO;
+//    }
+//    
     NSMutableString *mutableString = [NSMutableString stringWithString:textField.text];
     if ([string isEqualToString:@""]) {
         //删除

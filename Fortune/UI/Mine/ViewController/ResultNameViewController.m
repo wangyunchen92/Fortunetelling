@@ -13,6 +13,7 @@
 
 @interface ResultNameViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewTopConstraint;
 
 @end
 
@@ -46,6 +47,7 @@
         @strongify(self);
         [self.tableView reloadData];
     };
+    self.viewTopConstraint.constant = iPhoneX ? 88 : 64;
 }
 
 -(void)viewWillAppear:(BOOL)animated {

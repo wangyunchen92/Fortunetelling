@@ -24,7 +24,7 @@
 @property (nonatomic, copy)NSString *topContent;
 @property (nonatomic, copy)NSString *boardYi;
 @property (nonatomic, copy)NSString *boardJi;
-@property (nonatomic, strong)NSMutableArray *boardtopArray;
+@property (nonatomic, strong)NSMutableArray *boardtopArray; // 小时宜忌
 @property (nonatomic, copy)NSString *baizujinji;
 @property (nonatomic, strong)NSMutableArray *boardbottomArray;
 @property (nonatomic, strong)NSString *bottom;

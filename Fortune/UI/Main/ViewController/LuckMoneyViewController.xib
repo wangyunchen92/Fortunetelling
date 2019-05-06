@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,6 +15,7 @@
                 <outlet property="nameTextField" destination="Vsh-PM-yBQ" id="2LM-Cl-uRf"/>
                 <outlet property="radioButton" destination="fYo-cg-Awa" id="ofx-w2-Bc9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewTopConstraint" destination="Dzy-SM-pYn" id="Vrm-NP-j8g"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -54,7 +55,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择出生日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyz-M3-QZi">
-                                            <rect key="frame" x="96" y="14.5" width="93" height="16"/>
+                                            <rect key="frame" x="96" y="14" width="93" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.76078431369999999" green="0.75294117650000003" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -182,7 +183,7 @@
                                     <rect key="frame" x="0.0" y="48" width="94" height="80"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="手相算命" translatesAutoresizingMaskIntoConstraints="NO" id="9mR-dM-b2g">
-                                            <rect key="frame" x="21.5" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="22" y="0.0" width="50" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="Odu-CX-yKU"/>
                                                 <constraint firstAttribute="height" constant="50" id="uhQ-Wg-9dq"/>
@@ -206,10 +207,10 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDf-Y2-XAy">
-                                    <rect key="frame" x="281" y="48" width="94" height="80"/>
+                                    <rect key="frame" x="281.5" y="48" width="93.5" height="80"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="周公解梦入口球" translatesAutoresizingMaskIntoConstraints="NO" id="9te-Ox-NC4">
-                                            <rect key="frame" x="22" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="21.5" y="0.0" width="50" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="HrT-6z-Jxw"/>
                                                 <constraint firstAttribute="height" constant="50" id="t2m-xz-o3N"/>
@@ -232,17 +233,17 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZxX-Zf-ayq">
-                                    <rect key="frame" x="187.5" y="48" width="93.5" height="80"/>
+                                    <rect key="frame" x="187.5" y="48" width="94" height="80"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="抽签占卜" translatesAutoresizingMaskIntoConstraints="NO" id="gSN-Lc-mbl">
-                                            <rect key="frame" x="21.5" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="22" y="0.0" width="50" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="pR7-wq-LvU"/>
                                                 <constraint firstAttribute="width" constant="50" id="u3V-9O-3J6"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="抽签占卜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kF1-db-ZmK">
-                                            <rect key="frame" x="15.5" y="60" width="61.5" height="18"/>
+                                            <rect key="frame" x="16" y="60" width="61.5" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -258,7 +259,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3u-td-uvx">
-                                    <rect key="frame" x="233" y="23.5" width="40" height="1"/>
+                                    <rect key="frame" x="233.5" y="23.5" width="40" height="1"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="VIZ-lX-qsf"/>
@@ -266,13 +267,13 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您还可以" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkf-zX-C7R">
-                                    <rect key="frame" x="156.5" y="15" width="61.5" height="18"/>
+                                    <rect key="frame" x="157" y="15" width="61.5" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYH-Uk-PwM">
-                                    <rect key="frame" x="101.5" y="24" width="40" height="1"/>
+                                    <rect key="frame" x="102" y="23.5" width="40" height="1"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="hbQ-3V-tHH"/>
@@ -290,7 +291,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="指纹算命" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w35-6k-tmf">
-                                            <rect key="frame" x="15.5" y="60" width="61.5" height="18"/>
+                                            <rect key="frame" x="16" y="60" width="61.5" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -389,12 +390,12 @@
     <resources>
         <image name="checked" width="15" height="15"/>
         <image name="unchecked" width="15" height="15"/>
-        <image name="向下箭头图标" width="10" height="6"/>
+        <image name="向下箭头图标" width="10.5" height="6"/>
         <image name="周公解梦入口球" width="33" height="33"/>
         <image name="手相算命" width="33" height="33"/>
         <image name="抽签占卜" width="33" height="33"/>
         <image name="指纹算命" width="33" height="33"/>
-        <image name="测算页banner" width="250" height="76"/>
+        <image name="测算页banner" width="250" height="76.5"/>
         <image name="测算页花纹" width="250" height="106"/>
     </resources>
 </document>

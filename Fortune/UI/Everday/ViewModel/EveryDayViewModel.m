@@ -26,7 +26,7 @@
         [self.dataArray removeAllObjects];
         HttpRequestMode *model = [[HttpRequestMode alloc]init];
         NSMutableDictionary *program = [[NSMutableDictionary alloc] init];
-        [program addUnEmptyString:[ToolUtil stringFromDate:self.date] forKey:@"date"];
+        [program addUnEmptyString:[ToolUtil stringFromDate:self.date] forKey:@"cx_date"];
         model.name= @"每日宜忌";
         model.parameters = program;
         model.url = GetFortuneList;

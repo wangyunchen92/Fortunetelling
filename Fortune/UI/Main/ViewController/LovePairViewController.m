@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *femaleDateLabel;
 @property (weak, nonatomic) IBOutlet UITextField *maleNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *femaleNameTextField;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewTopConstraint;
 @property (nonatomic, strong)LovePairViewModel *viewModel;
 @end
 
@@ -50,6 +51,7 @@
     }] subscribeNext:^(id x) {
         self.viewModel.femaleName = x;
     }];
+    self.viewTopConstraint.constant = iPhoneX ? 88 : 64;
 }
 
 - (IBAction)getboyDateAction:(id)sender {

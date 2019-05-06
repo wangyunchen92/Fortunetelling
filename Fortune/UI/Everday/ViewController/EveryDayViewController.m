@@ -12,6 +12,7 @@
 #import "WSDatePickerView.h"
 
 @interface EveryDayViewController ()
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewTopConstraint;
 @property (nonatomic, strong)EveryDayViewModel *viewModel;
 @property (weak, nonatomic) IBOutlet UILabel *topTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *topConterntLabel;
@@ -31,6 +32,7 @@
     [super viewDidLoad];
     self.viewModel = [[EveryDayViewModel alloc] init];
     [self createNavWithTitle:[ToolUtil stringFromDate:self.viewModel.date format:@"yyyy年MM月dd日"]  leftImage:@"" rightImage:@"图层"];
+    [self.theSimpleNavigationBar.rightButton setFrame:CGRectMake(20, 10, 25, 25)];
     self.theSimpleNavigationBar.backgroundColor = defaultColor;
     [self.theSimpleNavigationBar.titleButton setTitleColor: [UIColor whiteColor] forState:UIControlStateNormal];
     self.theSimpleNavigationBar.bottomLineView.backgroundColor = [UIColor clearColor];
@@ -42,8 +44,8 @@
         self.topFirstLabel.text = self.viewModel.model.boardYi;
         self.topSecendLabel.text = self.viewModel.model.boardJi;
         [self.boardLabelArray enumerateObjectsUsingBlock:^(UILabel *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            YiJiModel *model = self.viewModel.model.boardtopArray[idx];
-            obj.text = model.showTitle;
+            obj.text = self.viewModel.model.boardtopArray[idx];
+            
         }];
         self.boardSecendLabel.text = self.viewModel.model.baizujinji;
         [self.boardSecendLabelArray enumerateObjectsUsingBlock:^(UILabel *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -52,12 +54,13 @@
         self.bottomLabel.text = self.viewModel.model.bottom;
     };
     self.topTitleLabel.userInteractionEnabled = YES;
+    self.viewTopConstraint.constant = iPhoneX ? 88 : 64;
     // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)pushDetailView:(id)sender {
-    EveryDayDetailViewController *EVC = [[EveryDayDetailViewController alloc] init];
-    EVC.dateArray = self.viewModel.model.boardtopArray;
-    [self.navigationController pushViewController:EVC animated:YES];
+//    EveryDayDetailViewController *EVC = [[EveryDayDetailViewController alloc] init];
+//    EVC.dateArray = self.viewModel.model.boardtopArray;
+//    [self.navigationController pushViewController:EVC animated:YES];
 }
 
 -(void)viewWillAppear:(BOOL)animated {

@@ -33,7 +33,8 @@
     self.theSimpleNavigationBar.bottomLineView.backgroundColor = [UIColor clearColor];
     //加载界面
     self.webView = [[WKWebView alloc] init];
-    self.webView.frame = CGRectMake(0, 64, kScreenWidth, kScreenHeight-64);
+    CGFloat topViewHeight = iPhoneX ? 88 : 64;
+    self.webView.frame = CGRectMake(0, topViewHeight, kScreenWidth, kScreenHeight-topViewHeight);
     [self.view addSubview:self.webView];
     self.webView.UIDelegate = self;
     self.webView.navigationDelegate = self;
@@ -58,7 +59,8 @@
 -(YMWebProgressLayer *)progressLayer{
     if (!_progressLayer) {
         _progressLayer = [YMWebProgressLayer new];
-        _progressLayer.frame = CGRectMake(0, 62, kScreenWidth, 2);
+        CGFloat topViewHeight = iPhoneX ? 88 : 64;
+        _progressLayer.frame = CGRectMake(0, topViewHeight, kScreenWidth, 2);
         _progressLayer.hidden = NO;
         [self.theSimpleNavigationBar.layer addSublayer:_progressLayer];
         // [self.navigationController.navigationBar.layer addSublayer:_progressLayer];

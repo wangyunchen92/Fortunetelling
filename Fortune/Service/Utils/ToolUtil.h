@@ -217,4 +217,6 @@
 
 #pragma -mark - 格式化AttributedString,多彩宝页面，我的资产页面的总资产
 + (NSMutableAttributedString *)changeAnnualizedIncomeLabelDisplayStyle:(NSString *)value;
+
++ (NSString *)getChineseDay;
 @end

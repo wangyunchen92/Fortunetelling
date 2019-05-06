@@ -14,6 +14,7 @@
 @interface NameCalculateViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (nonatomic, strong)NameCalculateViewModel *viewModel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewTopConstraint;
 
 @end
 
@@ -41,6 +42,7 @@
         RVC.viewModel.isgetDate = NO;
         [self.navigationController pushViewController:RVC animated:YES];
     };
+    self.viewTopConstraint.constant = iPhoneX ? 88 : 64;
     // Do any additional setup after loading the view from its nib.
 }
 

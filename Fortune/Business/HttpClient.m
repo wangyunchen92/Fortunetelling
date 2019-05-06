@@ -10,7 +10,7 @@
 
 #define HTTPURL @""
 #define HTTPIMAGEURL @""
-#define PrivalStr   @"e176de519a0a97a8"
+#define PrivalStr   @"sxwl@#$net2019&"
 
 @interface HttpClient ()
 @end

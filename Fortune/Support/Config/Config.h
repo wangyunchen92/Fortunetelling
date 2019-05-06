@@ -69,6 +69,8 @@ static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
 #define kScreenWidth          [[UIScreen mainScreen] bounds].size.width           //(e.g. 320)
 #define kScreenHeight         [[UIScreen mainScreen] bounds].size.height
 
+
+
 #define kApplicationSize      [[UIScreen mainScreen] applicationFrame].size       //(e.g. 320,460)
 #define kApplicationWidth     [[UIScreen mainScreen] applicationFrame].size.width //(e.g. 320)
 #define kApplicationHeight    [[UIScreen mainScreen] applicationFrame].size.height//不包含状态bar的高度(e.g. 460)
@@ -90,13 +92,15 @@ static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
 #define kNBButtonWidth          50
 #define kNBTitleWidth           160
 
-#define kHeightStatusBar        20
+#define kHeightStatusBar        iPhoneX ? 44 : 20
 #define kHeightTabBar           49
 #define kHeightNavigation       64
 #define kHeightNavigationCustomView 30
+#define KXHeightNavigation      88
 #define kHeightCustomNavigation kHeightNavigation+kHeightNavigationCustomView
 
 #define kHeightButtonBig        49
+#define KHeightDefault          iPhoneX ? 44 : 20
 #define kHeightCellNormal       44
 #define kHeightNormal           30
 #define kHeightCellNormalEx     40
@@ -143,6 +147,11 @@ otherButtonTitles:nil] show];\
 NSAssert([sender isKindOfClass:[UIButton class]], @"sender必须是UIButton类型");\
 [(UIButton*)sender setEnabled:NO];
 
+#define iPhoneX ({BOOL isPhoneX = NO;\
+if (@available(iOS 11.0, *)) {\
+isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
+}\
+(isPhoneX);})
 
 
 typedef NS_ENUM(NSInteger, NewType) {

@@ -11,6 +11,7 @@
 
 @interface EveryDayDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewTopConstraint;
 
 @end
 
@@ -23,6 +24,7 @@
     [self.theSimpleNavigationBar.titleButton setTitleColor: [UIColor whiteColor] forState:UIControlStateNormal];
     self.theSimpleNavigationBar.bottomLineView.backgroundColor = [UIColor clearColor];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([EveryDayTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([EveryDayTableViewCell class])];
+        self.viewTopConstraint.constant = iPhoneX ? 88 : 64;
     // Do any additional setup after loading the view from its nib.
 }
 - (void)viewDidAppear:(BOOL)animated {

@@ -12,6 +12,7 @@
 - (void)initSigin {
     
     [self.subject_getDate subscribeNext:^(id x) {
+
         if (!(self.name.length > 0)) {
             [BasePopoverView showFailHUDToWindow:@"请输入男方姓名"];
             return ;

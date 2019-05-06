@@ -19,6 +19,7 @@
 #import "MainSmallBannerCell.h"
 
 @interface MainViewController ()<NewPagedFlowViewDelegate,NewPagedFlowViewDataSource,UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topViewConstraint;
 @property (nonatomic, strong)NewPagedFlowView *pageView;
 @property (nonatomic, strong)UIPageControl *pageControl;
 @property (nonatomic, strong)MainViewModel *viewModel;
@@ -93,6 +94,7 @@
     self.pageControl = pageControl;
     [self.topMaskView addSubview:pageFlowView];
 
+    self.topViewConstraint.constant = iPhoneX ? 88 : 64;
     [self setDateForLabel];
 
 }

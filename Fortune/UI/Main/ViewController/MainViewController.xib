@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,6 +16,7 @@
                 <outlet property="dateYearLabel" destination="oZW-cJ-8Zm" id="HLY-YH-7Mb"/>
                 <outlet property="jiLabel" destination="aei-vG-Qdn" id="XeU-nV-uMJ"/>
                 <outlet property="topMaskView" destination="mQs-NY-pj4" id="NxR-Zp-nHc"/>
+                <outlet property="topViewConstraint" destination="MWc-vH-CJv" id="QFJ-eE-C2o"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="yiLabel" destination="m9I-39-K8N" id="jHQ-BR-3Gv"/>
                 <outletCollection property="bigBannerView" destination="6IR-2y-7EG" id="d1M-zu-D3y"/>
@@ -108,7 +108,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2i2-Bx-i3p">
-                                    <rect key="frame" x="78" y="55" width="28.5" height="72"/>
+                                    <rect key="frame" x="77.5" y="55" width="28.5" height="72"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="60"/>
                                     <color key="textColor" red="1" green="0.30980392159999998" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -169,7 +169,7 @@
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xTV-9X-F0u" customClass="MainSmallBannerCell">
-                            <rect key="frame" x="275" y="427" width="90.5" height="105"/>
+                            <rect key="frame" x="275.5" y="427" width="90.5" height="105"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <gestureRecognizers/>
                             <connections>
@@ -185,7 +185,7 @@
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssK-Yn-8BU" customClass="MainSmallBannerCell">
-                            <rect key="frame" x="275" y="533" width="90.5" height="104"/>
+                            <rect key="frame" x="275.5" y="533" width="90.5" height="104"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <gestureRecognizers/>
                             <connections>
@@ -204,7 +204,7 @@
                                     </connections>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pC-mD-Rlf" customClass="MainSmallBannerCell">
-                                    <rect key="frame" x="91" y="0.0" width="91.5" height="100"/>
+                                    <rect key="frame" x="91.5" y="0.0" width="91.5" height="100"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <gestureRecognizers/>
                                     <connections>

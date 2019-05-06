@@ -50,7 +50,7 @@
                     self.block_reloadDate();
                 }
             } Failure:^(HttpRequest *request, HttpResponse *response) {
-                
+                [BasePopoverView showFailHUDToWindow:response.errorMsg];
             }];
         }];
     }

@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (nonatomic, strong)LuckMoneyViewModel *viewModel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewTopConstraint;
 
 @end
 
@@ -45,6 +46,7 @@
         [self.navigationController pushViewController:RVC animated:YES];
     };
     
+    self.viewTopConstraint.constant = iPhoneX ? 88 : 64;
     // Do any additional setup after loading the view from its nib.
 }
 

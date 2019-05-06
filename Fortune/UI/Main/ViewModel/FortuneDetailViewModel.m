@@ -53,17 +53,15 @@
         model.url = GetCurlInfo;
         [pram addUnEmptyString:[ToolUtil dy_getDeviceUUID] forKey:@"imei"];
         [pram addUnEmptyString:[ToolUtil dy_getDeviceUUID] forKey:@"uuid"];
-        [pram addUnEmptyString:self.firstName forKey:@"xing"];
-        [pram addUnEmptyString:self.lastName forKey:@"ming"];
+        [pram addUnEmptyString:[NSString stringWithFormat:@"%@%@",self.firstName,self.lastName] forKey:@"name"];
         [pram addUnEmptyString:self.sex forKey:@"sex"];
         [pram addUnEmptyString:self.year forKey:@"year"];
         [pram addUnEmptyString:self.month forKey:@"month"];
         [pram addUnEmptyString:self.day forKey:@"day"];
         [pram addUnEmptyString:self.hour forKey:@"hour"];
-        [pram addUnEmptyString:self.min forKey:@"minute"];
+//        [pram addUnEmptyString:self.min forKey:@"minute"];
         model.name= @"八字算命";
         model.parameters = pram;
-        model.url = GetCurlInfo;
         [BasePopoverView showHUDToWindow:YES withMessage:@"提交中..."];
         [[HttpClient sharedInstance]requestApiWithHttpRequestMode:model Success:^(HttpRequest *request, HttpResponse *response) {
             [BasePopoverView hideHUDForWindow:YES];
@@ -77,6 +75,9 @@
                 if (self.block_personDetail) {
                     self.block_personDetail(personViewModel);
                 }
+//                if (self.block_isNoTest) {
+//                    self.block_isNoTest(model.projectId,personViewModel);
+//                }
             } else {
                 // 已经测算过
                 if ([[dic objectForKey:@"status"] integerValue] == 1) {

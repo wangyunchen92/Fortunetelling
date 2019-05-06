@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *payMoneyButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollerView;
 @property (nonatomic, strong)UIWebView *webview;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewTopConstraint;
 
 @end
 
@@ -57,7 +58,10 @@
     self.alPayView.layer.borderColor = RGB(209, 89, 82).CGColor;
     self.weiPayView.layer.borderWidth = 1;
     self.weiPayView.layer.borderColor = RGB(209, 89, 82).CGColor;
+    self.viewTopConstraint.constant = iPhoneX ? 88 : 64;
 }
+
+#warning -WZ未申请账号，暂时不做支付
 
 - (IBAction)alPayAction:(id)sender {
     
@@ -69,6 +73,7 @@
 
         self.webview.hidden = NO;
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.viewModel.webPayRequestUrl]];
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:sigin]];
         NSArray *cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage].cookies;
         //Cookies数组转换为requestHeaderFields
         NSDictionary *requestHeaderFields = [NSHTTPCookie requestHeaderFieldsWithCookies:cookies];
@@ -147,15 +152,36 @@
 
 
 #pragma mark - UIWebViewDelegate
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    NSLog(@"开始加载数据 request == %@",request);
+
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    
+    NSString *url = [request.URL.absoluteString stringByRemovingPercentEncoding];
+//    NSString* reUrl=[[webView URL] absoluteString];
+//    
+//    if ([url containsString:kBaseUrl]) {
+//        reUrl=url;
+//    }
+    
+    if ([url containsString:@"alipay://"]) {
+        NSInteger subIndex = 23;
+        NSString* dataStr=[url substringFromIndex:subIndex];
+        //编码
+        NSString *encodeString = [self encodeString:dataStr];
+        NSMutableString* mString=[[NSMutableString alloc] init];
+        [mString appendString:[url substringToIndex:subIndex]];
+        [mString appendString:encodeString];
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:mString]];
+        
+    }
     
     if ([[webView.request.URL absoluteString] containsString:@"detail"]) {
         if (self.block_payResult) {
             self.block_payResult(YES);
         }
     }
-    //    [content evaluateScript:@"hideOther()"];
     return YES;
 }
 
@@ -164,6 +190,28 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(NSString*)encodeString:(NSString*)unencodedString{
+    
+    // CharactersToBeEscaped = @":/?&=;+!@#$()~',*";
+    
+    // CharactersToLeaveUnescaped = @"[].";
+    
+    NSString *encodedString = (NSString *)
+    
+    CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+                                                              
+                                                              (CFStringRef)unencodedString,
+                                                              
+                                                              NULL,
+                                                              
+                                                              (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                              
+                                                              kCFStringEncodingUTF8));
+    
+    return encodedString;
+    
+}
 /*
 #pragma mark - Navigation
 

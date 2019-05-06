@@ -14,6 +14,7 @@
 
 @interface ResultLuckMoneyViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewTopConstraint;
 
 
 @end
@@ -48,6 +49,7 @@
     };
     self.tableView.estimatedRowHeight = 44;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.viewTopConstraint.constant = iPhoneX ? 88 : 64;
 }
 
 -(void)viewWillAppear:(BOOL)animated {

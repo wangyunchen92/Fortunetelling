@@ -32,7 +32,7 @@
 - (void)reloadAllView{
     // 背景View，在self 上面
     [self createNavBG];
-
+    
     // 标题
     [self createNavTitle];
     
@@ -45,10 +45,10 @@
     self.rightButton = [self createKeyButton:NBFrameMainBtn text:_rightText imageName:_rightImage];
     [self createNavButton:NBFrameRightBtnBG tag:NBButtonRight sonButton:self.rightButton];
     
-    // 右侧ex按钮
-    self.rightButtonEx = [self createKeyButton:NBFrameMainBtn text:_rightTextEx imageName:_rightImageEx];
-    [self createNavButton:NBFrameRightBtnExBG tag:NBButtonRightEx sonButton:self.rightButtonEx];
-
+    //    // 右侧ex按钮
+    //    self.rightButtonEx = [self createKeyButton:NBFrameMainBtn text:_rightTextEx imageName:_rightImageEx];
+    //    [self createNavButton:NBFrameRightBtnExBG tag:NBButtonRightEx sonButton:self.rightButtonEx];
+    
 }
 - (void)reloadCustomView
 {
@@ -74,7 +74,7 @@
     label.numberOfLines = 0;
     label.backgroundColor = [UIColor clearColor];
     [customView addSubview:label];
-
+    
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(@(kScreenWidth));
         make.height.equalTo(@(kHeightNavigationCustomView));
@@ -98,7 +98,7 @@
     }];
     
     // 标题
-    self.titleButton = [UIUtil createButton:CGRectMake((kScreenWidth - kNBTitleWidth) / 2, kHeightStatusBar+kHeightNavigationCustomView, kNBTitleWidth, kHeightCellNormal) title:self.title titleColor:kColorTitleBlack bgImage:IMAGE_NAME(self.titleImage) target:nil action:nil];
+    self.titleButton = [UIUtil createButton:CGRectMake((kScreenWidth - kNBTitleWidth) / 2, kHeightStatusBar+kHeightNavigationCustomView, kNBTitleWidth, kHeightCellNormal) title:self.title titleColor:kColorTitleBlack bgImage:self.titleImage? IMAGE_NAME(self.titleImage):nil target:nil action:nil];
     //    self.titleButton.backgroundColor = [UIColor blueColor];
     self.titleButton.titleLabel.font = [UIFont systemFontOfSize:17.0];
     self.titleButton.userInteractionEnabled = NO;
@@ -113,20 +113,20 @@
     self.rightButton = [self createKeyButton:NBFrameMainBtn text:_rightText imageName:_rightImage];
     [self createNavButton:CGRectMake(kScreenWidth - kNBButtonWidth, kHeightStatusBar+kHeightNavigationCustomView, kNBButtonWidth, kHeightCellNormal) tag:NBButtonRight sonButton:self.rightButton];
     
-    // 右侧ex按钮
-    self.rightButtonEx = [self createKeyButton:NBFrameMainBtn text:_rightTextEx imageName:_rightImageEx];
-    [self createNavButton:NBFrameRightBtnExBG tag:NBButtonRightEx sonButton:self.rightButtonEx];
+    //    // 右侧ex按钮
+    //    self.rightButtonEx = [self createKeyButton:NBFrameMainBtn text:_rightTextEx imageName:_rightImageEx];
+    //    [self createNavButton:NBFrameRightBtnExBG tag:NBButtonRightEx sonButton:self.rightButtonEx];
 }
 
 + (SimpleNavigationBar *)createWithTitle:(NSString *)title titleImage:(NSString *)titleImage leftText:(NSString *)leftText leftImage:(NSString *)leftImage rightText:(NSString *)rightText rightImage:(NSString *)rightImage target:(id)target action:(SEL)action {
-    SimpleNavigationBar *nb = [[SimpleNavigationBar alloc] initWithFrame:NBFrameBG];
-   
+    SimpleNavigationBar *nb = [[SimpleNavigationBar alloc] initWithFrame:iPhoneX ? NBFrameBGIPHONEX :  NBFrameBG];
+    
     nb.title = title;
     nb.titleImage = titleImage;
     
     nb.leftText = leftText;
     nb.leftImage = leftImage;
-
+    
     nb.rightText = rightText;
     nb.rightImage = rightImage;
     
@@ -199,17 +199,17 @@
 #pragma mark - 创建标题
 - (void)createNavTitle
 {
-    self.titleButton = [UIUtil createButton:NBFrameTitle title:self.title titleColor:kColorTitleBlack bgImage:IMAGE_NAME(self.titleImage) target:nil action:nil];
-//    self.titleButton.backgroundColor = [UIColor blueColor];
+    self.titleButton = [UIUtil createButton:NBFrameTitle title:self.title titleColor:kColorTitleBlack bgImage:self.titleImage? IMAGE_NAME(self.titleImage):nil target:nil action:nil];
+    //    self.titleButton.backgroundColor = [UIColor blueColor];
     self.titleButton.titleLabel.font = kFontHWSmall;
     self.titleButton.userInteractionEnabled = NO;
     [self addSubview:self.titleButton];
 }
 
 - (UIButton *)createKeyButton:(CGRect)rt text:(NSString *)text imageName:(NSString *)imageName {
-
+    
     // 只做展示
-    UIButton *btn = [UIUtil createButton:rt title:text titleColor:kColorHWBlack bgImage:IMAGE_NAME(imageName) target:nil action:nil];
+    UIButton *btn = [UIUtil createButton:rt title:text titleColor:kColorHWBlack bgImage:imageName?IMAGE_NAME(imageName):nil target:nil action:nil];
     btn.userInteractionEnabled = NO;
     return btn;
 }
@@ -221,12 +221,12 @@
     UIButton *bgBtn = [UIUtil createButton:rt title:nil titleColor:kColorHWBlack bgImage:nil target:_target action:_action];
     bgBtn.tag = tag;
     [bgBtn addSubview:sonButton];
-
+    
     [self addSubview:bgBtn];
 }
 
 - (void)addBottomLine:(CGRect)rt color:(UIColor *)color {
-
+    
     self.bottomLineView = [UIUtil createView:rt bgColor:color];
     [self addSubview:self.bottomLineView];
 }

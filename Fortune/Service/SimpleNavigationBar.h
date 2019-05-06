@@ -12,13 +12,13 @@
 
 
 #define NBFrameBG               CGRectMake(0, 0, kScreenWidth, kHeightNavigation)
-#define NBFrameBGIPHONEX        CGRectMake(0, 24, kScreenWidth, kHeightNavigation)
+#define NBFrameBGIPHONEX        CGRectMake(0, 0, kScreenWidth, KXHeightNavigation)
 
 #define NBFrameLeftBtnBG        CGRectMake(0, kHeightStatusBar, kNBButtonWidth, kHeightCellNormal)
 #define NBFrameMainBtnLeft      CGRectMake(20, 12, 11, 20)
-#define NBFrameMainBtn          CGRectMake(18, 13, 22, 22)
+#define NBFrameMainBtn          CGRectMake(-10, 10, kNBButtonWidth, kHeightCellNormal)
 #define NBFrameMainBtnText      CGRectMake(0, 0, kNBButtonWidth, kHeightCellNormal)
-#define NBFrameRightBtnBG       CGRectMake(kScreenWidth - kNBButtonWidth, kHeightStatusBar, kNBButtonWidth, kHeightCellNormal)
+#define NBFrameRightBtnBG       CGRectMake(kScreenWidth - kNBButtonWidth,  KHeightDefault, kNBButtonWidth, kHeightCellNormal)
 
 /**
  *  修改右前侧按钮位置

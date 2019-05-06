@@ -1550,6 +1550,25 @@
     return returnArray;
 }
 
++ (NSString *)getChineseDay {
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierChinese];
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    NSInteger unitFlags = NSCalendarUnitMonth | NSCalendarUnitDay;
+    comps = [calendar components:unitFlags fromDate:[NSDate date]];
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = NSNumberFormatterRoundHalfUp;
+    NSArray *chineseMonths=[NSArray arrayWithObjects:
+                            @"正月", @"二月", @"三月", @"四月", @"五月", @"六月", @"七月", @"八月",
+                            @"九月", @"十月", @"冬月", @"腊月", nil];
+    NSArray *chineseDays=[NSArray arrayWithObjects:
+                          @"初一", @"初二", @"初三", @"初四", @"初五", @"初六", @"初七", @"初八", @"初九", @"初十",
+                          @"十一", @"十二", @"十三", @"十四", @"十五", @"十六", @"十七", @"十八", @"十九", @"二十",
+                          @"廿一", @"廿二", @"廿三", @"廿四", @"廿五", @"廿六", @"廿七", @"廿八", @"廿九", @"三十",  nil];
+    NSString *m_str = [chineseMonths objectAtIndex:comps.month-1];
+    NSString *d_str = [chineseDays objectAtIndex:comps.day-1];
+    return [NSString stringWithFormat:@"%@%@",m_str,d_str];
+}
+
 + (NSMutableArray *)stringForJi {
     NSDateFormatter *dateformatte = [[NSDateFormatter alloc] init];
     dateformatte.dateFormat = @"yyyyMMdd";
@@ -1560,7 +1579,6 @@
     NSMutableArray *array2 = [[NSMutableArray alloc] initWithObjects:@"入殓",@"移徙",@"破土",@"解除",@"入宅",@"修造",@"栽种",@"开光", nil];
     NSMutableArray *array3 = [[NSMutableArray alloc] initWithObjects:@"开市",@"移柩",@"订盟",@"拆卸",@"立卷",@"交易",@"求嗣",@"入宅", nil];
     NSMutableArray *array4 = [[NSMutableArray alloc] initWithObjects:@"纳财",@"起基",@"赴任",@"安门",@"修坟",@"挂匾",@"上梁",@"移柩",nil];
-    
     NSMutableArray *returnArray  = [[NSMutableArray alloc] init];
     switch (tag1) {
         case 1:
@@ -1587,13 +1605,10 @@
             [returnArray addObject:array3[(tag2) %8]];
             [returnArray addObject:array4[(tag2) %8]];
             break;
-            
         default:
             break;
     }
-    
     return returnArray;
 }
-
 
 @end

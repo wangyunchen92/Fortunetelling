@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,6 +17,7 @@
                 <outlet property="lastNameTextField" destination="rGM-uL-VI2" id="DQm-u1-C2g"/>
                 <outlet property="radioButton" destination="VJf-uE-uDU" id="x8n-bd-5nf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewTopConstraint" destination="af0-KK-JJd" id="ENa-63-UKq"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -87,7 +87,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入名字" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rGM-uL-VI2">
-                                            <rect key="frame" x="95.5" y="0.0" width="247.5" height="44"/>
+                                            <rect key="frame" x="96" y="0.0" width="247" height="44"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -161,7 +161,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入出生日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idr-Rf-tgd">
-                                            <rect key="frame" x="96" y="13.5" width="107.5" height="18"/>
+                                            <rect key="frame" x="96" y="13" width="107.5" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -237,7 +237,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手相算命" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ny4-n8-Z0l">
-                                            <rect key="frame" x="16.5" y="60" width="61.5" height="18"/>
+                                            <rect key="frame" x="16" y="60" width="61.5" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -257,10 +257,10 @@
                                     </connections>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzF-Ku-Bd8">
-                                    <rect key="frame" x="281.5" y="48" width="94" height="80"/>
+                                    <rect key="frame" x="281.5" y="48" width="93.5" height="80"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="周公解梦入口球" translatesAutoresizingMaskIntoConstraints="NO" id="gih-JK-EBl">
-                                            <rect key="frame" x="22" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="21.5" y="0.0" width="50" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="4Mf-47-hYh"/>
                                                 <constraint firstAttribute="height" constant="50" id="kbL-NF-5NP"/>
@@ -315,7 +315,7 @@
                                     </connections>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBz-LM-Ib4">
-                                    <rect key="frame" x="233" y="23.5" width="40" height="1"/>
+                                    <rect key="frame" x="233.5" y="23.5" width="40" height="1"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="TpK-M7-TPg"/>
@@ -323,13 +323,13 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您还可以" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUr-Ba-v7q">
-                                    <rect key="frame" x="156.5" y="15" width="61.5" height="18"/>
+                                    <rect key="frame" x="157" y="15" width="61.5" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75a-v0-Teh">
-                                    <rect key="frame" x="101.5" y="24" width="40" height="1"/>
+                                    <rect key="frame" x="102" y="23.5" width="40" height="1"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="erD-lN-W1e"/>
@@ -340,7 +340,7 @@
                                     <rect key="frame" x="94" y="48" width="93.5" height="80"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="指纹算命" translatesAutoresizingMaskIntoConstraints="NO" id="AIF-dP-rPI">
-                                            <rect key="frame" x="21" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="21.5" y="0.0" width="50" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="N7s-eW-Vo7"/>
                                                 <constraint firstAttribute="height" constant="50" id="ofn-P2-92S"/>
@@ -457,12 +457,12 @@
     <resources>
         <image name="checked" width="15" height="15"/>
         <image name="unchecked" width="15" height="15"/>
-        <image name="向下箭头图标" width="10" height="6"/>
+        <image name="向下箭头图标" width="10.5" height="6"/>
         <image name="周公解梦入口球" width="33" height="33"/>
         <image name="手相算命" width="33" height="33"/>
         <image name="抽签占卜" width="33" height="33"/>
         <image name="指纹算命" width="33" height="33"/>
-        <image name="测算页banner" width="250" height="76"/>
+        <image name="测算页banner" width="250" height="76.5"/>
         <image name="测算页花纹" width="250" height="106"/>
     </resources>
 </document>
